@@ -1,0 +1,115 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Login_model extends CI_Model {
+
+	function login($username, $password){
+		$this->db->select('id,firstname,lastname,middlename,type,department,username,password,email,dateregistered');
+		$this->db->from('user');
+		$this->db->where('username', $username);
+		$this->db->where('password', md5($password));
+		$this->db->limit(1);
+		$query = $this->db->get();
+		if($query->num_rows()==1){
+			return $query->result();
+		} else{
+			return false;
+		}
+	}
+
+	public function register(){
+		$firstname 		= $this->input->post('firstname');
+		$lastname 		= $this->input->post('lastname');
+		$middlename 	= $this->input->post('middlename');
+		$type 			= $this->input->post('type');
+		$department 	= $this->input->post('department');
+		$username 		= $this->input->post('username');
+		$password 		= md5($this->input->post('password'));
+		$email			= $this->input->post('email');
+		$dateregistered = $this->input->post('dateregistered');
+
+  /*    $firstName = $this->input->post('firstname');
+		$lastName = $this->input->post('lastname');
+		$middlename = $this->input->post('middlename');
+		$type = $this->input->post('type');
+		$department = $this->input->post('department');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		email = $this->input->post('email');
+		$dateregistered = $this->input->post('dateregistered');*/
+
+
+
+	//	$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('middlename', 'Middlename', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('type', 'Type', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('department', 'Department', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('dateregistered', 'Dateregistered', 'trim|required|xss_clean');
+
+  /* 	if($this->form_validation->run()==false){
+		$this->session->set_flashdata('msg', 'All fields Are Required.');
+      		redirect('create', 'refresh');
+
+    }
+    else {*/
+        $data = array(
+			'id' 			 => '',
+			'firstname'  	 => $firstname,
+			'lastname'	     => $lastname,
+			'middlename'	 => $middlename,
+			'type'			 => $type,
+			'department'   	 => $department,
+			'username' 		 => $username,
+			'password' 		 => $password,
+			'email' 		 => $email,
+			'dateregistered' => $dateregistered
+		);
+		$this->db->insert('user', $data);// Proceed with DB insertion
+     }
+     public function update($id, $firstname, $astname,$middlename,$type,$department,$username,$password,$email,$dateregistered) //Change effect
+{  
+            $data = array(
+			'id' 			 => '',
+			'firstname'  	 => $firstname,
+			'lastname'	     => $lastname,
+			'middlename'	 => $middlename,
+			'type'			 => $type,
+			'department'   	 => $department,
+			'username' 		 => $username,
+			'password' 		 => $password,
+			'email' 		 => $email,
+			'dateregistered' => $dateregistered
+        );
+        $this->db->where('id', $id);
+        return $this->db->update('user', $data); //Change effect
+    }
+    public function delete($id, $firstname, $astname,$middlename,$type,$department,$username,$password,$email,$dateregistered) //Change effect
+{  
+            $data = array(
+			'id' 			 => '',
+			'firstname'  	 => $firstname,
+			'lastname'	     => $lastname,
+			'middlename'	 => $middlename,
+			'type'			 => $type,
+			'department'   	 => $department,
+			'username' 		 => $username,
+			'password' 		 => $password,
+			'email' 		 => $email,
+			'dateregistered' => $dateregistered
+        );
+        $this->db->where('id', $id);
+        return $this->db->delete('user', $data); //Change effect
+    }
+
+ }
+
+
+//}
+
+	
+
+//put the function here maybe... for linking the read button
