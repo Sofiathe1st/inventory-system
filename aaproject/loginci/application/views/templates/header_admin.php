@@ -9,25 +9,33 @@
     <body>
       <div id="mySidenav" class="sidenav">
         <b href="javascript:void(0)" class="closebtn" style="cursor:pointer" onclick="closeNav()">&times;</b>
-            <center>
-               <img src="<?php echo base_url('assets/images/userpicture.png'); ?>" alt="Avatar" style="width:100px">
-            </center>
-          <a href="#">NAME: <?php echo "$firstname $lastname"; ?></a>
-          <a href="#">ID: <?php echo $id; ?></a>
-          <a href="#"><?php echo $type; ?></a>
-          <a href="#">EMAIL: <?php echo $email; ?></a>
-          <a href="#">DEPARTMENT: <?php echo $department; ?></a>
-          <a id="logout" name= "logout" href='login'>Logout</a>
+          <center>
+            <a href="profileimage">
+              <img alt="Avatar" src="<?php echo base_url('assets/images/userpicture.png'); ?>" style="width:100px">
+            </a>
+          </center>
+            <a href="#">NAME: <?php echo "$firstname $lastname"; ?></a>
+            <!--<a href="#">ID: <?php echo $id; ?></a>
+            <a href="#"><?php echo $type; ?></a>
+            <a href="#">EMAIL: <?php echo $email; ?></a>
+            <a href="#">DEPARTMENT: <?php echo $department; ?></a>-->
+            <a id="logout" name= "logout" href='home/logout'>Logout</a>
       </div>
+
 
 
       <div id="main">
           <ul>
             <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
             <li><a class="active" href="home">Home</a></li>
-            <li><a class="active" href="create">Create</a></li>
-            <li><a class="active" href="read">Read</a></li>
-            <li><a class="active" href="update">Update</a></li>
+              <div class="dropdown">
+            <li><a class="dropbtn">Users<i class="fa fa-caret-down"></i></a></li>
+      <div class="dropdown-content">
+            <li><a href="create">Create</a></li>
+            <li><a href="read">Read</a></li>
+            <li><a href="update">Update</a></li>
+      </div>
+               </div>
           </ul>
 
 

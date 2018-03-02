@@ -20,17 +20,25 @@
         </tr>
         <thead>
 
-        <tr>
-            <td><?php echo $id;  ?></td>  
-            <td><?php echo $firstname;  ?></td>  
-            <td><?php echo $lastname; ?> </td>  
-            <td><?php echo $middlename;  ?></td>
-            <td><?php echo $type;  ?></td>
-            <td><?php echo $department;  ?></td> 
-            <td><?php echo $username;  ?></td>
-            <td><?php echo $email; ?></td>
-        </tr>     
-    
+            <?php if(is_array($user_list)) { 
+
+                foreach ($user_list as $row) {
+                    
+                echo "<tr>
+                    <td>". $row->id ."</td>  
+                    <td>". $row->firstname ."</td>  
+                    <td>". $row->lastname ."</td>  
+                    <td>". $row->middlename ."</td>
+                    <td>". $row->type ."</td>
+                    <td>". $row->department ."</td> 
+                    <td>". $row->username ."</td>
+                    <td>". $row->email ."</td>
+                </tr> 
+                ";    
+
+                }
+
+            } ?>    
     </table>
  
  
