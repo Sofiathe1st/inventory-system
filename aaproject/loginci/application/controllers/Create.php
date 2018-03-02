@@ -4,7 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Create extends CI_Controller {
 
 	public function index()
-	{
+	{$this->load->helper(array('form', 'url'));
+
+                $this->load->library('form_validation');
+
+                if ($this->form_validation->run() == FALSE)
+                {
+                        $this->load->view('');
+                }
+                else
+                {
+                        $this->load->view('formsuccess');
+                }
 
 		if($this->session->userdata('logged_in')){
 			$session_data = $this->session->userdata('logged_in');

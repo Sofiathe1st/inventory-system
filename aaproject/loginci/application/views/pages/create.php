@@ -5,36 +5,19 @@ include ('datetime.php');
     <title><?php echo $firstname?>: Create User Area</title>
 
             	<h3>Create User</h3>
-              <?php
-              if(validation_errors()){
-              ?>
-              <div class="alert alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
-                <strong><?php echo validation_errors(); ?></strong>
-              </div>
-              <?php
-              }
-              echo form_open('login/register','class="myclass"');
-              ?>
-                <h3>Create User Form</h3>
-                <div class="form-group">
-                  <?php
-                    echo form_label('First Name','firstname');
-                    echo form_input('firstname','','class="form-control" id="firstname" placeholder="Firstname", required')
-                  ?>
-                </div>
-                 <div class="form-group">
-                  <?php
-                    echo form_label('Last Name','lastname');
-                    echo form_input('lastname','','class="form-control" id="lastname" placeholder="Lastname", required ')
-                  ?>
-                </div>
-                 <div class="form-group">
-                  <?php
-                    echo form_label('Middle Name','middlename');
-                    echo form_input('middlename','','class="form-control" id="middlename" placeholder="Middlename", required')
-                  ?>
-                </div>
+              <?php echo validation_errors(); ?>
+
+<?php echo form_open('login/register'); ?>
+<label><h2>Create User</h2></label>
+  <label>Firstname</label>
+    <input type="text" name="firstname" value="" placeholder="Firstname" />
+
+  <label>Lastname</label>
+    <input type="text" name="lastname" value="" placeholder="Lastname" />
+
+  <label>Middlename</label>
+    <input type="text" name="middlename" value="" placeholder="Middlename" />
+
                  <div class="form-group">  
                         <select name="type">
                           <option value="SuperAdmin">SUPER-ADMIN</option>
@@ -54,25 +37,13 @@ include ('datetime.php');
                           <option value="AAD">AA-DEPARTMENT</option>
                         </select>
                             </div>  
-                <div class="form-group">
-                  <?php
-                    echo form_label('Username','username');
-                    echo form_input('username','','class="form-control" id="username" placeholder="Username", required')
-                  ?>
-                </div>
-                <div class="form-group">
-                  <?php
-                    echo form_label('Password','password');
-                    echo form_password('password','','class="form-control" id="password" placeholder="Password", required')
-                  ?>
-                </div>
-                <div class="form-group">
-                  Email<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
-                  <!--<?php
-                    echo form_label('Email','email');
-                    echo form_input('email','','class="form-control" id="email" placeholder="Email", required')
-                  ?>-->
-                  </div>
+  <label>Username</label>
+    <input type="text" name="username" value="" placeholder="Username" />
+  <label>Password</label>
+    <input type="password" name="password" value="" placeholder="Password" />
+  <label>Email</label>
+    <input type="text" name="email" value="" placeholder="Email" />
+
                   <!--<div> 
                     <img height="100" width="100" id="profile" src="<?php echo base_url('assets/images/userpicture.png'); ?>" alt="profile-image" />
 
@@ -82,13 +53,9 @@ include ('datetime.php');
                       <br>-->
                  <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo $timezone; ?>" />
                 <center><button type="submit" name="register" value="Register">Register</button></center>
-                <!--<a href="<?php echo site_url('login') ?>" class="btn btn-link">Sign In</a>-->
               <?php echo form_close() ?>
 
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4"></div>
-      </div>
 
-    </div>
+
+        <div class="col-md-4"></div>
+

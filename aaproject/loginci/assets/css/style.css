@@ -228,20 +228,7 @@ td {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f90404), to(#b70101));
     background-image:         linear-gradient(to bottom, #f90404 0%, ##b70101 100%);
 }
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
 
 .dropdown {
     float: left;
@@ -257,10 +244,7 @@ td {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
-}
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #e8f0ff;
 }
 
 .dropdown-content {
