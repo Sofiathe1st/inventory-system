@@ -8,15 +8,16 @@ include ('datetime.php');
               <?php echo validation_errors(); ?>
 
 <?php echo form_open('login/register'); ?>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <label><h2>Create User</h2></label>
   <label>Firstname</label>
-    <input type="text" name="firstname" value="" placeholder="Firstname" />
+    <input type="text" name="firstname" value="" placeholder="Firstname" onkeypress="return isLetterKey(event)"/>
 
   <label>Lastname</label>
-    <input type="text" name="lastname" value="" placeholder="Lastname" />
+    <input type="text" name="lastname" value="" placeholder="Lastname" onkeypress="return isLetterKey(event)"/>
 
   <label>Middlename</label>
-    <input type="text" name="middlename" value="" placeholder="Middlename" />
+    <input type="text" name="middlename" value="" placeholder="Middlename" onkeypress="return isLetterKey(event)"/>
 
                  <div class="form-group">  
                         <select name="type">
@@ -42,7 +43,7 @@ include ('datetime.php');
   <label>Password</label>
     <input type="password" name="password" value="" placeholder="Password" />
   <label>Email</label>
-    <input type="text" name="email" value="" placeholder="Email" />
+    <input type="email" name="email" value="" placeholder="Email" />
 
                   <!--<div> 
                     <img height="100" width="100" id="profile" src="<?php echo base_url('assets/images/userpicture.png'); ?>" alt="profile-image" />

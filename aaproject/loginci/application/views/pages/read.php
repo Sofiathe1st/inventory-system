@@ -26,13 +26,13 @@
                     
                 echo "<tr>
                     <td>". $row->id ."</td>  
-                    <td>". $row->firstname ."</td>  
-                    <td>". $row->lastname ."</td>  
-                    <td>". $row->middlename ."</td>
+                    <td>". htmlspecialchars($row->firstname) ."</td>  
+                    <td>". htmlspecialchars($row->lastname) ."</td>  
+                    <td>". htmlspecialchars($row->middlename) ."</td>
                     <td>". $row->type ."</td>
                     <td>". $row->department ."</td> 
-                    <td>". $row->username ."</td>
-                    <td>". $row->email ."</td>
+                    <td>". htmlspecialchars($row->username) ."</td>
+                    <td>". htmlspecialchars($row->email) ."</td>
                 </tr> 
                 ";    
 

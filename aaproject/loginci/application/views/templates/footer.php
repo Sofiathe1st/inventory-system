@@ -1,4 +1,5 @@
-<br><br>			    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<br><br>			    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 			    <script>
 			      $("#image").change(function(){
 			        readURL(this);
@@ -16,6 +17,32 @@
 			            reader.readAsDataURL(input.files[0]);
 			        }
 			    }
+			    function isNumberKey(evt)
+  {
+     var charCode = (evt.which) ? evt.which : event.keyCode
+     if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+     return true;
+  }
+
+function isLetterKey(evt)
+  {
+     var charCode = (evt.which) ? evt.which : event.keyCode
+     if (charCode < 33 || (charCode <= 90 && charCode >= 65) || (charCode <= 122 && charCode >= 97))
+        return true;
+
+     return false;
+  }
+
+function isAlphaKey(evt)
+  {
+     var charCode = (evt.which) ? evt.which : event.keyCode
+     if (charCode < 33 || (charCode <= 90 && charCode >= 65) || (charCode <= 122 && charCode >= 97) || (charCode <= 57 && charCode >=48))
+        return true;
+
+     return false;
+  }
 			    </script>
 			    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			    <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>

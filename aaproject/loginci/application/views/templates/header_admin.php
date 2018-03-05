@@ -31,11 +31,11 @@
               <div class="dropdown">
             <li><a class="dropbtn">Users<i class="fa fa-caret-down"></i></a></li>
       <div class="dropdown-content">
-            <li><a href="create">Create</a></li>
-            <li><a href="read">Read</a></li>
-            <li><a href="update">Update</a></li>
+            <a href="create">Create</a>
+            <a href="read">Read</a>
+            <a href="update">Update</a>
       </div>
-               </div>
+               
           </ul>
 
 

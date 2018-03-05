@@ -28,15 +28,14 @@
           <ul>
             <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
             <li><a class="active" href="home">Home</a></li>
-              <div class="dropdown">
+              <div class="dropdown" id="title">
             <li><a class="dropbtn">Users<i class="fa fa-caret-down"></i></a></li>
-      <div class="dropdown-content">
-            <li><a href="create">Create</a></li>
-            <li><a href="read">Read</a></li>
-            <li><a href="update">Update</a></li>
-            <li><a href="delete">Delete</a></li>
+      <div class="dropdown-content" id="content">
+            <a href="create">Create</a>
+            <a href="read">Read</a>
+            <a href="update">Update</a>
+            <a href="delete">Delete</a>
       </div>
-               </div>
           </ul>
 
 

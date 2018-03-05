@@ -19,64 +19,40 @@ include ('datetime.php');
                 <div class="form-group">  
             ID<input type="text" id="id" name="id" value="" placeholder="Id" required>
         </div> 
-                <div class="form-group">
-                  <?php
-                    echo form_label('First Name','firstname');
-                    echo form_input('firstname','','class="form-control" id="firstname" placeholder="Firstname", required')
-                  ?>
-                </div>
-                 <div class="form-group">
-                  <?php
-                    echo form_label('Last Name','lastname');
-                    echo form_input('lastname','','class="form-control" id="lastname" placeholder="Lastname", required ')
-                  ?>
-                </div>
-                 <div class="form-group">
-                  <?php
-                    echo form_label('Middle Name','middlename');
-                    echo form_input('middlename','','class="form-control" id="middlename" placeholder="Middlename", required')
-                  ?>
-                </div>
+               <label>Firstname</label>
+                  <input type="text" name="firstname" value="" placeholder="Firstname" onkeypress="return isLetterKey(event)"/>
+
+               <label>Lastname</label>
+                  <input type="text" name="lastname" value="" placeholder="Lastname" onkeypress="return isLetterKey(event)"/>
+
+               <label>Middlename</label>
+                  <input type="text" name="middlename" value="" placeholder="Middlename" onkeypress="return isLetterKey(event)"/>
+
                  <div class="form-group">  
-                                  <select name="type">
-                        <option value="SuperAdmin">SUPER-ADMIN</option>
-                        <option value="Admin">ADMIN</option>
-                        <option value="User">USER</option>
-                        
-                                    </select>
+                        <select name="type">
+                          <option value="SuperAdmin">SUPER-ADMIN</option>
+                          <option value="Admin">ADMIN</option>
+                          <option value="User">USER</option>
+                        </select>
                             </div><br>
-        <div class="form-group">  
-                                  <select name="department">
-                        <option value="CTD">CT-DEPARTMENT</option>
-                        <option value="ITD">IT-DEPARTMENT</option>
-                        <option value="HRD">HR-DEAPRTMENT</option>
-            			<option value="BDD">BD-DEPARTMENT</option>
-                        <option value="CSD">CS-DEPARTMENT</option>
-                        <option value="RCD">RC-DEPARTMENT</option>
-                        <option value="BSD">BS-DEPARTMENT</option>
-                        <option value="AAD">AA-DEPARTMENT</option>
-                        
-                                    </select>
+                  <div class="form-group">  
+                        <select name="department">
+                          <option value="CTD">CT-DEPARTMENT</option>
+                          <option value="ITD">IT-DEPARTMENT</option>
+                          <option value="HRD">HR-DEAPRTMENT</option>
+                          <option value="BDD">BD-DEPARTMENT</option>
+                          <option value="CSD">CS-DEPARTMENT</option>
+                          <option value="RCD">RC-DEPARTMENT</option>
+                          <option value="BSD">BS-DEPARTMENT</option>
+                          <option value="AAD">AA-DEPARTMENT</option>
+                        </select>
                             </div>  
-                <div class="form-group">
-                  <?php
-                    echo form_label('Username','username');
-                    echo form_input('username','','class="form-control" id="username" placeholder="Username", required')
-                  ?>
-                </div>
-                <div class="form-group">
-                  <?php
-                    echo form_label('Password','password');
-                    echo form_password('password','','class="form-control" id="password" placeholder="Password", required')
-                  ?>
-                </div>
-                <div class="form-group">
-                  Email<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
-                  <!--<?php
-                    echo form_label('Email','email');
-                    echo form_input('email','','class="form-control" id="email" placeholder="Email", required')
-                  ?>-->
-                  </div>
+              <label>Username</label>
+                <input type="text" name="username" value="" placeholder="Username" />
+              <label>Password</label>
+                <input type="password" name="password" value="" placeholder="Password" />
+              <label>Email</label>
+                <input type="email" name="email" value="" placeholder="Email" />
                   <!--<div> 
                     <img height="100" width="100" id="profile" src="<?php echo base_url('assets/images/userpicture.png'); ?>" alt="profile-image" />
 

@@ -18,6 +18,7 @@ class Login_model extends CI_Model {
 	}
 
 	public function register(){
+		$this->load->library('form_validation');
 		$firstname 		= $this->input->post('firstname');
 		$lastname 		= $this->input->post('lastname');
 		$middlename 	= $this->input->post('middlename');
@@ -27,7 +28,13 @@ class Login_model extends CI_Model {
 		$password 		= md5($this->input->post('password'));
 		$email			= $this->input->post('email');
 		$dateregistered = $this->input->post('dateregistered');
-
+		
+		$this->security->xss_clean($firstname);
+		$this->security->xss_clean($lastname);
+		$this->security->xss_clean($middlename);
+		$this->security->xss_clean($username);
+		$this->security->xss_clean($password);
+		$this->security->xss_clean($email);
 
 		$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
 		$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
@@ -67,6 +74,12 @@ class Login_model extends CI_Model {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[user.username]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[user.email]');
+		$this->security->xss_clean($firstname);
+		$this->security->xss_clean($lastname);
+		$this->security->xss_clean($middlename);
+		$this->security->xss_clean($username);
+		$this->security->xss_clean($password);
+		$this->security->xss_clean($email);
 
    	if($this->form_validation->run()==false){
 		$this->session->set_flashdata('msg', 'All fields Are Required.');
