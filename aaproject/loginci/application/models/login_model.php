@@ -29,6 +29,7 @@ class Login_model extends CI_Model {
 		$email			= $this->input->post('email');
 		$dateregistered = $this->input->post('dateregistered');
 		
+
 		$this->security->xss_clean($firstname);
 		$this->security->xss_clean($lastname);
 		$this->security->xss_clean($middlename);
@@ -74,6 +75,7 @@ class Login_model extends CI_Model {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[user.username]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[user.email]');
+
 		$this->security->xss_clean($firstname);
 		$this->security->xss_clean($lastname);
 		$this->security->xss_clean($middlename);
@@ -82,7 +84,10 @@ class Login_model extends CI_Model {
 		$this->security->xss_clean($email);
 
    	if($this->form_validation->run()==false){
-		$this->session->set_flashdata('msg', 'All fields Are Required.');
+		//$this->session->set_flashdata('msg', 'All fields Are Required.');
+		echo '<script language="javascript">';
+		echo 'alert("All fields Are Required To Be Inputted Correctly.")';
+		echo '</script>';
       		redirect('create', 'refresh');
 }
 else{  
