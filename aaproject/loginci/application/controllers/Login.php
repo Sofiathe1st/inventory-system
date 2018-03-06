@@ -28,7 +28,8 @@ class Login extends CI_Controller {
 					'department' => $row->department, 
 					'email'		 => $row->email,
 					'middlename' => $row->middlename,
-					'lastname' 	 => $row->lastname);
+					'lastname' 	 => $row->lastname,
+					'password'	 => $row->password);
 				$this->session->set_userdata('logged_in', $sess_array);
 			}
 			return true;
@@ -111,21 +112,21 @@ public function delete() {
    // $this->load->helper('form');
    // $this->load->library('form_validation');
     // Update field validation
-    $this->form_validation->set_rules('firstname', 'Firstname', 'trim|required|min_length[4]|is_unique[user.firstname]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required|min_length[4]|is_unique[user.lastname]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('middlename', 'Middlename', 'trim|required|min_length[4]|is_unique[user.middlename]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('type', 'Type', 'trim|required');
-		$this->form_validation->set_rules('department', 'Department', 'trim|required');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|is_unique[user.username]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]', array('is_unique' => 'This email already exists.'));
-		$this->form_validation->set_rules('dateregistered', 'Dateregistered');
+    //$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required|min_length[4]|is_unique[user.firstname]', array('is_unique' => 'This username already exists.'));
+	//	$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required|min_length[4]|is_unique[user.lastname]', array('is_unique' => 'This username already exists.'));
+	//	$this->form_validation->set_rules('middlename', 'Middlename', 'trim|required|min_length[4]|is_unique[user.middlename]', array('is_unique' => 'This username already exists.'));
+	//	$this->form_validation->set_rules('type', 'Type', 'trim|required');
+	//	$this->form_validation->set_rules('department', 'Department', 'trim|required');
+	//	$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|is_unique[user.username]', array('is_unique' => 'This username already exists.'));
+	//	$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+	//	$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]', array('is_unique' => 'This email already exists.'));
+	//	$this->form_validation->set_rules('dateregistered', 'Dateregistered');
 		 $data = array(
 					'id'			 => $id,
 				);
 				 $this->db->where('id', $id);
        			 $this->db->delete('user', $data);
-       			 redirect('home');
+       			 redirect('read');
    
     /*if($this->form_validation->run() == false) {
         redirect('update');

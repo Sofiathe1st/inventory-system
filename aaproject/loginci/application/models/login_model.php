@@ -29,7 +29,6 @@ class Login_model extends CI_Model {
 		$email			= $this->input->post('email');
 		$dateregistered = $this->input->post('dateregistered');
 		
-
 		$this->security->xss_clean($firstname);
 		$this->security->xss_clean($lastname);
 		$this->security->xss_clean($middlename);
@@ -107,22 +106,11 @@ else{
         return $this->db->update('user', $data); //Change effect
     }
 }
-    public function delete($id, $firstname, $astname,$middlename,$type,$department,$username,$password,$email,$dateregistered) //Change effect
-{  
-            $data = array(
-			'id' 			 => '',
-			'firstname'  	 => $firstname,
-			'lastname'	     => $lastname,
-			'middlename'	 => $middlename,
-			'type'			 => $type,
-			'department'   	 => $department,
-			'username' 		 => $username,
-			'password' 		 => $password,
-			'email' 		 => $email,
-			'dateregistered' => $dateregistered
-        );
-        $this->db->where('id', $id);
-        return $this->db->delete('user', $data); //Change effect
+    public function deleteuser($id) //Change effect
+{  $this->load->database();
+	$this->db->where('id',$iduser);
+	$this->db->delete();
+	return true;
     }
 
  }

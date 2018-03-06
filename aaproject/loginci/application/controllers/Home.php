@@ -16,6 +16,7 @@ class Home extends CI_Controller {
 			$data['department']= $session_data['department'];
 			$data['email']     = $session_data['email'];
 			$data['lastname']  = $session_data['lastname'];
+			
 			$this->load->view('dashboard_superadmin', $data);
 			$this->load->view('dashboard_admin', $data);
 			$this->load->view('dashboard_user', $data);

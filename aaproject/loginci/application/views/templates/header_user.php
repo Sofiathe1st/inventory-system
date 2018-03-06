@@ -14,7 +14,7 @@
               <img alt="Avatar" src="<?php echo base_url('assets/images/userpicture.png'); ?>" style="width:100px">
             </a>
           </center>
-            <a href="#">NAME: <?php echo "$firstname $lastname"; ?></a>
+            <a href="#">NAME: <?php echo htmlspecialchars("$firstname $lastname"); ?></a>
             <!--<a href="#">ID: <?php echo $id; ?></a>
             <a href="#"><?php echo $type; ?></a>
             <a href="#">EMAIL: <?php echo $email; ?></a>

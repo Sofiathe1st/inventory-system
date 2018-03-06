@@ -15,7 +15,7 @@
               ?>
                 <h3>Delete User Form</h3>
                 <div class="form-group">  
-            <input type="text" id="id" name="id" value="" placeholder="Id" required>
+            <input type="text" id="id" name="id" value="<?php echo $id;?>" placeholder="Id" required>
         </div> 
 
 
