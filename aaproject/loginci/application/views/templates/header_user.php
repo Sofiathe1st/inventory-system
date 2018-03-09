@@ -15,23 +15,19 @@
             </a>
           </center>
             <a href="#">NAME: <?php echo htmlspecialchars("$firstname $lastname"); ?></a>
-            <!--<a href="#">ID: <?php echo $id; ?></a>
-            <a href="#"><?php echo $type; ?></a>
-            <a href="#">EMAIL: <?php echo $email; ?></a>
-            <a href="#">DEPARTMENT: <?php echo $department; ?></a>-->
-            <a id="logout" name= "logout" href='home/logout'>Logout</a>
+            <a id="logout" name= "logout" href='<?php echo base_url() ?>index.php/home/logout'>Logout</a>
       </div>
 
 
       <div id="main">
           <ul>
             <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
-            <li><a class="active" href="home">Home</a></li>
+            <li><a class="active" href="<?php echo base_url() ?>index.php/home">Home</a></li>
               <div class="dropdown">
             <li><a class="dropbtn">Users<i class="fa fa-caret-down"></i></a></li>
       <div class="dropdown-content">
-            <a href="create">Create</a>
-            <a href="read">Read</a>
+            <a href="<?php echo base_url() ?>index.php/create">Create</a>
+            <a href="<?php echo base_url() ?>index.php/read">Read</a>
       </div>
                
           </ul>

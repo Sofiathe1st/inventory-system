@@ -35,12 +35,19 @@
                     <td><?php echo $row->department; ?></td> 
                     <td><?php echo htmlspecialchars($row->username); ?></td>
                     <td><?php echo htmlspecialchars($row->email); ?></td>
-                    <td><a href="update"><button class="btn">Update</button></a></td>
-                    <td><a href="delete"><button name="delete" id="delete">Delete</button></a></td>
+ <?php
+        
+              echo form_open('login/delete','class="myclass"');
+              ?>
+                    <td><a href="<?php echo base_url() ?>index.php/login/update/<?php echo $row->id ?>" id="a_upd">UPDATE</a></td>
+                    <td><a href="<?php echo base_url() ?>index.php/login/delete/?del=<?php echo $row->id ?>" id="a_del">DELETE</a></td>
+             <!--        <td><a href="<?php ?>"><button class="btn">Update</button></a></td>
+                    <td><a href="delete"><button name="delete" id="delete">Delete</button></a></td> -->
+<?php echo form_close() ?>
 
                 </tr> 
                    
-
+<!-- http://localhost/aaproject/loginci/index.php/update?id=1 -->
           <?php      }
 
             } ?>    

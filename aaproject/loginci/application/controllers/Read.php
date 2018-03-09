@@ -38,21 +38,4 @@ class Read extends CI_Controller {
 
 
 	}
-	/*public function readuser(){
-	$this->load->model('queries');
-		$posts = $this->queries->getPosts();
-$data = array(
-			'id' 			 => $id,
-			'firstname'  	 => $firstname,
-			'lastname'	     => $lastname,
-			'middlename'	 => $middlename,
-			'type'			 => $type,
-			'department'   	 => $department,
-			'username' 		 => $username,
-			'password' 		 => $password,
-			'email' 		 => $email,
-			'dateregistered' => $dateregistered);
-		$this->load-view('read_dashboard', $data);
-}
-*/
 }

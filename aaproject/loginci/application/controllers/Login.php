@@ -49,101 +49,84 @@ class Login extends CI_Controller {
 		}
 	}
 	public function update() {
-		$id 			= $this->input->post('id');
-		$firstname 		= $this->input->post('firstname');
-		$lastname 		= $this->input->post('lastname');
-		$middlename 	= $this->input->post('middlename');
-		$type 			= $this->input->post('type');
-		$department 	= $this->input->post('department');
-		$username 		= $this->input->post('username');
-		$password 		= md5($this->input->post('password'));
-		$email			= $this->input->post('email');
-		$dateregistered = $this->input->post('dateregistered');
-    // Load form helper and validation library
-   // $this->load->helper('form');
-   // $this->load->library('form_validation');
-    // Update field validation
-    	$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required|min_length[4]|is_unique[user.firstname]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required|min_length[4]|is_unique[user.lastname]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('middlename', 'Middlename', 'trim|required|min_length[4]|is_unique[user.middlename]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('type', 'Type', 'trim|required');
-		$this->form_validation->set_rules('department', 'Department', 'trim|required');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|is_unique[user.username]', array('is_unique' => 'This username already exists.'));
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]', array('is_unique' => 'This email already exists.'));
-		$this->form_validation->set_rules('dateregistered', 'Dateregistered');
-		 $data = array(
-					
-					'firstname'  	 => $firstname,
-					'lastname'	     => $lastname,
-					'middlename'	 => $middlename,
-					'type'			 => $type,
-					'department'   	 => $department,
-					'username' 		 => $username,
-					'password' 		 => $password,
-					'email' 		 => $email,
-					'dateregistered' => $dateregistered
-				);
-				 $this->db->where('id', $id);
-       			 $this->db->update('user', $data);
-       			 redirect('read');
-   
-    /*if($this->form_validation->run() == false) {
-        redirect('update');
-    } else {
-        // Set variable from Form
-        $id         =   $this->input->post('id');
-        $username   =   $this->input->post('username');
-        $email      =   $this->input->post('email');
-        if($this->user_model->update_user($id, $username, $email)) {
-            $this->session->set_flashdata('notice','<div class="success">Your details updated Successfully!</div>');
-            redirect('read');
-        } else {    
-            $this->session->set_flashdata('msg', '<div class="error">Problem with update your detail!</div>');
-            redirect('read');
-        }
-    }
-}*/
+
+		$id = $this->uri->segment(3);
+
+		$data= array();
+		$data['result'] = $this->login->getInfoById($id);
+		$session_data = $this->session->userdata('logged_in');
+			$data['type'] 	   = $session_data['type'];		
+			$data['id']   	   = $session_data['id'];
+			$data['firstname'] = $session_data['firstname'];
+			$data['middlename']= $session_data['middlename'];
+			$data['username']  = $session_data['username'];
+			$data['department']= $session_data['department'];
+			$data['email']     = $session_data['email'];
+			$data['lastname']  = $session_data['lastname'];
+
+			$this->load->view('update_dashboard', $data);
+
+
 }
 public function delete() {
-		$id 			= $this->input->post('id');
 
-    // Load form helper and validation library
-   // $this->load->helper('form');
-   // $this->load->library('form_validation');
-    // Update field validation
-    //$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required|min_length[4]|is_unique[user.firstname]', array('is_unique' => 'This username already exists.'));
-	//	$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required|min_length[4]|is_unique[user.lastname]', array('is_unique' => 'This username already exists.'));
-	//	$this->form_validation->set_rules('middlename', 'Middlename', 'trim|required|min_length[4]|is_unique[user.middlename]', array('is_unique' => 'This username already exists.'));
-	//	$this->form_validation->set_rules('type', 'Type', 'trim|required');
-	//	$this->form_validation->set_rules('department', 'Department', 'trim|required');
-	//	$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|is_unique[user.username]', array('is_unique' => 'This username already exists.'));
-	//	$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-	//	$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]', array('is_unique' => 'This email already exists.'));
-	//	$this->form_validation->set_rules('dateregistered', 'Dateregistered');
 		 $data = array(
-					'id'			 => $id,
+					$row->id = $_GET['del']
 				);
-				 $this->db->where('id', $id);
-       			 $this->db->delete('user', $data);
+				 $this->db->where('id', $row->id);
+       			 $this->db->delete('user');
        			 redirect('read');
-   
-    /*if($this->form_validation->run() == false) {
-        redirect('update');
-    } else {
-        // Set variable from Form
-        $id         =   $this->input->post('id');
-        $username   =   $this->input->post('username');
-        $email      =   $this->input->post('email');
-        if($this->user_model->update_user($id, $username, $email)) {
-            $this->session->set_flashdata('notice','<div class="success">Your details updated Successfully!</div>');
-            redirect('read');
-        } else {    
-            $this->session->set_flashdata('msg', '<div class="error">Problem with update your detail!</div>');
-            redirect('read');
-        }
-    }
-}*/
+ 
 }
+	public function update_user() {
+		$id_user			= $this->input->post('id');
+	    $firstname_user		= $this->input->post('firstname');
+		$lastname_user 		= $this->input->post('lastname');
+		$middlename_user 	= $this->input->post('middlename');
+		$type_user 			= $this->input->post('type');
+		$department_user 	= $this->input->post('department');
+		$username_user 		= $this->input->post('username');
+		$password_user 		= md5($this->input->post('password'));
+		$email_user			= $this->input->post('email');
+		$dateregistered_user = $this->input->post('dateregistered');
+		
+		$this->security->xss_clean($firstname_user);
+		$this->security->xss_clean($lastname_user);
+		$this->security->xss_clean($middlename_user);
+		$this->security->xss_clean($username_user);
+		$this->security->xss_clean($password_user);
+		$this->security->xss_clean($email_user);
 
+		$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
+		$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
+		$this->form_validation->set_rules('middlename', 'Middlename', 'trim|required');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[user.username]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[user.email]');
+
+   	if($this->form_validation->run()==false){
+		echo '<script language="javascript">';
+		echo 'alert("All fields Are Required To Be Inputted Correctly.")';
+		echo '</script>';
+		$this->load->library('user_agent');
+		redirect($this->agent->referrer());
+}
+else{  
+            $data = array(
+			'id' 			 => $id_user,
+			'firstname'  	 => $firstname_user,
+			'lastname'	     => $lastname_user,
+			'middlename'	 => $middlename_user,
+			'type'			 => $type_user,
+			'department'   	 => $department_user,
+			'username' 		 => $username_user,
+			'password' 		 => $password_user,
+			'email' 		 => $email_user,
+			'dateregistered' => $dateregistered_user
+        );
+        $this->db->where('id', $id_user);
+        $this->db->update('user', $data);
+        redirect('read');
+    }
+ }
 }

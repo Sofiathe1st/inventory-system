@@ -34,8 +34,7 @@
                     <td><?php echo $row->department; ?></td> 
                     <td><?php echo htmlspecialchars($row->username); ?></td>
                     <td><?php echo htmlspecialchars($row->email); ?></td>
-                    <td><a href="update"><button class="btn">Update</button></a></td>
-
+                    <td><a href="<?php echo base_url() ?>index.php/login/update/<?php echo $row->id ?>" id="a_upd">UPDATE</a></td>
 
                 </tr> 
                    

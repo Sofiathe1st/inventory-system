@@ -47,7 +47,6 @@
                   ?>
                 </div>
                <center><button type="submit" class="btn btn-primary" name="login" value="Login">Login</button></center>
-                <!--<a href="<?php echo site_url('login/register') ?>" class="btn btn-link">Sign Up</a>-->
               <?php echo form_close() ?>
 
             </div>
@@ -57,10 +56,7 @@
       </div>
 
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
   </body>
 </html>

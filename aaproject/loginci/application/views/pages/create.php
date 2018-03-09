@@ -44,14 +44,6 @@ include ('datetime.php');
     <input type="password" name="password" value="" placeholder="Password" />
   <label>Email</label>
     <input type="email" name="email" value="" placeholder="Email" />
-
-                  <!--<div> 
-                    <img height="100" width="100" id="profile" src="<?php echo base_url('assets/images/userpicture.png'); ?>" alt="profile-image" />
-
-                    <input id="image" type="file" name="image" placeholder="Photo" required="" capture>
-                   </div>
-                    <br>
-                      <br>-->
                  <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo $timezone; ?>" />
                 <center><button type="submit" name="register" value="Register">Register</button></center>
               <?php echo form_close() ?>
