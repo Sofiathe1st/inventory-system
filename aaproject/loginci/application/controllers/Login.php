@@ -221,7 +221,7 @@ public function inventory(){
 			'color'					=> $color
 		);
 		$this->db->insert('inventory', $data);// Proceed with DB insertion
-		redirect('inventory');
+		redirect('inventory_read');
 }
 }
 }

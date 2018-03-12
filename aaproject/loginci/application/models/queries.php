@@ -20,5 +20,17 @@ class queries extends CI_Model{
 	      return $data;
 	    }			
 	}
+	public function getInv(){
+		$q = $this->db->get('inventory');
+	    
+	    if($q->num_rows() > 0)
+	    {
+	      foreach ($q->result() as $row)
+	      {
+	        $data[] = $row;
+	      }
+	      return $data;
+	}
+}
 }
 ?>
