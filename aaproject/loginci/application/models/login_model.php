@@ -3,11 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login_model extends CI_Model {
 
-	function login($username, $password){
+	function login($username_user, $password_user){
 		$this->db->select('id,firstname,lastname,middlename,type,department,username,password,email,dateregistered');
 		$this->db->from('user');
-		$this->db->where('username', $username);
-		$this->db->where('password', md5($password));
+		$this->db->where('username', $username_user);
+		$this->db->where('password', md5($password_user));
 		$this->db->limit(1);
 		$query = $this->db->get();
 		if($query->num_rows()==1){
@@ -19,22 +19,22 @@ class Login_model extends CI_Model {
 
 	public function register(){
 		$this->load->library('form_validation');
-		$firstname 		= $this->input->post('firstname');
-		$lastname 		= $this->input->post('lastname');
-		$middlename 	= $this->input->post('middlename');
-		$type 			= $this->input->post('type');
-		$department 	= $this->input->post('department');
-		$username 		= $this->input->post('username');
-		$password 		= md5($this->input->post('password'));
-		$email			= $this->input->post('email');
+		$firstname_user 		= $this->input->post('firstname');
+		$lastname_user 		= $this->input->post('lastname');
+		$middlename_user 	= $this->input->post('middlename');
+		$type_user 			= $this->input->post('type');
+		$department_user 	= $this->input->post('department');
+		$username_user 		= $this->input->post('username');
+		$password_user 		= md5($this->input->post('password'));
+		$email_user			= $this->input->post('email');
 		$dateregistered = $this->input->post('dateregistered');
 		
-		$this->security->xss_clean($firstname);
-		$this->security->xss_clean($lastname);
-		$this->security->xss_clean($middlename);
-		$this->security->xss_clean($username);
-		$this->security->xss_clean($password);
-		$this->security->xss_clean($email);
+		$this->security->xss_clean($firstname_user);
+		$this->security->xss_clean($lastname_user);
+		$this->security->xss_clean($middlename_user);
+		$this->security->xss_clean($username_user);
+		$this->security->xss_clean($password_user);
+		$this->security->xss_clean($email_user);
 
 		$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
 		$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
@@ -54,15 +54,15 @@ class Login_model extends CI_Model {
     else {
         $data = array(
 			'id' 			 => '',
-			'firstname'  	 => $firstname,
-			'lastname'	     => $lastname,
-			'middlename'	 => $middlename,
-			'type'			 => $type,
-			'department'   	 => $department,
-			'username' 		 => $username,
-			'password' 		 => $password,
-			'email' 		 => $email,
-			'dateregistered' => $dateregistered
+			'firstname'  	 => $firstname_user,
+			'lastname'	     => $lastname_user,
+			'middlename'	 => $middlename_user,
+			'type'			 => $type_user,
+			'department'   	 => $department_user,
+			'username' 		 => $username_user,
+			'password' 		 => $password_user,
+			'email' 		 => $email_user,
+			'dateregistered' => $dateregistered_user
 		);
 		$this->db->insert('user', $data);// Proceed with DB insertion
      }
@@ -129,6 +129,5 @@ else{
 		$query = $this->db->get('user');
 		return $query->result_array();
     }
-
 
 }

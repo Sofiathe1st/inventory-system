@@ -22,9 +22,11 @@ include ('datetime.php');
               $department_user     = $result[0]['department'];
               $username_user       = $result[0]['username'];
               $email_user          = $result[0]['email'];
+              $email_user2          = $result[0]['email'];
               $dateregistered_user = $result[0]['dateregistered'];
 
               ?>
+              <div id="form_1">
 
                 <h3>Update User Form</h3>
                 <h4><label>ID: <?php echo $id_user;?></label></h4>
@@ -33,18 +35,18 @@ include ('datetime.php');
             <input type="hidden" id="id" name="id" value="<?php echo $id_user;?>" required>
         </div> 
                <label>Firstname</label>
-                  <input type="text" name="firstname" value="<?php echo $firstname_user; ?>" placeholder="Firstname" />
+                  <input type="text" id="input_1" name="firstname" value="<?php echo $firstname_user; ?>" placeholder="Firstname" />
 
                <label>Lastname</label>
-                  <input type="text" name="lastname" value="<?php echo $lastname_user; ?>" placeholder="Lastname" />
+                  <input type="text" id="input_1" name="lastname" value="<?php echo $lastname_user; ?>" placeholder="Lastname" />
 
                <label>Middlename</label>
-                  <input type="text" name="middlename" value="<?php echo $middlename_user; ?>" placeholder="Middlename" />
+                  <input type="text" id="input_1" name="middlename" value="<?php echo $middlename_user; ?>" placeholder="Middlename" />
 
                  <div class="form-group">  
                         <select name="type">
                           <option value="<?php echo $type_user; ?>"><?php echo $type_user; ?></option>
-                          <option value="SuperAdmin">Super-Admin</option>
+                          <option value="SuperAdmin">SuperAdmin</option>
                           <option value="Admin">Admin</option>
                           <option value="User">User</option>
                         </select>
@@ -52,25 +54,28 @@ include ('datetime.php');
                   <div class="form-group">  
                         <select name="department">
                           <option value="<?php echo $department_user ?>"><?php echo $department_user ?></option>
-                          <option value="CT-DEPARTMENT">CTD-DEPARTMENT</option>
-                          <option value="IT-DEPARTMENT">ITD-DEPARTMENT</option>
-                          <option value="HR-DEPARTMENT">HRD-DEPARTMENT</option>
-                          <option value="BD-DEPARTMENT">BDD-DEPARTMENT</option>
-                          <option value="CS-DEPARTMENT">CSD-DEPARTMENT</option>
-                          <option value="RC-DEPARTMENT">RCD-DEPARTMENT</option>
-                          <option value="BS-DEPARTMENT">BSD-DEPARTMENT</option>
-                          <option value="AA-DEPARTMENT">ACD-DEPARTMENT</option>
+                          <option value="CTD-DEPARTMENT">CTD-DEPARTMENT</option>
+                          <option value="ITD-DEPARTMENT">ITD-DEPARTMENT</option>
+                          <option value="HRD-DEPARTMENT">HRD-DEPARTMENT</option>
+                          <option value="BDD-DEPARTMENT">BDD-DEPARTMENT</option>
+                          <option value="CSD-DEPARTMENT">CSD-DEPARTMENT</option>
+                          <option value="RCD-DEPARTMENT">RCD-DEPARTMENT</option>
+                          <option value="BSD-DEPARTMENT">BSD-DEPARTMENT</option>
+                          <option value="ACD-DEPARTMENT">ACD-DEPARTMENT</option>
                         </select>
                             </div>  
               <label>Username</label>
-                <input type="text" name="username" value="<?php echo $username_user ?>" placeholder="Username" />
+                <input type="text" id="input_1" name="username" value="<?php echo $username_user ?>" placeholder="Username" />
               <label>Password</label>
-                <input type="password" name="password" value="" placeholder="Password" required />
+                <input type="password" id="input_1" name="password" value="" placeholder="Password" required />
               <label>Email</label>
-                <input type="email" name="email" value="<?php echo $email_user; ?>" placeholder="Email" />
+                <input type="email" id="input_1" name="email" value="<?php echo $email_user; ?>" placeholder="Email" />
+                <input type="hidden" name="email" value="<?php echo $email_user2; ?>" placeholder="Email" />
                  <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo $dateregistered_user; ?>" />
-                <center><button type="submit" name="update" value="Update">Update</button></center>
+                <center><button type="submit" name="update" value="Update" id="button_1">Update</button></center>
               <?php echo form_close() ?>
+            </button>
+          </div>
 
             </div>
           </div>

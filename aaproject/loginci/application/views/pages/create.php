@@ -9,43 +9,45 @@ include ('datetime.php');
 
 <?php echo form_open('login/register'); ?>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <div id="form_1">
 <label><h2>Create User</h2></label>
   <label>Firstname</label>
-    <input type="text" name="firstname" value="" placeholder="Firstname" />
+    <input type="text" name="firstname" value="" placeholder="Firstname" id="input_1" />
 
   <label>Lastname</label>
-    <input type="text" name="lastname" value="" placeholder="Lastname" />
+    <input type="text" name="lastname" value="" placeholder="Lastname" id="input_1"/>
 
   <label>Middlename</label>
-    <input type="text" name="middlename" value="" placeholder="Middlename"/>
+    <input type="text" name="middlename" value="" placeholder="Middlename" id="input_1"/>
 
                  <div class="form-group">  
                         <select name="type">
-                          <option value="Super-Admin">Super-Admin</option>
+                          <option value="SuperAdmin">SuperAdmin</option>
                           <option value="Admin">Admin</option>
                           <option value="User">User</option>
                         </select>
                             </div><br>
                   <div class="form-group">  
                         <select name="department">
-                          <option value="CT-DEPARTMENT">CT-DEPARTMENT</option>
-                          <option value="IT-DEPARTMENT">IT-DEPARTMENT</option>
-                          <option value="HR-DEPARTMENT">HR-DEPARTMENT</option>
-                          <option value="BD-DEPARTMENT">BD-DEPARTMENT</option>
-                          <option value="CS-DEPARTMENT">CS-DEPARTMENT</option>
-                          <option value="RC-DEPARTMENT">RC-DEPARTMENT</option>
-                          <option value="BS-DEPARTMENT">BS-DEPARTMENT</option>
-                          <option value="AA-DEPARTMENT">AA-DEPARTMENT</option>
+                          <option value="CTD-DEPARTMENT">CTD-DEPARTMENT</option>
+                          <option value="ITD-DEPARTMENT">ITD-DEPARTMENT</option>
+                          <option value="HRD-DEPARTMENT">HRD-DEPARTMENT</option>
+                          <option value="BDD-DEPARTMENT">BDD-DEPARTMENT</option>
+                          <option value="CSD-DEPARTMENT">CSD-DEPARTMENT</option>
+                          <option value="RCD-DEPARTMENT">RCD-DEPARTMENT</option>
+                          <option value="BSD-DEPARTMENT">BSD-DEPARTMENT</option>
+                          <option value="ACD-DEPARTMENT">ACD-DEPARTMENT</option>
                         </select>
                             </div>  
   <label>Username</label>
-    <input type="text" name="username" value="" placeholder="Username" />
+    <input type="text" name="username" value="" placeholder="Username" id="input_1"/>
   <label>Password</label>
-    <input type="password" name="password" value="" placeholder="Password" />
+    <input type="password" name="password" value="" placeholder="Password" id="input_1"/>
   <label>Email</label>
-    <input type="email" name="email" value="" placeholder="Email" />
+    <input type="email" name="email" value="" placeholder="Email" id="input_1"/>
                  <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo $timezone; ?>" />
-                <center><button type="submit" name="register" value="Register">Register</button></center>
+                <center><button type="submit" name="register" value="Register" id="button_1">Register</button></center>
+              </div>
               <?php echo form_close() ?>
 
 

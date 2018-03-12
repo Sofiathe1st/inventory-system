@@ -32,21 +32,21 @@
               <?php
               }
               echo form_open('login','class="myclass"');
-              ?>
+              ?><div id="form_1">
                 <h3>Login</h3>
                 <div class="form-group">
                   <?php
                     echo form_label('Username','username');
-                    echo form_input('username','','class="form-control" id="username" placeholder="Username"')
+                    echo form_input('username','','class="form-control" id="input_1" placeholder="Username"')
                   ?>
                 </div>
                 <div class="form-group">
                   <?php
                     echo form_label('Password','password');
-                    echo form_password('password','','class="form-control" id="password" placeholder="Password"')
+                    echo form_password('password','','class="form-control" id="input_1" placeholder="Password"')
                   ?>
                 </div>
-               <center><button type="submit" class="btn btn-primary" name="login" value="Login">Login</button></center>
+               <center><button type="submit" class="btn btn-primary" name="login" value="Login" id="button_1">Login</button></center>
               <?php echo form_close() ?>
 
             </div>
@@ -56,6 +56,7 @@
       </div>
 
     </div>
+  </div>
     <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
   </body>

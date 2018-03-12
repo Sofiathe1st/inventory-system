@@ -16,7 +16,6 @@ body {
     padding-top: 60px;
 
 }
-
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -133,14 +132,8 @@ img {
 .container {
     padding: 16px;
 }
-form {
-    border-bottom: 3px solid #f1f1f1;
-    border-left: 3px solid #f1f1f1;
-    border-right: 3px solid #f1f1f1;
-    border-top: 3px solid #f1f1f1;
-}
 
-input {
+#input_1 {
     width: 85%;
     padding: 15px 50px;
     margin: 8px 0;
@@ -151,7 +144,11 @@ input {
     margin-left: 25px;
     margin-right: 25px;
 }
-form {
+#form_1 {
+    border-bottom: 3px solid #f1f1f1;
+    border-left: 3px solid #f1f1f1;
+    border-right: 3px solid #f1f1f1;
+    border-top: 3px solid #f1f1f1;
     margin:auto;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -159,7 +156,7 @@ form {
     text-align: center;
     width: 350px;
 }
-button {
+#button_1 {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -176,7 +173,7 @@ button {
     background-image:         linear-gradient(to bottom, #4CAF50 0%, #3b8e3f 100%);
 }
 
-button:hover {
+#button_1:hover {
     opacity:1;
 }
 .alert-danger {
@@ -307,3 +304,83 @@ td {
     cursor:pointer;
     opacity:0.9;
    }
+#po_no {
+    width: 150px;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+#po_date {
+    width: 100px;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#quantity {
+    width: 100px;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#remarks_po {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+#category {
+    width: 120px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#manufacturer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#serial_number {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#purchase_order_inv {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#item_details {
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#remarks_inv {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#item_name_w_details {
+    width: 500px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#color {
+    margin-top: 5px;
+    margin-bottom: 5px;    
+}
+#submit {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 5px;
+
+}
+#submit:hover {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
