@@ -1,6 +1,6 @@
 <title>Inventory</title>
 	<h2>Inventory</h2>
-	<a href="<?php echo base_url() ?>index.php/inventory" id="a_add">Add</a>
+	<a href="<?php echo base_url() ?>index.php/inventory" id="a_add">Add Item</a>
 
 <title><?php echo $firstname?>: Read User Area</title>
 <body>
