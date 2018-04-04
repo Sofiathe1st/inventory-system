@@ -96,13 +96,15 @@ public function delete() {
 		$this->security->xss_clean($username_user);
 		$this->security->xss_clean($password_user);
 		$this->security->xss_clean($email_user);
+		$this->security->xss_clean($dateregistered_user);
 
 		$this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
 		$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
 		$this->form_validation->set_rules('middlename', 'Middlename', 'trim|required');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[user.username]');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[user.email]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('dateregistered', 'Dateregistered', 'trim|required');
 
    	if($this->form_validation->run()==false){
 		echo '<script language="javascript">';
@@ -126,31 +128,35 @@ else{
         );
         $this->db->where('id', $id_user);
         $this->db->update('user', $data);
-        redirect('read');
+        echo "<script>window.close();</script>";
     }
  }
- public function purchase_order(){
+ 
+public function purchase_order(){
 		$this->load->library('form_validation');
+		$this->load->model('queries');
 		$purchase_order_no 		= $this->input->post('purchase_order_no');
 		$purchase_order_date	= $this->input->post('purchase_order_date');
-		$quantity 				= $this->input->post('quantity');
-		$category 				= $this->input->post('category');
-		$amount 				= $this->input->post('amount');
+		$manufacturer			= $this->input->post('manufacturer');
 		$remarks 				= $this->input->post('remarks');
+		$author_email			= $this->input->post('author_email');
+		$author_firstname		= $this->input->post('author_firstname');
+		$author_lastname		= $this->input->post('author_lastname');
 		
 		$this->security->xss_clean($purchase_order_no);
 		$this->security->xss_clean($purchase_order_date);
-		$this->security->xss_clean($quantity);
-		$this->security->xss_clean($category);
-		$this->security->xss_clean($amount);
 		$this->security->xss_clean($remarks);
+		$this->security->xss_clean($author_email);
+		$this->security->xss_clean($author_firstname);
+		$this->security->xss_clean($author_lastname);
 
 		$this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
 		$this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
-		$this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
-		$this->form_validation->set_rules('category', 'category', 'trim|required');
-		$this->form_validation->set_rules('amount', 'amount', 'trim|required');
+		$this->form_validation->set_rules('manufacturer', 'manufacturer', 'trim|required');
 		$this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
+		$this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
+		$this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
+		$this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
 
    	if($this->form_validation->run()==false){
 		echo '<script language="javascript">';
@@ -162,66 +168,76 @@ else{
 
     else {
         $data = array(
-        	'id' 			 		=> '',
 			'purchase_order_no' 	=> $purchase_order_no,
 			'purchase_order_date'  	=> $purchase_order_date,
-			'quantity'	     		=> $quantity,
-			'category'	 			=> $category,
-			'amount'			 	=> $amount,
+			'manufacturer'	     	=> $manufacturer,
 			'remarks'   	 		=> $remarks,
+			'author_email'			=> $author_email,
+			'author_firstname'		=> $author_firstname,
+			'author_lastname'		=> $author_lastname
 		);
-		$this->db->insert('purchase_order', $data);// Proceed with DB insertion
-		redirect('purchase_order');
-}
-}
-public function inventory(){
+		$this->db->insert('purchase_order', $data);
+		echo '<script language="javascript">';
+		echo 'alert("Your Form was Submitted Successfully.")';
+		echo '</script>';// Proceed with DB insertion
+		redirect('purchase_order_details');
+}}
+public function purchase_order_details(){
 		$this->load->library('form_validation');
-		$manufacturer 		= $this->input->post('manufacturer');
+		$this->load->model('queries');
 		$serial_number	= $this->input->post('serial_number');
-		$purchase_order_inv 				= $this->input->post('purchase_order_inv');
-		$item_details 				= $this->input->post('item_details');
-		$remarks 				= $this->input->post('remarks');
-		$item_name_w_details 				= $this->input->post('item_name_w_details');
 		$color 				= $this->input->post('color');
+		$author_email			= $this->input->post('author_email');
+		$author_firstname		= $this->input->post('author_firstname');
+		$author_lastname		= $this->input->post('author_lastname');
+		$data['purchase_order_no'] = $this->input->post("purchase_order_no");
+		$data['purchase_order_date']     = $this->input->post("purchase_order_date");
+		$data['manufacturer']     = $this->input->post("manufacturer");
 
-		$this->security->xss_clean($manufacturer);
+		$data['results'] 	= $this->queries->getManufacturerList();
+
+
+
 		$this->security->xss_clean($serial_number);
-		$this->security->xss_clean($purchase_order_inv);
-		$this->security->xss_clean($item_details);
-		$this->security->xss_clean($remarks);
-		$this->security->xss_clean($item_name_w_details);
+		$this->security->xss_clean($purchase_order_no);
 		$this->security->xss_clean($color);
+		$this->security->xss_clean($author_firstname);
+		$this->security->xss_clean($author_lastname);
+		$this->security->xss_clean($author_email);
 
-
-		$this->form_validation->set_rules('manufacturer', 'manufacturer', 'trim|required');
 		$this->form_validation->set_rules('serial_number', 'serial_number', 'trim|required');
-		$this->form_validation->set_rules('purchase_order_inv', 'purchase_order_inv', 'trim|required');
-		$this->form_validation->set_rules('item_details', 'item_details', 'trim|required');
-		$this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
-		$this->form_validation->set_rules('item_name_w_details', 'item_name_w_details', 'trim|required');
+		$this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
 		$this->form_validation->set_rules('color', 'color', 'trim|required');
+		$this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
+		$this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
+		$this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
+
 
    	if($this->form_validation->run()==false){
 		echo '<script language="javascript">';
 		echo 'alert("All fields Are Required To Be Inputted Correctly.")';
 		echo '</script>';
-      		redirect('inventory', 'refresh');
+      		redirect('purchase_order_details', 'refresh');
 
     }
 
     else {
         $data = array(
-        	'id' 			 		=> '',
-			'manufacturer' 			=> $manufacturer,
+
 			'serial_number'  		=> $serial_number,
-			'purchase_order_inv'	=> $purchase_order_inv,
-			'item_details'	 		=> $item_details,
-			'remarks'			 	=> $remarks,
-			'item_name_w_details'   => $item_name_w_details,
-			'color'					=> $color
+			'purchase_order_no'		=> $purchase_order_no,
+			'color'					=> $color,
+			'manufacturer'			=> $manufacturer,
+			'purchase_order_date'	=> $purchase_order_date,
+			'remarks'				=> $remarks,
+			'author_firstname'		=> $author_firstname,
+			'author_lastname'		=> $author_lastname,
+			'author_email'			=> $author_email
 		);
-		$this->db->insert('inventory', $data);// Proceed with DB insertion
+		
+		$this->db->insert('purchase_order_details', $data);// Proceed with DB insertion
 		redirect('inventory_read');
 }
-}
+
+	}
 }

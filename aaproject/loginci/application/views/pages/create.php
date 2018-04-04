@@ -1,8 +1,4 @@
-<?php 
-include ('datetime.php'); 
-?>
-
-    <title><?php echo $firstname?>: Create User Area</title>
+<title><?php echo $firstname?>: Create User Area</title>
 
             	<h3>Create User</h3>
               <?php echo validation_errors(); ?>
@@ -45,7 +41,7 @@ include ('datetime.php');
     <input type="password" name="password" value="" placeholder="Password" id="input_1"/>
   <label>Email</label>
     <input type="email" name="email" value="" placeholder="Email" id="input_1"/>
-                 <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo $timezone; ?>" />
+                <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo date('Y-m-d');?>" readonly="true" />
                 <center><button type="submit" name="register" value="Register" id="button_1">Register</button></center>
               </div>
               <?php echo form_close() ?>

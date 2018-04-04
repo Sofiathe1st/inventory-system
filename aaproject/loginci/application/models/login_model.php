@@ -27,7 +27,7 @@ class Login_model extends CI_Model {
 		$username_user 		= $this->input->post('username');
 		$password_user 		= md5($this->input->post('password'));
 		$email_user			= $this->input->post('email');
-		$dateregistered = $this->input->post('dateregistered');
+		$dateregistered_user = $this->input->post('dateregistered');
 		
 		$this->security->xss_clean($firstname_user);
 		$this->security->xss_clean($lastname_user);

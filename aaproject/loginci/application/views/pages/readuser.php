@@ -1,7 +1,7 @@
 <title><?php echo $firstname?>: Read User Area</title>
 <body>
     <div class="table-responsive">  
-<h3>Users</h3>
+<center><h3 id="read_title" >Users</h3></center>
         <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
   
   

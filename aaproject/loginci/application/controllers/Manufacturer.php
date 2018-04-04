@@ -1,22 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inventory_read extends CI_Controller {
-
+class Manufacturer extends CI_Controller {
 	public function __consruct() {
 
 		parent::__consruct();
 
 		$this->load->model('queries', 'db');
-	}
 
+}
 	public function index()
 	{
 
 		if($this->session->userdata('logged_in')){
-
 			$this->load->model('queries');
-			
 			$session_data = $this->session->userdata('logged_in');
 			$data['type'] 	   = $session_data['type'];		
 			$data['id']   	   = $session_data['id'];
@@ -27,10 +24,9 @@ class Inventory_read extends CI_Controller {
 			$data['email']     = $session_data['email'];
 			$data['lastname']  = $session_data['lastname'];
 
-			$data['inventory_list'] = $this->queries->getInv();
-			$data['purchase_order']	= $this->queries->getPO();
+			$data['manufacturer_list'] = $this->queries->getManufacturerlist();
 
-			$this->load->view('inventory_read_dashboard', $data);
+			$this->load->view('manufacturer_dashboard', $data);
 } else{
 			redirect('login', 'refresh');
 		}

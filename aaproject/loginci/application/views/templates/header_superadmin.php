@@ -24,13 +24,16 @@
           <ul>
             <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/home">Home</a></li>
-              <div class="dropdown" id="title">
+             <li><a class="active" href="<?php echo base_url() ?>index.php/read">Users</a></li>
+             <li><a class="active" href="<?php echo base_url() ?>index.php/manufacturer">Manufacturers</a></li>
+             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_view">Purchase Orders</a></li>
+              <!--<div class="dropdown">
             <li><a class="dropbtn">Users<i class="fa fa-caret-down"></i></a></li>
-      <div class="dropdown-content" id="content">
+      <div class="dropdown-content">
             <a href="<?php echo base_url() ?>index.php/create">Create</a>
             <a href="<?php echo base_url() ?>index.php/read">Read</a>
       </div>
-    </div>
+    </div>-->
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order">Purchase Order</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_read">Inventory</a></li>
 
