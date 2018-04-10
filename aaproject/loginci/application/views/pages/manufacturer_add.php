@@ -26,7 +26,12 @@
     <input type="text" name="address" value="" placeholder="Address" id="input_1"/>
 
     <label>Status</label>
-    <input type="text" name="status" value="" placeholder="Status" id="input_1"/>
+    <div class="form-group">  
+      <select name="status">
+        <option value="active">active</option>
+        <option value="not-active">not-active</option>
+      </select>
+    </div>  
 
                     <center><button type="submit" name="manufacturer_add" value="Manufacturer_add" id="button_1">Add</button></center>
 

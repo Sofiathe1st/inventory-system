@@ -44,8 +44,8 @@
                     <td><?php echo htmlspecialchars($row->purchase_order_date); ?></td>
                     <td><?php echo htmlspecialchars($row->manufacturer); ?></td>
                     <td><?php echo htmlspecialchars($row->remarks); ?></td>
-                    <td><a href="<?php echo base_url() ?>index.php/login/update/<?php echo $row->id ?>" id="a_upd">Edit</a>
-                        | <a href="<?php echo base_url() ?>index.php/login/update/<?php echo $row->id ?>" id="a_del">Delete</a></td>
+                    <td><a href="<?php echo base_url() ?>index.php/login/editpurchaseorder/?upd=<?php echo $row->id ?>" id="a_upd">Edit</a>
+                        | <a href="<?php echo base_url() ?>index.php/login/deletepurchaseorder/?del=<?php echo $row->id ?>" id="a_del">Delete</a></td>
                     <!--<td><a href="<?php echo base_url() ?>index.php/login/inventory/<?php echo $row->serial_number ?>" id="a_upd">Add Details</a></td>-->
 
                 </tr> 

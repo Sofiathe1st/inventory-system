@@ -243,9 +243,29 @@ public function purchase_order_details(){
 	public function manufacturer_add(){
 		if($this->input->post('manufacturer_add')){
 			$this->login->manufacturer_add();
-			redirect('home');
+			redirect('manufacturer');
 		} else{
 			$this->load->view('pages/manufacturer_add');
 		}
 	}
+	public function deletepurchaseorder() {
+
+		 $data = array(
+					$row->id = $_GET['del']
+				);
+				 $this->db->where('id', $row->id);
+       			 $this->db->delete('purchase_order');
+       			 redirect('purchase_order_view');
+ 
+	}
+	public function deletemanufacturer() {
+
+		 $data = array(
+					$row->id = $_GET['del']
+				);
+				 $this->db->where('id', $row->id);
+       			 $this->db->delete('manufacturer');
+       			 redirect('manufacturer');
+
+}
 }

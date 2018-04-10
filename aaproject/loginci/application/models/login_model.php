@@ -169,12 +169,12 @@ public function manufacturer_add(){
         $data = array(
 			'id' 			 => '',
 			'manufacturer_name'  	 => $manufacturer_name,
-			'contact_no'	     => $lastname_user,
-			'region'	 => $middlename_user,
-			'province'			 => $type_user,
-			'city'   	 => $department_user,
-			'address' 		 => $username_user,
-			'status' 		 => $password_user,
+			'contact_no'	     => $contact_no,
+			'region'	 => $region,
+			'province'			 => $province,
+			'city'   	 => $city,
+			'address' 		 => $address,
+			'status' 		 => $status,
 		);
 		$this->db->insert('manufacturer', $data);// Proceed with DB insertion
      }
