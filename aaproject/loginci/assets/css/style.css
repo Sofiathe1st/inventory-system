@@ -482,6 +482,7 @@ td {
     cursor: pointer;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+    margin-bottom: 3px;
 }
 #submitsearch:hover {
     color:white;

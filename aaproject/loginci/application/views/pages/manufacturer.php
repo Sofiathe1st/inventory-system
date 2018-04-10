@@ -3,7 +3,7 @@
 
 <title>Manufacturer</title>
 <h2 id="inv_title">Manufacturers</h2>
-<a href="<?php echo base_url() ?>index.php/create" id="a_add">Add Manufacturer</a>
+<a href="<?php echo base_url() ?>index.php/manufacturer_add" id="a_add">Add Manufacturer</a>
 <body>
     <div class="table-responsive">
 <br>

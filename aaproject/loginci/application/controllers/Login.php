@@ -180,7 +180,7 @@ public function purchase_order(){
 		echo '<script language="javascript">';
 		echo 'alert("Your Form was Submitted Successfully.")';
 		echo '</script>';// Proceed with DB insertion
-		redirect('purchase_order_details');
+		redirect('purchase_order_view');
 }}
 public function purchase_order_details(){
 		$this->load->library('form_validation');
@@ -239,5 +239,13 @@ public function purchase_order_details(){
 		redirect('inventory_read');
 }
 
+	}
+	public function manufacturer_add(){
+		if($this->input->post('manufacturer_add')){
+			$this->login->manufacturer_add();
+			redirect('home');
+		} else{
+			$this->load->view('pages/manufacturer_add');
+		}
 	}
 }

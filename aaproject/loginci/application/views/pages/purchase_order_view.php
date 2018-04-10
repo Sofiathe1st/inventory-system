@@ -1,15 +1,26 @@
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.11/jquery.dataTables.min.js"></script>
+<script>
+    $(document) .ready(function()){
+        $('#example').DataTable();
+
+    });
+</script>
 <title>Purchase Orders</title>
 	<div id="inv_form">
-    <h2 id="inv_title">Purchase Orders</h2>     
-    <object align="right">
-    <input type="text" id="searchbar" name="searchbar" placeholder="">
-    <input type="submit" id="submitsearch" name="submitsearch" value="Search"></object>
+    <h2 id="inv_title">Purchase Orders</h2> 
+    <a href="<?php echo base_url() ?>index.php/purchase_order" id="a_add">Create New Purchase Order</a>
 <body>
     <div class="table-responsive">  
         <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
   
-  
-    <table class="table table-bordered table-hover table-striped" style="table-layout: responsive">  
+  <div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+
+    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped" id="example"> 
         <thead>  
     
         <tr>  
@@ -22,7 +33,7 @@
             
 
         </tr>
-        <thead>
+        </thead>
 
             <?php if(is_array($purchase_order_list)) { 
 
@@ -44,10 +55,3 @@
 
             } ?>   
     </table>
-</div>
-</div>
-</div>
-
-
- 
- 

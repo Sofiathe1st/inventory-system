@@ -33,7 +33,6 @@
             <a href="<?php echo base_url() ?>index.php/read">Read</a>
       </div>
     </div>-->
-             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order">Purchase Order</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_read">Inventory</a></li>
   
           </ul>
