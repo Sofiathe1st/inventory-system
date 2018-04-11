@@ -2,6 +2,10 @@
 <body>
     <div class="table-responsive">  
 <center><h3 id="read_title" >Users</h3></center>
+<div>
+<a href="<?php echo base_url() ?>index.php/create" id="a_add">Create User</a>
+</div>
+<br>
         <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
   
   
@@ -17,7 +21,7 @@
             <th><strong>Department</strong></th>
             <th><strong>Username</strong></th>
             <th><strong>Email</strong></th>
-            <th><strong>Update</strong></th>
+            <th><strong>Options</strong></th>
         </tr>
         <thead>
 

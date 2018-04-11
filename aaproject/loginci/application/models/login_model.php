@@ -179,4 +179,10 @@ public function manufacturer_add(){
 		$this->db->insert('manufacturer', $data);// Proceed with DB insertion
      }
  }
+ public function getInfoById_manufacturer($id) //Change effect
+	{  
+		$this->db->where('id', $id);
+		$query = $this->db->get('manufacturer');
+		return $query->result_array();
+    }
 }

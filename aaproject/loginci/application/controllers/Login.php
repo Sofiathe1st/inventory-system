@@ -268,4 +268,72 @@ public function purchase_order_details(){
        			 redirect('manufacturer');
 
 }
+public function edit_manufacturer_details() {
+
+		$id = $this->uri->segment(3);
+
+		$data= array();
+		$data['result'] = $this->login->getInfoById_manufacturer($id);
+		$session_data = $this->session->userdata('logged_in');
+			$data['type'] 	   = $session_data['type'];		
+			$data['id']   	   = $session_data['id'];
+			$data['firstname'] = $session_data['firstname'];
+			$data['middlename']= $session_data['middlename'];
+			$data['username']  = $session_data['username'];
+			$data['department']= $session_data['department'];
+			$data['email']     = $session_data['email'];
+			$data['lastname']  = $session_data['lastname'];
+			$this->load->view('edit_manufacturer_dashboard', $data);
+
+}
+public function edit_manufacturer() {
+
+ 		$id_manufacturer          = $this->input->post('id');
+        $manufacturer_name        = $this->input->post('manufacturer_name');
+        $contact_no_manufacturer  = $this->input->post('contact_no');
+        $region_manufacturer      = $this->input->post('region');
+        $province_manufacturer    = $this->input->post('province');
+        $city_manufacturer     	  = $this->input->post('city');
+        $address_manufacturer     = $this->input->post('address');
+        $status_manufacturer      = $this->input->post('status');
+		
+		$this->security->xss_clean($id_manufacturer);
+		$this->security->xss_clean($contact_no_manufacturer);
+		$this->security->xss_clean($region_manufacturer);
+		$this->security->xss_clean($province_manufacturer);
+		$this->security->xss_clean($city_manufacturer);
+		$this->security->xss_clean($address_manufacturer);
+		$this->security->xss_clean($status_manufacturer);
+
+		$this->form_validation->set_rules('manufacturer_name', 'manufacturer_name', 'trim|required');
+		$this->form_validation->set_rules('contact_no', 'contact_no', 'trim|required');
+		$this->form_validation->set_rules('region', 'region', 'trim|required');
+		$this->form_validation->set_rules('province', 'province', 'trim|required');
+		$this->form_validation->set_rules('city', 'city', 'trim|required');
+		$this->form_validation->set_rules('address', 'address', 'trim|required');
+		$this->form_validation->set_rules('status', 'status', 'trim|required');
+
+   	if($this->form_validation->run()==false){
+		echo '<script language="javascript">';
+		echo 'alert("All fields Are Required To Be Inputted Correctly.")';
+		echo '</script>';
+		$this->load->library('user_agent');
+		redirect($this->agent->referrer());
+}
+else{  
+            $data = array(
+			'id' 			 	=> $id_manufacturer,
+			'manufacturer_name' => $manufacturer_name,
+			'contact_no'	    => $contact_no_manufacturer,
+			'region'			=> $region_manufacturer,
+			'province'			=> $province_manufacturer,
+			'city'   	 		=> $city_manufacturer,
+			'address' 			=> $address_manufacturer,
+			'status' 		 	=> $status_manufacturer,
+        );
+        $this->db->where('id', $id_manufacturer);
+        $this->db->update('manufacturer', $data);
+        echo "<script>window.close();</script>";
+    }
+ }
 }
