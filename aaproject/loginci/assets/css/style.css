@@ -490,3 +490,6 @@ td {
     cursor:pointer;
     opacity:0.9;
 }
+#not-allowed {
+    cursor: not-allowed;
+}

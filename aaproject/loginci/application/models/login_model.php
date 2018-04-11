@@ -185,4 +185,10 @@ public function manufacturer_add(){
 		$query = $this->db->get('manufacturer');
 		return $query->result_array();
     }
+     public function getInfoById_purchase_order($id) //Change effect
+	{  
+		$this->db->where('id', $id);
+		$query = $this->db->get('purchase_order');
+		return $query->result_array();
+    }
 }

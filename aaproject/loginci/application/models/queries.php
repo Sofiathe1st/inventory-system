@@ -119,6 +119,24 @@ class queries extends CI_Model{
 	      return $data;
 	    }			
 	}
+	public function getPurchaseOrderdetails(){
+		// $query = $this->db->get('user');
+		// if($query->num_rows() > 0){
+		// 	return $query->result();
+		// }
+
+		// s
+		$q = $this->db->get('purchase_order');
+	    
+	    if($q->num_rows() > 0)
+	    {
+	      foreach ($q->result() as $row)
+	      {
+	        $data[] = $row;
+	      }
+	      return $data;
+	    }			
+	}
 
 }
 ?>
