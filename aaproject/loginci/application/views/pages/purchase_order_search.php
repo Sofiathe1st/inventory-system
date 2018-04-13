@@ -1,6 +1,6 @@
     <title><?php echo $firstname?>: Search Purchase Order</title>
 
-            	<h2 id="read_title">search</h2>
+            	<h2 id="read_title">Search Purchase Order No.</h2>
               <div id="form_1">
             	<p>Search Po by inputting po no</p>
               <?php
@@ -15,11 +15,11 @@
               echo form_open('login/delete2','class="myclass"');
               ?>
                 <div class="form-group">  
-            <input type="text" id="id" name="id" value="<?php echo $id;?>" required>
+            <input type="text" id="id" name="purchase_order_no"  placeholder="Po no." value="" required>
         </div> 
 
 
-                <center><button type="submit" name="delete" id="delete" value="Delete">Delete</button></center>
+                <center><button type="submit" name="submit" id="a_upd" value="submit">Search</button></center>
               <?php echo form_close() ?>
 
             </div>
