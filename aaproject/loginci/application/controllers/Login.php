@@ -393,27 +393,107 @@ public function edit_purchase_order() {
 }
 else{  
             $data = array(
-			'id' 			 	=> $id_purchase_order,
-			'purchase_order_no' => $purchase_order_no,
-			'purchase_order_date'	    => $purchase_order_date,
+			'id' 			 		=> $id_purchase_order,
+			'purchase_order_no' 	=> $purchase_order_no,
+			'purchase_order_date'	=> $purchase_order_date,
 			'manufacturer'			=> $manufacturer_purchase_order,
-			'remarks'			=> $remarks_purchase_order,
-			'author_email'   	 		=> $author_email,
-			'author_firstname' 			=> $author_firstname,
-			'author_lastname' 		 	=> $author_lastname,
+			'remarks'				=> $remarks_purchase_order,
+			'author_email'   	 	=> $author_email,
+			'author_firstname' 		=> $author_firstname,
+			'author_lastname' 		=> $author_lastname,
         );
         $this->db->where('id', $id_purchase_order);
         $this->db->update('purchase_order', $data);
         echo "<script>window.close();</script>";
     }
  }
- public function delete2() {
-		$po_no 	= $this->input->post('purchase_order_no');
-		$data 	= array(
-						'purchase_order_no' => $po_no,
-						);
-				 $this->db->where('purchase_order_no', $po_no);
-       			 $this->db->delete('purchase_order', $data);
-       			 redirect('purchase_order_view');
+ public function purchase_order_search() {
+ 	$this->load->model('queries');
+	$session_data = $this->session->userdata('logged_in');
+			$data['type'] 	   = $session_data['type'];		
+			$data['id']   	   = $session_data['id'];
+			$data['firstname'] = $session_data['firstname'];
+			$data['middlename']= $session_data['middlename'];
+			$data['username']  = $session_data['username'];
+			$data['department']= $session_data['department'];
+			$data['email']     = $session_data['email'];
+			$data['lastname']  = $session_data['lastname'];
+
+	$po_no 	= $this->input->post('purchase_order_no');
+   	$data['results'] = $this->queries->search($po_no);
+
+   	if ($data['results'] == FALSE ) 
+    {
+      $data['message'] = 'Purchase Order No. does not exist.';
+
+      $this->load->view('purchase_order_search_dashboard',$data);
+
+    }else{
+
+	$this->load->view('purchase_order_search_result_dashboard', $data);
+	}}
+	public function purchase_order_add_info() {
+		$purchase_order_no          = $this->input->post('purchase_order_no');
+		$purchase_order_date		= $this->input->post('purchase_order_date');
+		$serial_number				= $this->input->post('serial_number');
+		$manufacturer 				= $this->input->post('manufacturer');
+		$quantity 					= $this->input->post('quantity');
+		$category					= $this->input->post('category');
+		$amount						= $this->input->post('amount');
+		$remarks 					= $this->input->post('remarks');
+		$author_email    	        = $this->input->post('author_email');
+        $author_firstname           = $this->input->post('author_firstname');
+        $author_lastname            = $this->input->post('author_lastname');
+
+        $this->security->xss_clean($purchase_order_no);
+        $this->security->xss_clean($purchase_order_date);
+        $this->security->xss_clean($serial_number);
+        $this->security->xss_clean($manufacturer);
+        $this->security->xss_clean($quantity);
+        $this->security->xss_clean($category);
+        $this->security->xss_clean($amount);
+        $this->security->xss_clean($remarks);
+        $this->security->xss_clean($author_email);
+        $this->security->xss_clean($author_firstname);
+        $this->security->xss_clean($author_lastname);
+
+        $this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
+        $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
+        $this->form_validation->set_rules('serial_number', 'serial_number', 'trim|required');
+        $this->form_validation->set_rules('manufacturer', 'manufacturer', 'trim|required');
+        $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
+        $this->form_validation->set_rules('category', 'category', 'trim|required');
+        $this->form_validation->set_rules('amount', 'amount', 'trim|required');
+        $this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
+        $this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
+        $this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
+        $this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
+
+        if($this->form_validation->run()==false){
+		echo '<script language="javascript">';
+		echo 'alert("All fields Are Required To Be Inputted Correctly.")';
+		echo '</script>';
+		$this->load->library('user_agent');
+		redirect($this->agent->referrer());
 }
+else{  
+            $data = array(
+           	'id'					=>'id',
+			'purchase_order_no' 	=> $purchase_order_no,
+			'purchase_order_date'	=> $purchase_order_date,
+			'serial_number'			=> $serial_number,
+			'manufacturer'			=> $manufacturer,
+			'quantity'				=> $quantity,
+			'category'				=> $category,
+			'amount'				=> $amount,
+			'remarks'				=> $remarks,
+			'author_email'   	 	=> $author_email,
+			'author_firstname' 		=> $author_firstname,
+			'author_lastname' 		=> $author_lastname,
+        );
+        $this->db->insert('purchase_order_details', $data);
+        redirect('inventory_read');
+    }
+	}
+
 }

@@ -1,4 +1,4 @@
-    <title><?php echo $firstname?>: Update User Area</title>
+    <title>Update User Area</title>
 
     <h3>Update User</h3>
               <?php

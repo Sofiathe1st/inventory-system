@@ -26,6 +26,7 @@
              <li><a class="active" href="<?php echo base_url() ?>index.php/read">Users</a></li>
              <li><a class="active" href="<?php echo base_url() ?>index.php/manufacturer">Manufacturers</a></li>
              <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_view">Purchase Orders</a></li>
+             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_search">Po search</a></li>
               <!--<div class="dropdown">
             <li><a class="dropbtn">Users<i class="fa fa-caret-down"></i></a></li>
       <div class="dropdown-content">

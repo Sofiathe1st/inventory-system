@@ -149,7 +149,7 @@ public function manufacturer_add(){
 		$this->security->xss_clean($address);
 		$this->security->xss_clean($status);
 
-		$this->form_validation->set_rules('manufacturer_name', 'manufacturer_name', 'trim|required');
+		$this->form_validation->set_rules('manufacturer_name', 'manufacturer_name', 'trim|required|is_unique[manufacturer.manufacturer_name]');
 		$this->form_validation->set_rules('contact_no', 'contact_no', 'trim|required');
 		$this->form_validation->set_rules('region', 'region', 'trim|required');
 		$this->form_validation->set_rules('province', 'province', 'trim|required');

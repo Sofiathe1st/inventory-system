@@ -1,4 +1,4 @@
-    <title><?php echo $firstname?>: Search Purchase Order</title>
+    <title>Search Purchase Order</title>
 
             	<h2 id="read_title">Search Purchase Order No.</h2>
               <div id="form_1">
@@ -12,7 +12,7 @@
               </div>
               <?php
               }
-              echo form_open('login/delete2','class="myclass"');
+              echo form_open('login/purchase_order_search','class="myclass"');
               ?>
                 <div class="form-group">  
             <input type="text" id="id" name="purchase_order_no"  placeholder="Po no." value="" required>
@@ -20,12 +20,15 @@
 
 
                 <center><button type="submit" name="submit" id="a_upd" value="submit">Search</button></center>
+                <?php
+    
+    if(isset($message))
+    {
+        echo $message;
+    }  
+    ?>
               <?php echo form_close() ?>
 
             </div>
-          </div>
-        </div>
-        <div class="col-md-4"></div>
-      </div>
 
-    </div>
+        <div class="col-md-4"></div>

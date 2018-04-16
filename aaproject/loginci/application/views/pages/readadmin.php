@@ -1,4 +1,4 @@
-<title><?php echo $firstname?>: Read User Area</title>
+<title>Read User Area</title>
 <body>
     <div class="table-responsive">  
 <center><h3 id="read_title" >Users</h3></center>

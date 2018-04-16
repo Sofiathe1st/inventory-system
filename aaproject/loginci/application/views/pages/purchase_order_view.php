@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html>
 <title>Purchase Orders</title>
-
-<head>
-
-
-
-<script src="<?php echo base_url(); ?>assets/js/jquery-1.7.2.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap.js"></script>
-
-<script>
-$(document).ready( function () {
-    $('#example').DataTable();
-} );
-
-</script>
-</head>
 	<div id="inv_form">
     <h2 id="inv_title">Purchase Orders</h2> 
     <a href="<?php echo base_url() ?>index.php/purchase_order" id="a_add">Create New Purchase Order</a><br><br>
-<table class="table table-bordered" id="example">
+<table>
 
         <thead>  
     

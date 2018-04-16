@@ -137,6 +137,12 @@ class queries extends CI_Model{
 	      return $data;
 	    }			
 	}
+	public function search($po_no)
+    {
+        $this->db->where('purchase_order_no',$po_no);
+        $query  =   $this->db->get('purchase_order');
+        return $query->result();
+    }
 
 }
 ?>

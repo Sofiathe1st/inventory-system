@@ -10,13 +10,13 @@
         <thead>  
     
         <tr>  
+            <th><strong>Purchase Order No.</strong></th>
             <th><strong>Serial Number</strong></th>
             <th><strong>Manufacturer</strong></th>
-            <th><strong>Purchase Order No.</strong></th>
+            <th><strong>Quantity</strong></th>
+            <th><strong>Category</strong></th>
+            <th><strong>Amount</strong></th>
             <th><strong>Remarks</strong></th>
-            <th><strong>Color</strong></th>
-            <th><strong>Item With Complete Details</strong></th>
-            <!--<th><strong>Add Details</strong></th>-->
             
 
         </tr>
@@ -26,13 +26,14 @@
 
                 foreach ($inventory_list as $row) { ?>
                     
-                 <tr> 
+                 <tr>
+                    <td><?php echo ($row->purchase_order_no); ?></td> 
                     <td><?php echo htmlspecialchars($row->serial_number); ?></td> 
-                    <td>-----</td> 
-                    <td><?php echo htmlspecialchars($row->purchase_order_no); ?></td>
-                    <td>-----</td>
-                    <td><?php echo htmlspecialchars($row->color); ?></td>
-                    <td>-----</td>
+                    <td><?php echo ($row->manufacturer); ?></td> 
+                    <td><?php echo htmlspecialchars($row->quantity); ?></td>
+                    <td><?php echo ($row->category); ?></td>
+                    <td><?php echo htmlspecialchars($row->amount); ?></td>
+                    <td><?php echo ($row->remarks); ?></td>
                     <!--<td><a href="<?php echo base_url() ?>index.php/login/inventory/<?php echo $row->serial_number ?>" id="a_upd">Add Details</a></td>-->
 
                 </tr> 
