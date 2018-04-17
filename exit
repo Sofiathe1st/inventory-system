@@ -1,0 +1,166 @@
+[33mcommit 93be982d73e757edce603de6e54706e7feee1e52[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Tue Apr 17 08:09:12 2018 +0800
+
+    added changes in the search interface
+
+[33mcommit dd18765fca474708963dba35e99650d228f62deb[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Mon Apr 16 13:25:39 2018 +0800
+
+    search purchase order update
+
+[33mcommit 0a484d083936f565b1ef4cc2d7dc449b34d06f77[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Fri Apr 13 11:03:42 2018 +0800
+
+    added search bar for testing
+
+[33mcommit 834c5d209866d3fe6dac2f31e2d3c1000237eb41[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Fri Apr 13 09:53:20 2018 +0800
+
+    test file for search
+
+[33mcommit bf47e15193dfd0ea6a5c9cefeee6ee2d26e7df34[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Thu Apr 12 08:38:15 2018 +0800
+
+    updated the .sql file
+
+[33mcommit 76ecfb159c08eb0d75df8a2bdc5c405f56f66d62[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Thu Apr 12 08:31:36 2018 +0800
+
+    imported files
+
+[33mcommit ec55585862bc686fb8c4abcd3a9947c18a6f1cf1[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Wed Apr 11 16:21:41 2018 +0800
+
+    imported some files
+
+[33mcommit 3809d1893b643ed19640be62e3683564b32f9a16[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Wed Apr 11 13:52:24 2018 +0800
+
+    imported files
+
+[33mcommit 9c039c5d943ca8c8157d33694204726073100c9c[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Tue Apr 10 10:49:07 2018 +0800
+
+    import
+
+[33mcommit 27a0c677752c9c52889202712efadcefbe9017e0[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Tue Apr 10 09:30:23 2018 +0800
+
+    another import
+
+[33mcommit 7b46c238feb64feecc1d708a985015876bd71d89[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Tue Apr 10 08:40:44 2018 +0800
+
+    imported files
+
+[33mcommit 790f5cafbb36d7cb4d40ffd28f4c5cc712e09a32[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Wed Apr 4 13:25:47 2018 +0800
+
+    updated some files
+
+[33mcommit d5c9a63202446c730ca8ca10037c62421ffda3e2[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Tue Mar 13 11:41:46 2018 +0800
+
+    update
+
+[33mcommit 9c6b82ce8eb73b4c2837f64c1091402efb4e2d49[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Mon Mar 12 16:19:27 2018 +0800
+
+    updates
+
+[33mcommit b44bc0aa8666136c1ab84210592932e3cdb7f9f1[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Mon Mar 12 14:38:20 2018 +0800
+
+    udpates
+
+[33mcommit ff499586f30cbc6ac76b2ae4ce07861ec5bf4610[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Fri Mar 9 08:16:11 2018 +0800
+
+    user crud
+
+[33mcommit afa6799cd7c76b275a9a61730e400783bf6ce534[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Tue Mar 6 16:11:39 2018 +0800
+
+    added some updates
+    
+    changed the interface of read etc.
+
+[33mcommit 1e1064cb2c58246445334eaa03c4489f5a12fef3[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Mon Mar 5 14:42:53 2018 +0800
+
+    xss_filtering and other validation
+
+[33mcommit bb0ea0912a705939337453b3635ad1795013fa98[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Mon Mar 5 13:23:49 2018 +0800
+
+    added some updates
+    
+    more on the read query interface
+
+[33mcommit 3720a021bcee7b03bac78bef861b28fcb0e0cfda[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Fri Mar 2 16:22:15 2018 +0800
+
+    edited the navbar, models and validation
+
+[33mcommit 043d26c58f56768738f00c8b23077c3277a2f42e[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Fri Mar 2 13:08:06 2018 +0800
+
+    fixed "read" only reading the loggedin user
+
+[33mcommit ed1864d40c2e36657e47c433f4d6106964be6ff0[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Wed Feb 28 11:18:37 2018 +0800
+
+    moved sql file
+
+[33mcommit 74debb5850c098d82f17ef11c85ba7fef4a847c4[m
+Merge: 6dc3c4b b2fa219
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Wed Feb 28 11:15:38 2018 +0800
+
+    Merge branch 'master' of https://github.com/Sofiathe1st/inventory-system
+
+[33mcommit b2fa219882201b2dc9617384ff087d7d15a25b2d[m
+Author: John Charles Villavicencio <johncharlesvillavicencio@gmail.com>
+Date:   Wed Feb 28 10:54:54 2018 +0800
+
+    Update README.md
+
+[33mcommit 6dc3c4bb50e0c6ab19eb1eceea385db680cd84c6[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Wed Feb 28 10:49:17 2018 +0800
+
+    added sql file
+
+[33mcommit 846a4138d7a31331247339126f271e2d948f1245[m
+Author: John Charles Villavicencio <johncharlesvillavicencio@gmail.com>
+Date:   Tue Feb 27 08:18:34 2018 +0800
+
+    Create README.md
+
+[33mcommit a6f877943214884f9195b5aaa473cea5ff01bce9[m
+Author: Sofiathe1st <johncharlesvillavicencio@gmail.com>
+Date:   Tue Feb 27 08:15:06 2018 +0800
+
+    migrating files

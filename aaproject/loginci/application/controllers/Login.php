@@ -150,7 +150,7 @@ public function purchase_order(){
 		$this->security->xss_clean($author_firstname);
 		$this->security->xss_clean($author_lastname);
 
-		$this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
+		$this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required|is_unique[purchase_order.purchase_order_no]');
 		$this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
 		$this->form_validation->set_rules('manufacturer', 'manufacturer', 'trim|required');
 		$this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
