@@ -424,7 +424,7 @@ else{
 
    	if ($data['results'] == FALSE ) 
     {
-      $data['message'] = 'Purchase Order No. does not exist.';
+      $data['message'] = 'PO # ' . '"' . $po_no .'"' . ' not found.';
 
       $this->load->view('purchase_order_search_dashboard',$data);
 
