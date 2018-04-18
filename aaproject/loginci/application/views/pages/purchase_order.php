@@ -31,9 +31,10 @@ if(($purchase_no == 0) || $purchase_no == ''){
                             }
                         ?>
 					</select><br>
-				<!--<label>Quantity:</label>
-				    <input type="text" name="quantity" value="" id="quantity" />
-				<label>Category:</label> 
+					</
+				<label>Quantity:</label>
+				    <input type="text" name="quantity" value="" id="quantity" /><br>
+				<!--<label>Category:</label> 
 					<select name="category" id="category">
 						<option value="Television">Television</option>
 						<option value="Computer">Computer</option>

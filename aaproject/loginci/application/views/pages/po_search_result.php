@@ -5,6 +5,7 @@
 @$manufacturer       = $result[0]['manufacturer'];
 @$purchase_order_date= $result[0]['purchase_order_date'];
 @$remarks			 = $result[0]['remarks'];
+@$quantity 			 = $result[0]['quantity'];
 
  foreach ($results as $row) { ?>
                     

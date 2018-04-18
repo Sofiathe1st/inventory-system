@@ -138,14 +138,17 @@ public function purchase_order(){
 		$purchase_order_no 		= $this->input->post('purchase_order_no');
 		$purchase_order_date	= $this->input->post('purchase_order_date');
 		$manufacturer			= $this->input->post('manufacturer');
+		$quantity				= $this->input->post('quantity');
 		$remarks 				= $this->input->post('remarks');
 		$author_email			= $this->input->post('author_email');
 		$author_firstname		= $this->input->post('author_firstname');
 		$author_lastname		= $this->input->post('author_lastname');
 		
+
 		$this->security->xss_clean($purchase_order_no);
 		$this->security->xss_clean($purchase_order_date);
 		$this->security->xss_clean($remarks);
+		$this->security->xss_clean($quantity);
 		$this->security->xss_clean($author_email);
 		$this->security->xss_clean($author_firstname);
 		$this->security->xss_clean($author_lastname);
@@ -153,6 +156,7 @@ public function purchase_order(){
 		$this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required|is_unique[purchase_order.purchase_order_no]');
 		$this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
 		$this->form_validation->set_rules('manufacturer', 'manufacturer', 'trim|required');
+		$this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
 		$this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
 		$this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
 		$this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
@@ -171,6 +175,7 @@ public function purchase_order(){
 			'purchase_order_no' 	=> $purchase_order_no,
 			'purchase_order_date'  	=> $purchase_order_date,
 			'manufacturer'	     	=> $manufacturer,
+			'quantity'				=> $quantity,
 			'remarks'   	 		=> $remarks,
 			'author_email'			=> $author_email,
 			'author_firstname'		=> $author_firstname,
