@@ -1,11 +1,4 @@
-
 <?php
-@$purchase_order_id  = $result[0]['id'];
-@$purchase_order_no  = $result[0]['purchase_order_no'];
-@$manufacturer       = $result[0]['manufacturer'];
-@$purchase_order_date= $result[0]['purchase_order_date'];
-@$remarks			 = $result[0]['remarks'];
-@$quantity 			 = $result[0]['quantity'];
 
  foreach ($results as $row) { ?>
                     
@@ -25,15 +18,15 @@
 				<label>Manufacuturer:</label>
 					 <input type="text" name="manufacturer" value="<?php echo htmlspecialchars($row->manufacturer); ?>" id="" readonly="true"/>
 				<label>Quantity:</label>
-				    <input type="text" name="quantity" value="" id="quantity" required />
+				    <input type="text" name="quantity" value="1" id="quantity" readonly="true" />
 				<label>Category:</label> 
 					<select name="category" id="category">
 						<option value="Television">Television</option>
 						<option value="Computer">Computer</option>
 						<option value="Cellphones">Cellphones</option>
 				    </select>
-				<label>Amount:</label>
-				    <input type="text" name="amount" value="" id="amount" required /><br>
+				<label>Price:</label>
+				    <input type="text" name="price" value="" id="amount" required /><br>
 				<input type="hidden" name="remarks" value="<?php echo ($row->remarks); ?>">
 				<input type="hidden" name="author_email" value="<?php echo ($row->author_email); ?>">
 				<input type="hidden" name="author_firstname" value="<?php echo ($row->author_firstname); ?>">

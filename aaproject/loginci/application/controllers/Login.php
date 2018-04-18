@@ -444,7 +444,7 @@ else{
 		$manufacturer 				= $this->input->post('manufacturer');
 		$quantity 					= $this->input->post('quantity');
 		$category					= $this->input->post('category');
-		$amount						= $this->input->post('amount');
+		$price						= $this->input->post('price');
 		$remarks 					= $this->input->post('remarks');
 		$author_email    	        = $this->input->post('author_email');
         $author_firstname           = $this->input->post('author_firstname');
@@ -456,7 +456,7 @@ else{
         $this->security->xss_clean($manufacturer);
         $this->security->xss_clean($quantity);
         $this->security->xss_clean($category);
-        $this->security->xss_clean($amount);
+        $this->security->xss_clean($price);
         $this->security->xss_clean($remarks);
         $this->security->xss_clean($author_email);
         $this->security->xss_clean($author_firstname);
@@ -468,7 +468,7 @@ else{
         $this->form_validation->set_rules('manufacturer', 'manufacturer', 'trim|required');
         $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
         $this->form_validation->set_rules('category', 'category', 'trim|required');
-        $this->form_validation->set_rules('amount', 'amount', 'trim|required');
+        $this->form_validation->set_rules('price', 'price', 'trim|required');
         $this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
         $this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
         $this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
@@ -482,6 +482,10 @@ else{
 		redirect($this->agent->referrer());
 }
 else{  
+
+	$data = array();
+
+	$total = ((int)$price * (int)$quantity);
             $data = array(
            	'id'					=>'id',
 			'purchase_order_no' 	=> $purchase_order_no,
@@ -490,7 +494,8 @@ else{
 			'manufacturer'			=> $manufacturer,
 			'quantity'				=> $quantity,
 			'category'				=> $category,
-			'amount'				=> $amount,
+			'price'					=> $price,
+			'total'					=> $total,
 			'remarks'				=> $remarks,
 			'author_email'   	 	=> $author_email,
 			'author_firstname' 		=> $author_firstname,
@@ -499,6 +504,6 @@ else{
         $this->db->insert('purchase_order_details', $data);
         redirect('inventory_read');
     }
-	}
-
+	
+}
 }

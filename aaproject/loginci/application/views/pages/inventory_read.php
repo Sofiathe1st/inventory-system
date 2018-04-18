@@ -15,7 +15,8 @@
             <th><strong>Manufacturer</strong></th>
             <th><strong>Quantity</strong></th>
             <th><strong>Category</strong></th>
-            <th><strong>Amount</strong></th>
+            <th><strong>Price</strong></th>
+            <th><strong>Total</strong></th>
             <th><strong>Remarks</strong></th>
             
 
@@ -32,7 +33,8 @@
                     <td><?php echo ($row->manufacturer); ?></td> 
                     <td><?php echo htmlspecialchars($row->quantity); ?></td>
                     <td><?php echo ($row->category); ?></td>
-                    <td><?php echo htmlspecialchars($row->amount); ?></td>
+                    <td><?php echo htmlspecialchars($row->price); ?></td>
+                    <td><?php echo htmlspecialchars($row->total); ?></td>
                     <td><?php echo ($row->remarks); ?></td>
                     <!--<td><a href="<?php echo base_url() ?>index.php/login/inventory/<?php echo $row->serial_number ?>" id="a_upd">Add Details</a></td>-->
 
