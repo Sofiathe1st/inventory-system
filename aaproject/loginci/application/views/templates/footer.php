@@ -44,10 +44,9 @@ function isAlphaKey(evt)
   }
 			    </script>
 
-			    <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-
+			    <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>			    
 			    <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
-			<div id="footer">Footer here</div>
+			<div id="footer">Footer here <strong>{elapsed_time}</strong></div>
 		</div>
 	</body>
 </html>
