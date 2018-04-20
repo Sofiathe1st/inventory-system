@@ -191,7 +191,7 @@ class Login extends CI_Controller
             $this->db->insert('purchase_order', $data);
             echo '<script language="javascript">';
             echo 'alert("Your Form was Submitted Successfully.")';
-            echo '</script>'; // Proceed with DB insertion
+            echo '</script>'; 
             redirect('purchase_order_view');
         }
     }
@@ -249,7 +249,7 @@ class Login extends CI_Controller
                 'author_email' => $author_email
             );
             
-            $this->db->insert('purchase_order_details', $data); // Proceed with DB insertion
+            $this->db->insert('purchase_order_details', $data); 
             redirect('inventory_read');
         }
         
@@ -457,17 +457,32 @@ class Login extends CI_Controller
     }
     public function purchase_order_add_info()
     {
-        $purchase_order_no   = $this->input->post('purchase_order_no');
-        $purchase_order_date = $this->input->post('purchase_order_date');
-        $serial_number       = $this->input->post('serial_number');
-        $manufacturer        = $this->input->post('manufacturer');
-        $quantity            = $this->input->post('quantity');
-        $category            = $this->input->post('category');
-        $price               = $this->input->post('price');
-        $remarks             = $this->input->post('remarks');
-        $author_email        = $this->input->post('author_email');
-        $author_firstname    = $this->input->post('author_firstname');
-        $author_lastname     = $this->input->post('author_lastname');
+        $purchase_order_no   = array($this->input->post('purchase_order_no'));
+        $purchase_order_date = array($this->input->post('purchase_order_date'));
+        $serial_number       = array($this->input->post('serial_number'));
+        $manufacturer        = array($this->input->post('manufacturer'));
+        $quantity            = array($this->input->post('quantity'));
+        $category            = array($this->input->post('category'));
+        $price               = array($this->input->post('price'));
+        $remarks             = array($this->input->post('remarks'));
+        $author_email        = array($this->input->post('author_email'));
+        $author_firstname    = array($this->input->post('author_firstname'));
+        $author_lastname     = array($this->input->post('author_lastname'));
+
+        echo "<pre>";
+        echo var_dump($purchase_order_no);
+        echo var_dump($purchase_order_date);
+        echo var_dump($serial_number);
+        echo var_dump($manufacturer);
+        echo var_dump($quantity);
+        echo var_dump($category);
+        echo var_dump($price);
+        echo var_dump($remarks);
+        echo var_dump($author_email);
+        echo var_dump($author_firstname);
+        echo var_dump($author_lastname);
+        echo "<pre>";
+        exit();
         
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
@@ -501,8 +516,6 @@ class Login extends CI_Controller
             redirect($this->agent->referrer());
         } else {
             
-            $data = array();
-            
             $total = ((int) $price * (int) $quantity);
             $data  = array(
                 'id' => 'id',
@@ -519,7 +532,7 @@ class Login extends CI_Controller
                 'author_firstname' => $author_firstname,
                 'author_lastname' => $author_lastname
             );
-            $this->db->insert('purchase_order_details', $data);
+            $this->db->insert_batch('purchase_order_details', $data);
             redirect('inventory_read');
         }
         

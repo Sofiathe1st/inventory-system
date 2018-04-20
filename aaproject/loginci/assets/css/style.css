@@ -447,6 +447,10 @@ td {
     border: 1px solid #00c9f7;
     border-radius: 5px;
 }
+#po_div_line2 {
+    border: 5px solid pink;
+    border-radius: 5px;
+}
 #inv_div_line {
     border: 1px solid #00c9f7;
     border-radius: 5px;
