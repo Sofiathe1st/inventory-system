@@ -43,7 +43,6 @@
 
                 </tr> 
                    
-<!-- http://localhost/aaproject/loginci/index.php/update?id=1 -->
           <?php      }
 
             } ?>    

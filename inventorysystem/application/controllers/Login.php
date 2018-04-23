@@ -191,7 +191,7 @@ class Login extends CI_Controller
             $this->db->insert('purchase_order', $data);
             echo '<script language="javascript">';
             echo 'alert("Your Form was Submitted Successfully.")';
-            echo '</script>'; 
+            echo '</script>';
             redirect('purchase_order_view');
         }
     }
@@ -249,7 +249,7 @@ class Login extends CI_Controller
                 'author_email' => $author_email
             );
             
-            $this->db->insert('purchase_order_details', $data); 
+            $this->db->insert('purchase_order_details', $data);
             redirect('inventory_read');
         }
         
@@ -457,32 +457,19 @@ class Login extends CI_Controller
     }
     public function purchase_order_add_info()
     {
-        $purchase_order_no   = array($this->input->post('purchase_order_no'));
-        $purchase_order_date = array($this->input->post('purchase_order_date'));
-        $serial_number       = array($this->input->post('serial_number'));
-        $manufacturer        = array($this->input->post('manufacturer'));
-        $quantity            = array($this->input->post('quantity'));
-        $category            = array($this->input->post('category'));
-        $price               = array($this->input->post('price'));
-        $remarks             = array($this->input->post('remarks'));
-        $author_email        = array($this->input->post('author_email'));
-        $author_firstname    = array($this->input->post('author_firstname'));
-        $author_lastname     = array($this->input->post('author_lastname'));
-
-        echo "<pre>";
-        echo var_dump($purchase_order_no);
-        echo var_dump($purchase_order_date);
-        echo var_dump($serial_number);
-        echo var_dump($manufacturer);
-        echo var_dump($quantity);
-        echo var_dump($category);
-        echo var_dump($price);
-        echo var_dump($remarks);
-        echo var_dump($author_email);
-        echo var_dump($author_firstname);
-        echo var_dump($author_lastname);
-        echo "<pre>";
-        exit();
+        $purchase_order_no   = $this->input->post('purchase_order_no');
+        $purchase_order_date = $this->input->post('purchase_order_date');
+        $serial_number       = $this->input->post('serial_number');
+        $manufacturer        = $this->input->post('manufacturer');
+        $quantity            = $this->input->post('quantity');
+        $category            = $this->input->post('category');
+        $price               = $this->input->post('price');
+        $remarks             = $this->input->post('remarks');
+        $author_email        = $this->input->post('author_email');
+        $author_firstname    = $this->input->post('author_firstname');
+        $author_lastname     = $this->input->post('author_lastname');
+        $quantity2           = $this->input->post('quantity2');
+        
         
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
@@ -496,45 +483,43 @@ class Login extends CI_Controller
         $this->security->xss_clean($author_firstname);
         $this->security->xss_clean($author_lastname);
         
-        $this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
-        $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
-        $this->form_validation->set_rules('serial_number', 'serial_number', 'trim|required');
-        $this->form_validation->set_rules('manufacturer', 'manufacturer', 'trim|required');
-        $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
-        $this->form_validation->set_rules('category', 'category', 'trim|required');
-        $this->form_validation->set_rules('price', 'price', 'trim|required');
-        $this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
-        $this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
-        $this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
-        $this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
+        $this->form_validation->set_rules('purchase_order_no[]', 'purchase_order_no', 'trim|required');
+        $this->form_validation->set_rules('purchase_order_date[]', 'purchase_order_date', 'trim|required');
+        $this->form_validation->set_rules('serial_number[]', 'serial_number', 'trim|required');
+        $this->form_validation->set_rules('manufacturer[]', 'manufacturer', 'trim|required');
+        $this->form_validation->set_rules('quantity[]', 'quantity', 'trim|required');
+        $this->form_validation->set_rules('category[]', 'category', 'trim|required');
+        $this->form_validation->set_rules('price[]', 'price', 'trim|required');
+        $this->form_validation->set_rules('remarks[]', 'remarks', 'trim|required');
+        $this->form_validation->set_rules('author_email[]', 'author_email', 'trim|required');
+        $this->form_validation->set_rules('author_firstname[]', 'author_firstname', 'trim|required');
+        $this->form_validation->set_rules('author_lastname[]', 'author_lastname', 'trim|required');
         
         if ($this->form_validation->run() == false) {
             echo '<script language="javascript">';
             echo 'alert("All fields Are Required To Be Inputted Correctly.")';
             echo '</script>';
-            $this->load->library('user_agent');
-            redirect($this->agent->referrer());
+            redirect('purchase_order_search');
         } else {
             
-            $total = ((int) $price * (int) $quantity);
-            $data  = array(
-                'id' => 'id',
-                'purchase_order_no' => $purchase_order_no,
-                'purchase_order_date' => $purchase_order_date,
-                'serial_number' => $serial_number,
-                'manufacturer' => $manufacturer,
-                'quantity' => $quantity,
-                'category' => $category,
-                'price' => $price,
-                'total' => $total,
-                'remarks' => $remarks,
-                'author_email' => $author_email,
-                'author_firstname' => $author_firstname,
-                'author_lastname' => $author_lastname
-            );
+            for ($i = 0; $i < $quantity2; $i++) {
+                $data[$i] = array(
+                    'id' => 'id',
+                    'purchase_order_no' => $purchase_order_no[$i],
+                    'purchase_order_date' => $purchase_order_date[$i],
+                    'serial_number' => $serial_number[$i],
+                    'manufacturer' => $manufacturer[$i],
+                    'quantity' => $quantity[$i],
+                    'category' => $category[$i],
+                    'price' => $price[$i],
+                    'remarks' => $remarks[$i],
+                    'author_email' => $author_email[$i],
+                    'author_firstname' => $author_firstname[$i],
+                    'author_lastname' => $author_lastname[$i]
+                );
+            }
             $this->db->insert_batch('purchase_order_details', $data);
             redirect('inventory_read');
         }
-        
     }
 }

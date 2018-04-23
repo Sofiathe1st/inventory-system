@@ -37,33 +37,35 @@
 				    	<input type="text" name="price" value="" id="amount" required /><br>
 		<hr id="po_div_line2"> -->
 
-				<?php 
+				   	<?php 
     for ($i = 0; $i < $row->quantity; $i++) { 
         echo 	"<label>Purchase Order No.:</label>
-					<input type='text' name='purchase_order_no". $i ."' value='$row->purchase_order_no' id='po_no' readonly='true' />";
-		echo 	"<input type='hidden' name='purchase_order_date". $i ."' value='$row->purchase_order_date' id='po_date' readonly='true' /><br>";
+					<input type='text' name='purchase_order_no[]' value='$row->purchase_order_no' id='po_no' readonly='true' />";
+		echo 	"<input type='hidden' name='purchase_order_date[]' value='$row->purchase_order_date' id='po_date' readonly='true' /><br>";
 		echo 	"<hr id='po_div_line'>";
 		echo 	"<label>Serial Number:</label>
-					<input type='text' name='serial_number". $i ."' required />";
+					<input type='text' name='serial_number[]' required />";
 		echo 	"<label>Manufacuturer:</label>
-					<input type='text' name='manufacturer". $i ."' value='$row->manufacturer' id='' readonly='true'/>";
+					 	<input type='text' name='manufacturer[]' value='$row->manufacturer' id='' readonly='true'/>";
 		echo 	"<label>Quantity:</label>
-				    <input type='text' name='quantity". $i ."' value='1' id='quantity' readonly='true' />";
+				    	<input type='text' name='quantity[]' value='1' id='quantity' readonly='true' />";
 		echo 	"<label>Category:</label> 
-					<select name='category". $i ."' id='category'>
-						<option value='Television'>Television</option>
-						<option value='Computer'>Computer</option>
-						<option value='Cellphones'>Cellphones</option>
-				    </select>";
+						<select name='category[]' id='category'>
+							<option value='Television'>Television</option>
+							<option value='Computer'>Computer</option>
+							<option value='Cellphones'>Cellphones</option>
+				    	</select>";
 		echo 	"<label>Price:</label>
-				    <input type='text' name='price". $i ."' value='' id='amount' required /><br>";
-		echo 	"<input type='hidden' name='remarks". $i ."' value='$row->remarks'>";
-		echo 	"<input type='hidden' name='author_email". $i ."' value='$row->author_email'>";
-		echo 	"<input type='hidden' name='author_firstname". $i ."' value='$row->author_firstname'>";
-		echo 	"<input type='hidden' name='author_lastname". $i ."' value='$row->author_lastname'>";
+				    	<input type='text' name='price[]' value='' id='amount' required /><br>";
+		echo 	"<input type='hidden' name='remarks[]' value='$row->remarks'>";
+		echo 	"<input type='hidden' name='author_email[]' value='$row->author_email'>";
+		echo 	"<input type='hidden' name='author_firstname[]' value='$row->author_firstname'>";
+		echo 	"<input type='hidden' name='author_lastname[]' value='$row->author_lastname'>";
         echo 	"<br><br><hr id='po_div_line2'>";
+        echo "<input type='hidden' name='quantity2' value='$row->quantity'>";
     }
 ?>
+
 
 							<!-- <input type="hidden" name="remarks" value="<?php echo ($row->remarks); ?>">
 							<input type="hidden" name="author_email" value="<?php echo ($row->author_email); ?>">
