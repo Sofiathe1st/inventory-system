@@ -520,7 +520,16 @@ class Login extends CI_Controller
             }
             $this->db->insert_batch('purchase_order_details', $data);
             redirect('inventory_read');
-            
+
+        }
+    }
+    public function inventory_hs_add()
+    {
+        if ($this->input->post('inventory_hs_add')) {
+            $this->login->inventory_hs_add();
+            redirect('inventory_hs');
+        } else {
+            $this->load->view('pages/inventory_hs_add');
         }
     }
 }

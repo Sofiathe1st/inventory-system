@@ -202,4 +202,85 @@ class Login_model extends CI_Model
         $query = $this->db->get('purchase_order');
         return $query->result_array();
     }
+    public function inventory_hs_add(){
+    $this->load->library('form_validation');
+        $asset_type = $this->input->post('asset_type');
+        $asset_num        = $this->input->post('asset_num');
+        $type            = $this->input->post('type');
+        $brand          = $this->input->post('brand');
+        $assigned_to              = $this->input->post('assigned_to');
+        $specifications           = $this->input->post('specifications');
+        $date_purchased            = $this->input->post('date_purchased');
+        $amount = $this->input->post('amount');
+        $status = $this->input->post('status');
+        $comment = $this->input->post('comment');
+        $author_email = $this->input->post('author_email');
+        $author_firstname = $this->input->post('author_firstname');
+        $author_lastname = $this->input->post('author_lastname');
+
+        
+        $this->security->xss_clean($asset_type);
+        $this->security->xss_clean($asset_num);
+        $this->security->xss_clean($type);
+        $this->security->xss_clean($brand);
+        $this->security->xss_clean($assigned_to);
+        $this->security->xss_clean($specifications);
+        $this->security->xss_clean($date_purchased);
+        $this->security->xss_clean($amount);
+        $this->security->xss_clean($status);
+        $this->security->xss_clean($comment);
+        $this->security->xss_clean($author_email);
+        $this->security->xss_clean($author_firstname);
+        $this->security->xss_clean($author_lastname);
+
+        
+        $this->form_validation->set_rules('asset_type', 'asset_type', 'trim|required');
+        $this->form_validation->set_rules('asset_num', 'asset_num', 'trim|required');
+        $this->form_validation->set_rules('type', 'type', 'trim|required');
+        $this->form_validation->set_rules('brand', 'brand', 'trim|required');
+        $this->form_validation->set_rules('assigned_to', 'assigned_to', 'trim|required');
+        $this->form_validation->set_rules('specifications', 'specifications', 'trim|required');
+        $this->form_validation->set_rules('date_purchased', 'date_purchased', 'trim|required');
+        $this->form_validation->set_rules('amount', 'amount', 'trim|required');
+        $this->form_validation->set_rules('status', 'status', 'trim|required');
+        $this->form_validation->set_rules('comment', 'comment', 'trim|required');
+        $this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
+        $this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
+        $this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
+
+        if ($this->form_validation->run() == false) {
+            echo '<script language="javascript">';
+            echo 'alert("All fields Are Required To Be Inputted Correctly.")';
+            echo '</script>';
+            redirect('inventory_hs_add', 'refresh');
+            
+        }
+        if ($this->form_validation->run() == true) {
+            echo '<script language="javascript">';
+            echo 'alert("success.")';
+            echo '</script>';
+            $data = array(
+                'id' => '',
+                'asset_type' => $asset_type,
+                'asset_num' => $asset_num,
+                'type' => $type,
+                'brand' => $brand,
+                'assigned_to' => $assigned_to,
+                'specifications' => $specifications,
+                'date_purchased' => $date_purchased,
+                'amount' => $amount,
+                'status' => $status,
+                'comment' => $comment,
+                'author_email' => $author_email,
+                'author_firstname' => $author_firstname,
+                'author_lastname' => $author_lastname
+            );
+            $this->db->insert('inventory_hs', $data);
+            redirect('inventory_hs', 'refresh');
+        }
+        
+        else {
+            redirect('login', 'refresh');
+        }
+    }
 }

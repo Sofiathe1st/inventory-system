@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2018 at 04:12 AM
+-- Generation Time: Apr 24, 2018 at 08:18 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -19,6 +19,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `ci`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inventory_hs`
+--
+
+CREATE TABLE `inventory_hs` (
+  `id` int(250) NOT NULL,
+  `asset_type` varchar(250) NOT NULL,
+  `asset_num` varchar(250) NOT NULL,
+  `type` varchar(250) NOT NULL,
+  `brand` varchar(250) NOT NULL,
+  `assigned_to` varchar(250) NOT NULL,
+  `specifications` varchar(250) NOT NULL,
+  `date_purchased` date NOT NULL,
+  `amount` varchar(250) NOT NULL,
+  `status` varchar(250) NOT NULL,
+  `comment` varchar(250) NOT NULL,
+  `author_email` varchar(250) NOT NULL,
+  `author_firstname` varchar(250) NOT NULL,
+  `author_lastname` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `inventory_hs`
+--
+
+INSERT INTO `inventory_hs` (`id`, `asset_type`, `asset_num`, `type`, `brand`, `assigned_to`, `specifications`, `date_purchased`, `amount`, `status`, `comment`, `author_email`, `author_firstname`, `author_lastname`) VALUES
+(1, 'Hardware', '23', '23', '23', '23', '23', '2018-04-10', '23', 'Working', '2323', 'super@admin', 'John Charles', 'Villavicencio'),
+(2, 'Hardware', 'asd12e12e', 'Laptop', 'Asus N53JQ Series Notebook ', 'Diaz, John', 'Asus N53JQ Series Notebook  Microsoft Windows 7 Home Premium  Mobile QuadCore Intel Core i7-740QM, 2400 MHz (18 x 133)  NVIDIA GeForce GT 425M (1024 MB)  WDC WD5000BEVT-24A0R SCSI Disk Device (500 GB, 5400 RPM, SATA-II)  Kingston 9905428-093.A00LF   ', '2018-04-02', '72000', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -141,12 +172,17 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `middlename`, `type`, `department`, `username`, `password`, `email`, `dateregistered`) VALUES
 (00017, 'John Charles', 'Villavicencio', 'Bautista', 'SuperAdmin', 'CT-DEPARTMENT', 'superadmin', '17c4520f6cfd1ab53d8745e84681eb49', 'super@admin', '2018-04-19'),
 (00077, 'John Charles', 'Villavicencio', 'Bautista', 'User', 'CT-DEPARTMENT', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@user', '2018-04-18'),
-(00078, 'John Charles', 'Villavicencio', 'Bautista', 'Admin', 'CT-DEPARTMENT', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin', '2018-04-18'),
-(00079, 'John Charlesies', 'Villavicencio', 'Bautista', 'Admin', 'HRD-DEPARTMENT', 'admin2', 'c84258e9c39059a89ab77d846ddab909', 'admin2@email.com', '2018-04-18');
+(00078, 'John Charles', 'Villavicencio', 'Bautista', 'Admin', 'CT-DEPARTMENT', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin', '2018-04-18');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `inventory_hs`
+--
+ALTER TABLE `inventory_hs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `manufacturer`
@@ -176,6 +212,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `inventory_hs`
+--
+ALTER TABLE `inventory_hs`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `manufacturer`
 --

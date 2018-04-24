@@ -105,6 +105,18 @@ class queries extends CI_Model
         $query = $this->db->get('purchase_order');
         return $query->result();
     }
+    public function getInventory_HS()
+    {
+        
+        $query = $this->db->get('inventory_hs');
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        
+    }
     
 }
 ?>
