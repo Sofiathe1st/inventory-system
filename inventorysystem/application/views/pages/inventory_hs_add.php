@@ -34,29 +34,6 @@
 
 				   	<label>Comment/Remarks:</label><br>
 				   		<textarea rows="4" cols="50" name="comment" value="" id="remarks_po"></textarea><br>
-				    
-					<!-- <label>Manufacuturer:</label>
-					<select name="manufacturer" id="manufacturer">
-						 <option value="">Select Manufacturer</option>
-                        <?php
-                            foreach ($manufacturer as $res) {
-                                echo "<option value='$res->manufacturer_name'>$res->manufacturer_name</option>";
-                            }
-                        ?>
-					</select><br> -->
-					
-				<!-- <label>Quantity:</label>
-				    <input type="text" name="quantity" value="" id="quantity" /><br>
-				<label>Category:</label> 
-					<select name="category" id="category">
-						<option value="Television">Television</option>
-						<option value="Computer">Computer</option>
-						<option value="Cellphones">Cellphones</option>
-				    </select><br>
-				<label>Amount:</label>
-				    <input type="text" name="amount" value="" id="amount" /><br>
-				<label>Remarks:</label><br>
-				    <textarea rows="4" cols="50" name="remarks" value="" id="remarks_po"></textarea><br> -->
 				<input type="hidden" name="author_email" value="<?php echo $email; ?>">
 				<input type="hidden" name="author_firstname" value="<?php echo $firstname; ?>">
 				<input type="hidden" name="author_lastname" value="<?php echo $lastname; ?>">

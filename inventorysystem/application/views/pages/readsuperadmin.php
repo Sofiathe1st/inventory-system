@@ -8,7 +8,7 @@
 <br>
         <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
   
-  
+  <div id="inv_form">
     <table class="table table-bordered table-hover table-striped" style="table-layout: responsive">  
         <thead>  
     
@@ -57,4 +57,5 @@
             } ?>    
     </table>
  
- 
+ </div>
+ </div>

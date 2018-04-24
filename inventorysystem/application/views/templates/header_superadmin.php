@@ -29,7 +29,7 @@
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_view">Purchase Orders</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_search">Po search</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_read">Inventory</a></li> -->
-            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_hs">Inventory H/S</a></li>
+            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_hs">Inventory</a></li>
 
           </ul>
 

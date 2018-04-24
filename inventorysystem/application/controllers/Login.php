@@ -532,4 +532,15 @@ class Login extends CI_Controller
             $this->load->view('pages/inventory_hs_add');
         }
     }
+     public function delete_inventory_hs()
+    {
+        
+        $data = array(
+            $row->id = $_GET['del']
+        );
+        $this->db->where('id', $row->id);
+        $this->db->delete('inventory_hs');
+        redirect('inventory_hs');
+        
+    }
 }
