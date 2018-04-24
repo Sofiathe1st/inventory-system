@@ -268,11 +268,11 @@ td {
     display: list-item;
 }
 #a_del {
-     text-decoration: none ;
-     color: white;
+    text-decoration: none ;
+    color: white;
     padding : 5px;
     border-radius: 5px;
-   background-image: -webkit-linear-gradient(top, #f90404 0%, ##b70101 100%);
+    background-image: -webkit-linear-gradient(top, #f90404 0%, ##b70101 100%);
     background-image:      -o-linear-gradient(top, #f90404 0%, ##b70101 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f90404), to(#b70101));
     background-image:         linear-gradient(to bottom, #f90404 0%, ##b70101 100%);
@@ -448,8 +448,10 @@ td {
     border-radius: 5px;
 }
 #po_div_line2 {
-    border: 5px solid pink;
-    border-radius: 5px;
+    border: 5px solid #00c9f7;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: .7;
 }
 #inv_div_line {
     border: 1px solid #00c9f7;

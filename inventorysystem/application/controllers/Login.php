@@ -520,6 +520,7 @@ class Login extends CI_Controller
             }
             $this->db->insert_batch('purchase_order_details', $data);
             redirect('inventory_read');
+            
         }
     }
 }
