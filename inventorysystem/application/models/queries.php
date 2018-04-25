@@ -105,10 +105,10 @@ class queries extends CI_Model
         $query = $this->db->get('purchase_order');
         return $query->result();
     }
-    public function getInventory_HS()
+    public function getInventory_hardware()
     {
         
-        $query = $this->db->get('inventory_hs');
+        $query = $this->db->get('inventory_hardware');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -117,6 +117,17 @@ class queries extends CI_Model
         }
         
     }
-    
+    public function getInventory_software()
+    {
+        
+        $query = $this->db->get('inventory_software');
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+
+   } 
 }
 ?>

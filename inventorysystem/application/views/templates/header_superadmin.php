@@ -29,8 +29,8 @@
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_view">Purchase Orders</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_search">Po search</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_read">Inventory</a></li> -->
-            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_hs">Inventory Hardware</a></li>
-            <li><a class="active" href="#">Inventory Software</a></li>
+            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_hardware">Inventory Hardware</a></li>
+            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_software">Inventory Software</a></li>
 
           </ul>
 

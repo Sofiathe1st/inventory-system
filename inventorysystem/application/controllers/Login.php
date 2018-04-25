@@ -523,34 +523,34 @@ class Login extends CI_Controller
 
         }
     }
-    public function inventory_hs_add()
+    public function inventory_hardware_add()
     {
-        if ($this->input->post('inventory_hs_add')) {
-            $this->login->inventory_hs_add();
-            redirect('inventory_hs');
+        if ($this->input->post('inventory_hardware_add')) {
+            $this->login->inventory_hardware_add();
+            redirect('inventory_hardware');
         } else {
-            $this->load->view('pages/inventory_hs_add');
+            $this->load->view('pages/inventory_hardware_add');
         }
     }
-     public function delete_inventory_hs()
+     public function delete_inventory_hardware()
     {
         
         $data = array(
             $row->id = $_GET['del']
         );
         $this->db->where('id', $row->id);
-        $this->db->delete('inventory_hs');
-        redirect('inventory_hs');
+        $this->db->delete('inventory_hardware');
+        redirect('inventory_hardware');
         
     }
-    public function edit_inventory_hs_details()
+    public function edit_inventory_hardware_details()
     {
         
         $id = $this->uri->segment(3);
         $this->load->model('queries');
         
         $data                 = array();
-        $data['result']       = $this->login->getInfoById_inventory_hs_details($id);
+        $data['result']       = $this->login->getInfoById_inventory_hardware_details($id);
         $data['manufacturer'] = $this->queries->getManufacturer();
         $session_data         = $this->session->userdata('logged_in');
         $data['type']         = $session_data['type'];
@@ -561,16 +561,66 @@ class Login extends CI_Controller
         $data['department']   = $session_data['department'];
         $data['email']        = $session_data['email'];
         $data['lastname']     = $session_data['lastname'];
-        $this->load->view('edit_inventory_hs_dashboard', $data);
+        $this->load->view('edit_inventory_hardware_dashboard', $data);
         
     }
-    public function edit_inventory_hs()
+    public function edit_inventory_hardware()
     {
-        if ($this->input->post('edit_inventory_hs')) {
-            $this->login->edit_inventory_hs_details();
-            redirect('inventory_hs');
+        if ($this->input->post('edit_inventory_hardware')) {
+            $this->login->edit_inventory_hardware_details();
+            redirect('inventory_hardware');
         } else {
-            $this->load->view('pages/edit_inventory_hs_details');
+            $this->load->view('pages/edit_inventory_hardware_details');
         }
+    }
+    public function inventory_software_add()
+    {
+        if ($this->input->post('inventory_software_add')) {
+            $this->login->inventory_software_add();
+            redirect('inventory_software');
+        } else {
+            $this->load->view('pages/inventory_software_add');
+        }
+    }
+    public function delete_inventory_software()
+    {
+        
+        $data = array(
+            $row->id = $_GET['del']
+        );
+        $this->db->where('id', $row->id);
+        $this->db->delete('inventory_software');
+        redirect('inventory_software');
+        
+    }
+    public function edit_inventory_software()
+    {
+        if ($this->input->post('edit_inventory_software')) {
+            $this->login->edit_inventory_software_details();
+            redirect('inventory_software');
+        } else {
+            $this->load->view('pages/edit_inventory_software_details');
+        }
+    }
+     public function edit_inventory_software_details()
+    {
+        
+        $id = $this->uri->segment(3);
+        $this->load->model('queries');
+        
+        $data                 = array();
+        $data['result']       = $this->login->getInfoById_inventory_software_details($id);
+        $data['manufacturer'] = $this->queries->getManufacturer();
+        $session_data         = $this->session->userdata('logged_in');
+        $data['type']         = $session_data['type'];
+        $data['id']           = $session_data['id'];
+        $data['firstname']    = $session_data['firstname'];
+        $data['middlename']   = $session_data['middlename'];
+        $data['username']     = $session_data['username'];
+        $data['department']   = $session_data['department'];
+        $data['email']        = $session_data['email'];
+        $data['lastname']     = $session_data['lastname'];
+        $this->load->view('edit_inventory_software_dashboard', $data);
+        
     }
 }
