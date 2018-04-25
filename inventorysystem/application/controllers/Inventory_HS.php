@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inventory_HS extends CI_Controller {
+class Inventory_hs extends CI_Controller {
 
 	public function __consruct() {
 

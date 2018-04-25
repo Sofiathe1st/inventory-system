@@ -14,13 +14,13 @@
 				    <!-- <input type="hidden" name="purchase_order_date" value="<?php echo date('Y-m-d');?>" id="po_date" readonly="true" /><br> -->
 				    <hr id="po_div_line">
 				    <label>Type</label>
-				    	<input type="text" name="type" value="" id="po_no"/><br>
+				    	<input type="text" name="type_item" value="" id="po_no"/><br>
 				    <label>Brand:</label>
 				    	<input type="text" name="brand" value="" id="po_no"/><br>
 				   	<label>Assigned To:</label>
 				   		<input type="text" name="assigned_to" value="" id="po_no"/><br>
-				   	<label>Specifications:</label>
-				   		<input type="text" name="specifications" value="" id="po_no"><br>
+				   	<label>Specifications:</label><br>
+				   		<textarea rows="4" cols="50" name="specifications" value="" id="remarks_po"></textarea><br>
 				   	<label>Date Purchased:</label>
 				   		<input type="date" name="date_purchased" value="" id="po_no"><br>
 				   	<label>Amount:</label>

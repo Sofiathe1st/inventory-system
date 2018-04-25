@@ -543,4 +543,34 @@ class Login extends CI_Controller
         redirect('inventory_hs');
         
     }
+    public function edit_inventory_hs_details()
+    {
+        
+        $id = $this->uri->segment(3);
+        $this->load->model('queries');
+        
+        $data                 = array();
+        $data['result']       = $this->login->getInfoById_inventory_hs_details($id);
+        $data['manufacturer'] = $this->queries->getManufacturer();
+        $session_data         = $this->session->userdata('logged_in');
+        $data['type']         = $session_data['type'];
+        $data['id']           = $session_data['id'];
+        $data['firstname']    = $session_data['firstname'];
+        $data['middlename']   = $session_data['middlename'];
+        $data['username']     = $session_data['username'];
+        $data['department']   = $session_data['department'];
+        $data['email']        = $session_data['email'];
+        $data['lastname']     = $session_data['lastname'];
+        $this->load->view('edit_inventory_hs_dashboard', $data);
+        
+    }
+    public function edit_inventory_hs()
+    {
+        if ($this->input->post('edit_inventory_hs')) {
+            $this->login->edit_inventory_hs_details();
+            redirect('inventory_hs');
+        } else {
+            $this->load->view('pages/edit_inventory_hs_details');
+        }
+    }
 }
