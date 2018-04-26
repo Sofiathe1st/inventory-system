@@ -36,3 +36,4 @@
 				<button type="submit" name="inventory_software_add" value="inventory_software_add" id="submit" >Submit</button>
 			<?php echo form_close() ?>
 </div>
+

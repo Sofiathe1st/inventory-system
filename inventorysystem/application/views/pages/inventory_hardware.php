@@ -3,7 +3,17 @@
 <title>Inventory</title>
 	<div id="inv_form">
     <center><h2 id="inv_title">Inventory Hardware</h2></center>
-    <a href="<?php echo base_url() ?>index.php/inventory_hardware_add" id="a_add">Add Items</a><br><br>
+    <a href="<?php echo base_url() ?>index.php/inventory_hardware_add" id="a_add">Add Item</a><br><br>
+<?php
+              
+              echo form_open('login/search_asset_num','class="myclass"');
+              ?>
+        <div class="form-group">
+            <input type="text" class="form-control" name="asset_num" id="search" placeholder="search by Asset Number">
+        </div>
+            <button type="submit" class="btn btn-info" name="search_asset_num">Search</button>
+    </form>
+
 <table>
 
         <thead>  
@@ -26,9 +36,9 @@
         </thead>
         <tbody>
 
-            <?php if(is_array($inventory_hardware_list)) { 
+            <?php
 
-                foreach ($inventory_hardware_list as $row) { ?>
+                foreach ($inventory_hardware as $row) { ?>
                     
                  <tr> 
                     <td style="font-size:14px"><?php echo htmlspecialchars($row->asset_type); ?></td> 
@@ -47,12 +57,12 @@
                 </tr> 
                    
 
-          <?php      }
+          <?php      
 
             } ?>
             </tbody>   
     </table>
-
+ <center><?php echo $links; ?></center>
 
 
 </div>

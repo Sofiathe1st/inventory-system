@@ -128,6 +128,56 @@ class queries extends CI_Model
             return $data;
         }
 
-   } 
+   }
+   public function count_inventory_hardware() {
+    return $this->db->count_all('inventory_hardware');
+   }
+   public function fetch_inventory_hardware($limit,$offset) {
+    $this->db->limit($limit,$offset);
+    $query = $this->db->get('inventory_hardware');
+    if($query->num_rows() > 0){
+        return $query->result();
+    }else{
+        return $query->result();
+    }
+   }
+   public function count_inventory_software() {
+    return $this->db->count_all('inventory_software');
+   }
+   public function fetch_inventory_software($limit,$offset) {
+    $this->db->limit($limit,$offset);
+    $query = $this->db->get('inventory_software');
+    if($query->num_rows() > 0){
+        return $query->result();
+    }else{
+        return $query->result();
+    }
+   }
+   public function search_software_name($software_name) {
+        $this->db->select('*');
+        $this->db->from('inventory_software');
+        $this->db->where('software_name', $software_name);
+        $query = $this->db->get();
+            if ($query->num_rows() > 0) {
+                return $query->result();
+                # code...
+            }else{
+                return $query->result();
+            }
+        
+    }
+    public function search_asset_num($asset_num) {
+        $this->db->select('*');
+        $this->db->from('inventory_hardware');
+        $this->db->where('asset_num', $asset_num);
+        $query = $this->db->get();
+            if ($query->num_rows() > 0) {
+                return $query->result();
+                # code...
+            }else{
+                return $query->result();
+            }
+        
+    }
 }
 ?>

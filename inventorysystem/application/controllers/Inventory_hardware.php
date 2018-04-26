@@ -15,7 +15,17 @@ class Inventory_hardware extends CI_Controller {
 
 		if($this->session->userdata('logged_in')){
 
+			$this->load->library('pagination');
 			$this->load->model('queries');
+			$config = array();
+			$config['base_url'] = base_url() . 'index.php/inventory_hardware/index';
+			$config['total_rows'] = $this->queries->count_inventory_hardware();
+			$config['per_page'] = 10;
+			$this->pagination->initialize($config);
+			$page = $this->uri->segment(3);
+			$data['inventory_hardware'] = $this->queries->fetch_inventory_hardware($config['per_page'], $page);
+			$data['links'] = $this->pagination->create_links();
+			/*$this->load->view('inventory_hardware_list',$data);*/
 			
 			$session_data = $this->session->userdata('logged_in');
 			$data['type'] 	   = $session_data['type'];		

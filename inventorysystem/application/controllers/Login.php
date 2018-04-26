@@ -623,4 +623,46 @@ class Login extends CI_Controller
         $this->load->view('edit_inventory_software_dashboard', $data);
         
     }
+    public function search_software_name() {
+        $this->load->model('queries');
+        $software_name = $this->input->post('software_name');
+
+        if(isset($software_name) and !empty($software_name)){
+            $data['inventory_software'] = $this->queries->search_software_name($software_name);
+            $session_data         = $this->session->userdata('logged_in');
+            $data['type']         = $session_data['type'];
+            $data['id']           = $session_data['id'];
+            $data['firstname']    = $session_data['firstname'];
+            $data['middlename']   = $session_data['middlename'];
+            $data['username']     = $session_data['username'];
+            $data['department']   = $session_data['department'];
+            $data['email']        = $session_data['email'];
+            $data['lastname']     = $session_data['lastname'];
+            $data['links'] = '';
+            $this->load->view('inventory_software_dashboard', $data);
+        }else{
+            redirect('inventory_software', 'refresh');
+        }
+    }
+    public function search_asset_num() {
+        $this->load->model('queries');
+        $asset_num = $this->input->post('asset_num');
+
+        if(isset($asset_num) and !empty($asset_num)){
+            $data['inventory_hardware'] = $this->queries->search_asset_num($asset_num);
+            $session_data         = $this->session->userdata('logged_in');
+            $data['type']         = $session_data['type'];
+            $data['id']           = $session_data['id'];
+            $data['firstname']    = $session_data['firstname'];
+            $data['middlename']   = $session_data['middlename'];
+            $data['username']     = $session_data['username'];
+            $data['department']   = $session_data['department'];
+            $data['email']        = $session_data['email'];
+            $data['lastname']     = $session_data['lastname'];
+            $data['links'] = '';
+            $this->load->view('inventory_hardware_dashboard', $data);
+        }else{
+            redirect('inventory_hardware', 'refresh');
+        }
+    }
 }
