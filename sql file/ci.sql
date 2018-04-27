@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2018 at 08:18 AM
+-- Generation Time: Apr 27, 2018 at 03:06 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -23,17 +23,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventory_hs`
+-- Table structure for table `inventory_hardware`
 --
 
-CREATE TABLE `inventory_hs` (
+CREATE TABLE `inventory_hardware` (
   `id` int(250) NOT NULL,
   `asset_type` varchar(250) NOT NULL,
   `asset_num` varchar(250) NOT NULL,
-  `type` varchar(250) NOT NULL,
+  `type_item` varchar(250) NOT NULL,
   `brand` varchar(250) NOT NULL,
   `assigned_to` varchar(250) NOT NULL,
-  `specifications` varchar(250) NOT NULL,
+  `specifications` varchar(500) NOT NULL,
   `date_purchased` date NOT NULL,
   `amount` varchar(250) NOT NULL,
   `status` varchar(250) NOT NULL,
@@ -41,15 +41,45 @@ CREATE TABLE `inventory_hs` (
   `author_email` varchar(250) NOT NULL,
   `author_firstname` varchar(250) NOT NULL,
   `author_lastname` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `inventory_hardware`
+--
+
+INSERT INTO `inventory_hardware` (`id`, `asset_type`, `asset_num`, `type_item`, `brand`, `assigned_to`, `specifications`, `date_purchased`, `amount`, `status`, `comment`, `author_email`, `author_firstname`, `author_lastname`) VALUES
+(1, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(2, 'Hardware', '5', '5', '5', '5', '5', '0005-05-05', '5', 'Working', '5', 'super@admin', 'John Charles', 'Villavicencio');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inventory_software`
+--
+
+CREATE TABLE `inventory_software` (
+  `id` int(250) NOT NULL,
+  `asset_type` varchar(250) NOT NULL,
+  `software_name` varchar(250) NOT NULL,
+  `software_info` varchar(500) NOT NULL,
+  `assigned_to` varchar(250) NOT NULL,
+  `quantity` varchar(250) NOT NULL,
+  `date_purchased` date NOT NULL,
+  `amount` varchar(250) NOT NULL,
+  `status` varchar(250) NOT NULL,
+  `comments` varchar(500) NOT NULL,
+  `author_email` varchar(250) NOT NULL,
+  `author_firstname` varchar(250) NOT NULL,
+  `author_lastname` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `inventory_hs`
+-- Dumping data for table `inventory_software`
 --
 
-INSERT INTO `inventory_hs` (`id`, `asset_type`, `asset_num`, `type`, `brand`, `assigned_to`, `specifications`, `date_purchased`, `amount`, `status`, `comment`, `author_email`, `author_firstname`, `author_lastname`) VALUES
-(1, 'Hardware', '23', '23', '23', '23', '23', '2018-04-10', '23', 'Working', '2323', 'super@admin', 'John Charles', 'Villavicencio'),
-(2, 'Hardware', 'asd12e12e', 'Laptop', 'Asus N53JQ Series Notebook ', 'Diaz, John', 'Asus N53JQ Series Notebook  Microsoft Windows 7 Home Premium  Mobile QuadCore Intel Core i7-740QM, 2400 MHz (18 x 133)  NVIDIA GeForce GT 425M (1024 MB)  WDC WD5000BEVT-24A0R SCSI Disk Device (500 GB, 5400 RPM, SATA-II)  Kingston 9905428-093.A00LF   ', '2018-04-02', '72000', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio');
+INSERT INTO `inventory_software` (`id`, `asset_type`, `software_name`, `software_info`, `assigned_to`, `quantity`, `date_purchased`, `amount`, `status`, `comments`, `author_email`, `author_firstname`, `author_lastname`) VALUES
+(1, 'Software', '2', '2', '2', '2', '0002-02-22', '2', 'Spare', '2', 'super@admin', 'John Charles', 'Villavicencio'),
+(2, 'Software', '.', '.', '..', '..', '2018-04-10', '.', 'Working', '.', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -179,9 +209,15 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `middlename`, `type`, `depart
 --
 
 --
--- Indexes for table `inventory_hs`
+-- Indexes for table `inventory_hardware`
 --
-ALTER TABLE `inventory_hs`
+ALTER TABLE `inventory_hardware`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `inventory_software`
+--
+ALTER TABLE `inventory_software`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -213,9 +249,14 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `inventory_hs`
+-- AUTO_INCREMENT for table `inventory_hardware`
 --
-ALTER TABLE `inventory_hs`
+ALTER TABLE `inventory_hardware`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `inventory_software`
+--
+ALTER TABLE `inventory_software`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `manufacturer`
@@ -236,7 +277,7 @@ ALTER TABLE `purchase_order_details`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
