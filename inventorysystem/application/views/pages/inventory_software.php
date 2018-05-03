@@ -10,7 +10,7 @@
               echo form_open('login/software_search','class="myclass"');
               ?>
         <div class="form-group">
-            <input type="text" class="form-control" name="search_input" id="search" placeholder="search by software name">
+            <input type="text" class="form-control" name="search_input" id="search" placeholder="Search...">
   
             <button type="submit" class="btn btn-info" name="software_search">Search</button>      
         </div>

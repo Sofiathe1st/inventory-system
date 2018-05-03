@@ -529,10 +529,9 @@ td {
     background-image:         linear-gradient(to bottom, #f90404 0%, ##b70101 100%);
   }
 #del_inv1:hover
-  {
+{
     color:white;
     text-decoration:none;
     cursor:pointer;
     opacity:0.8;
-   }
-
+}

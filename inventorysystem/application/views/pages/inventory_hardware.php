@@ -8,10 +8,10 @@
               
               echo form_open('login/hardware_search','class="myclass"');
               ?>
-        <div class="form-group">
-            <input type="text" class="form-control" name="search_input" id="search" placeholder="search by Asset Number">
+        <div class="search-box-wrapper">
+            <input type="text" class="search-box-input" name="search_input" placeholder="Search...">
       
-            <button type="submit" class="btn btn-info" name="hardware_search">Search</button>
+            <button type="submit" class="search-box-button" name="hardware_search">Search</button>
       </div>
   </form>
 
