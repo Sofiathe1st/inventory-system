@@ -623,12 +623,12 @@ class Login extends CI_Controller
         $this->load->view('edit_inventory_software_dashboard', $data);
         
     }
-    public function search_software_name() {
+    public function software_search() {
         $this->load->model('queries');
-        $software_name = $this->input->post('software_name');
+        $search_input = $this->input->post('search_input');
 
-        if(isset($software_name) and !empty($software_name)){
-            $data['inventory_software'] = $this->queries->search_software_name($software_name);
+        if(isset($search_input) and !empty($search_input)){
+            $data['inventory_software'] = $this->queries->software_search($search_input);
             $session_data         = $this->session->userdata('logged_in');
             $data['type']         = $session_data['type'];
             $data['id']           = $session_data['id'];
@@ -644,12 +644,12 @@ class Login extends CI_Controller
             redirect('inventory_software', 'refresh');
         }
     }
-    public function search_asset_num() {
+    public function hardware_search() {
         $this->load->model('queries');
-        $asset_num = $this->input->post('asset_num');
+        $search_input = $this->input->post('search_input');
 
-        if(isset($asset_num) and !empty($asset_num)){
-            $data['inventory_hardware'] = $this->queries->search_asset_num($asset_num);
+        if(isset($search_input) and !empty($search_input)){
+            $data['inventory_hardware'] = $this->queries->hardware_search($search_input);
             $session_data         = $this->session->userdata('logged_in');
             $data['type']         = $session_data['type'];
             $data['id']           = $session_data['id'];

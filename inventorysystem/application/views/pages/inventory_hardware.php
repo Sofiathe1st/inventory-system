@@ -6,13 +6,14 @@
     <a href="<?php echo base_url() ?>index.php/inventory_hardware_add" id="a_add">Add Item</a><br><br>
 <?php
               
-              echo form_open('login/search_asset_num','class="myclass"');
+              echo form_open('login/hardware_search','class="myclass"');
               ?>
         <div class="form-group">
-            <input type="text" class="form-control" name="asset_num" id="search" placeholder="search by Asset Number">
-        </div>
-            <button type="submit" class="btn btn-info" name="search_asset_num">Search</button>
-    </form>
+            <input type="text" class="form-control" name="search_input" id="search" placeholder="search by Asset Number">
+      
+            <button type="submit" class="btn btn-info" name="hardware_search">Search</button>
+      </div>
+  </form>
 
 <table>
 

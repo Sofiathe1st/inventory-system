@@ -153,10 +153,18 @@ class queries extends CI_Model
         return $query->result();
     }
    }
-   public function search_software_name($software_name) {
+   public function software_search($search_input) {
         $this->db->select('*');
         $this->db->from('inventory_software');
-        $this->db->where('software_name', $software_name);
+        $this->db->where('asset_type', $search_input);
+        $this->db->or_where('software_name', $search_input);
+        $this->db->or_where('software_info', $search_input);
+        $this->db->or_where('assigned_to', $search_input);
+        $this->db->or_where('date_purchased', $search_input);
+        $this->db->or_where('amount', $search_input);
+        $this->db->or_where('status', $search_input);
+
+
         $query = $this->db->get();
             if ($query->num_rows() > 0) {
                 return $query->result();
@@ -166,10 +174,19 @@ class queries extends CI_Model
             }
         
     }
-    public function search_asset_num($asset_num) {
+    public function hardware_search($search_input) {
         $this->db->select('*');
         $this->db->from('inventory_hardware');
-        $this->db->where('asset_num', $asset_num);
+        $this->db->where('asset_num', $search_input);
+        $this->db->or_where('asset_type', $search_input);
+        $this->db->or_where('type_item', $search_input);
+        $this->db->or_where('brand', $search_input);
+        $this->db->or_where('assigned_to', $search_input);
+        $this->db->or_where('specifications', $search_input);
+        $this->db->or_where('date_purchased', $search_input);
+        $this->db->or_where('amount', $search_input);
+        $this->db->or_where('status', $search_input);
+
         $query = $this->db->get();
             if ($query->num_rows() > 0) {
                 return $query->result();
