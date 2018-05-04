@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2018 at 03:06 AM
+-- Generation Time: May 04, 2018 at 06:30 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -49,7 +49,31 @@ CREATE TABLE `inventory_hardware` (
 
 INSERT INTO `inventory_hardware` (`id`, `asset_type`, `asset_num`, `type_item`, `brand`, `assigned_to`, `specifications`, `date_purchased`, `amount`, `status`, `comment`, `author_email`, `author_firstname`, `author_lastname`) VALUES
 (1, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(2, 'Hardware', '5', '5', '5', '5', '5', '0005-05-05', '5', 'Working', '5', 'super@admin', 'John Charles', 'Villavicencio');
+(3, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(4, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(5, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(7, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(8, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(9, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(11, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(12, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(13, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(15, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(16, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(17, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(19, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(20, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(21, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(23, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(24, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(25, 'Hardware', 'Mouse0001', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(26, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(27, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(29, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(30, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
+(31, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(33, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(34, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -78,8 +102,14 @@ CREATE TABLE `inventory_software` (
 --
 
 INSERT INTO `inventory_software` (`id`, `asset_type`, `software_name`, `software_info`, `assigned_to`, `quantity`, `date_purchased`, `amount`, `status`, `comments`, `author_email`, `author_firstname`, `author_lastname`) VALUES
-(1, 'Software', '2', '2', '2', '2', '0002-02-22', '2', 'Spare', '2', 'super@admin', 'John Charles', 'Villavicencio'),
-(2, 'Software', '.', '.', '..', '..', '2018-04-10', '.', 'Working', '.', 'super@admin', 'John Charles', 'Villavicencio');
+(3, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
+(4, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '111111111', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio'),
+(7, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
+(8, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '222223', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio'),
+(11, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
+(12, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '12144444', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio'),
+(15, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
+(16, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '53321', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -120,8 +150,12 @@ CREATE TABLE `purchase_order` (
   `id` int(50) NOT NULL,
   `purchase_order_no` varchar(255) NOT NULL,
   `purchase_order_date` date NOT NULL,
+  `asset_type` varchar(250) NOT NULL,
   `manufacturer` varchar(255) NOT NULL,
+  `name_sh` varchar(250) NOT NULL,
   `quantity` int(250) NOT NULL,
+  `category` varchar(250) NOT NULL,
+  `price` int(250) NOT NULL,
   `remarks` varchar(1000) NOT NULL,
   `author_email` varchar(255) NOT NULL,
   `author_firstname` varchar(255) NOT NULL,
@@ -132,13 +166,8 @@ CREATE TABLE `purchase_order` (
 -- Dumping data for table `purchase_order`
 --
 
-INSERT INTO `purchase_order` (`id`, `purchase_order_no`, `purchase_order_date`, `manufacturer`, `quantity`, `remarks`, `author_email`, `author_firstname`, `author_lastname`) VALUES
-(63, 'qwerty', '2018-04-18', 'samsung', 2, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(65, '123123', '2018-04-18', 'toshiba', 3, 'asdf2', 'super@admin', 'John Charles', 'Villavicencio'),
-(66, '111', '2018-04-19', 'asus', 9, '/0k', 'super@admin', 'John Charles', 'Villavicencio'),
-(67, '0001', '2018-04-19', 'acer', 2, '2e', 'super@admin', 'John Charles', 'Villavicencio'),
-(68, '1123', '2018-04-19', 'hp', 12, 'xasd', 'super@admin', 'John Charles', 'Villavicencio'),
-(69, '12345', '2018-04-19', 'sharp', 1, 'qwe', 'super@admin', 'John Charles', 'Villavicencio');
+INSERT INTO `purchase_order` (`id`, `purchase_order_no`, `purchase_order_date`, `asset_type`, `manufacturer`, `name_sh`, `quantity`, `category`, `price`, `remarks`, `author_email`, `author_firstname`, `author_lastname`) VALUES
+(75, '1213', '2018-05-04', 'Software', 'sharp', 'macrohard', 2, 'Not Applicable', 15000, 'asd', 'admin@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -150,11 +179,17 @@ CREATE TABLE `purchase_order_details` (
   `id` int(15) NOT NULL,
   `purchase_order_no` varchar(255) NOT NULL,
   `purchase_order_date` date NOT NULL,
+  `asset_type` varchar(250) NOT NULL,
   `serial_number` varchar(250) NOT NULL,
+  `name_sh` varchar(250) NOT NULL,
   `manufacturer` varchar(250) NOT NULL,
   `quantity` int(250) NOT NULL,
+  `assigned_to` varchar(250) NOT NULL,
   `category` varchar(250) NOT NULL,
+  `specifications` varchar(250) NOT NULL,
   `price` int(250) NOT NULL,
+  `status` varchar(250) NOT NULL,
+  `color` varchar(250) NOT NULL,
   `remarks` varchar(250) NOT NULL,
   `author_firstname` varchar(60) NOT NULL,
   `author_lastname` varchar(60) NOT NULL,
@@ -165,16 +200,11 @@ CREATE TABLE `purchase_order_details` (
 -- Dumping data for table `purchase_order_details`
 --
 
-INSERT INTO `purchase_order_details` (`id`, `purchase_order_no`, `purchase_order_date`, `serial_number`, `manufacturer`, `quantity`, `category`, `price`, `remarks`, `author_firstname`, `author_lastname`, `author_email`) VALUES
-(1, '111', '2018-04-19', '1', 'asus', 1, 'Television', 2, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(2, '111', '2018-04-19', '3', 'asus', 1, 'Television', 4, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(3, '111', '2018-04-19', '5', 'asus', 1, 'Television', 6, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(4, '111', '2018-04-19', '7', 'asus', 1, 'Television', 8, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(5, '111', '2018-04-19', '9', 'asus', 1, 'Television', 10, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(6, '111', '2018-04-19', '11', 'asus', 1, 'Television', 12, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(7, '111', '2018-04-19', '13', 'asus', 1, 'Television', 14, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(8, '111', '2018-04-19', '15', 'asus', 1, 'Television', 16, '/0k', 'John Charles', 'Villavicencio', 'super@admin'),
-(9, '111', '2018-04-19', '17', 'asus', 1, 'Television', 18, '/0k', 'John Charles', 'Villavicencio', 'super@admin');
+INSERT INTO `purchase_order_details` (`id`, `purchase_order_no`, `purchase_order_date`, `asset_type`, `serial_number`, `name_sh`, `manufacturer`, `quantity`, `assigned_to`, `category`, `specifications`, `price`, `status`, `color`, `remarks`, `author_firstname`, `author_lastname`, `author_email`) VALUES
+(1, '123123ad', '2018-05-04', '0', 'asd', '0', 'toshiba', 1, 'asd', 'Computer', 'asd', 12, 'Working', 'asd', '12asd', 'John Charles', 'Villavicencio', 'admin@admin'),
+(2, '123123ad', '2018-05-04', '0', 'asd', '0', 'toshiba', 1, 'asd', 'Computer', 'asd', 12, 'Working', 'asd', '12asd', 'John Charles', 'Villavicencio', 'admin@admin'),
+(3, '1213', '2018-05-04', 'Software', 'dsa', 'macrohard', 'sharp', 1, 'charles', 'Not Applicable', 'na', 7500, 'Defective', 'na', 'asd', 'John Charles', 'Villavicencio', 'admin@admin'),
+(4, '1213', '2018-05-04', 'Software', 'asd', 'macrohard', 'sharp', 1, 'charles', 'Not Applicable', 'na', 7500, 'Defective', 'na', 'asd', 'John Charles', 'Villavicencio', 'admin@admin');
 
 -- --------------------------------------------------------
 
@@ -252,12 +282,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `inventory_hardware`
 --
 ALTER TABLE `inventory_hardware`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `inventory_software`
 --
 ALTER TABLE `inventory_software`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `manufacturer`
 --
@@ -267,12 +297,12 @@ ALTER TABLE `manufacturer`
 -- AUTO_INCREMENT for table `purchase_order`
 --
 ALTER TABLE `purchase_order`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 --
 -- AUTO_INCREMENT for table `purchase_order_details`
 --
 ALTER TABLE `purchase_order_details`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `user`
 --
