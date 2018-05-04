@@ -276,14 +276,14 @@ td {
     background-image:      -o-linear-gradient(top, #f90404 0%, ##b70101 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f90404), to(#b70101));
     background-image:         linear-gradient(to bottom, #f90404 0%, ##b70101 100%);
-  }
+}
 #a_del:hover
-  {
+{
     color:white;
     text-decoration:none;
     cursor:pointer;
     opacity:0.8;
-   }
+}
 #a_upd {
     text-decoration: none;
     color: white;
@@ -295,12 +295,12 @@ td {
     background-image:         linear-gradient(to bottom, #4CAF50 0%, #3b8e3f 100%);
 }
 #a_upd:hover
-  {
+{
     color:white;
     text-decoration:none;
     cursor:pointer;
     opacity:0.9;
-   }
+}
 #po_no {
     width: 150px;
     height: 20px;
@@ -511,12 +511,12 @@ td {
     background-image:         linear-gradient(to bottom, #4CAF50 0%, #3b8e3f 100%);
 }
 #edit_inv1:hover
-  {
+{
     color:white;
     text-decoration:none;
     cursor:pointer;
     opacity:0.9;
-   }
+}
 #del_inv1 {
     text-decoration: none ;
     color: white;
@@ -527,7 +527,7 @@ td {
     background-image:      -o-linear-gradient(top, #f90404 0%, ##b70101 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f90404), to(#b70101));
     background-image:         linear-gradient(to bottom, #f90404 0%, ##b70101 100%);
-  }
+}
 #del_inv1:hover
 {
     color:white;

@@ -1,18 +1,4 @@
-<?php
 
-
-// Generate Purchase No.
-@$purchase_no = $result[0]['purchase_order_no'];
-
-if(($purchase_no == 0) || $purchase_no == ''){
-    // generate purchase no
-    $new_purchase_no = '0001';
-
-  } else {
-    // new purchase no and ADD 1
-    $new_purchase_no = sprintf('%04d', $purchase_no + 1);
-}
-?>
 <title>Purchase Order</title>
 <div id="po_form">
 	<h2 id="po_title"> Create New Purchase Order</h2>
@@ -20,8 +6,14 @@ if(($purchase_no == 0) || $purchase_no == ''){
 			<?php echo form_open('login/purchase_order'); ?>
 				<label>Purchase Order No.:</label>
 				    <input type="text" name="purchase_order_no" value="" id="po_no" />
-				    <input type="hidden" name="purchase_order_date" value="<?php echo date('Y-m-d');?>" id="po_date" readonly="true" /><br>
+				<label>Purchase Order Date:</label>
+				<input type="date" name="purchase_order_date" value="" /><br>
 				    <hr id="po_div_line">
+				<label>Asset Type:</label>
+				<select name="asset_type" id="category">
+						<option value="Hardware">Hardware</option>
+						<option value="Software">Software</option>
+				</select><br>
 				<label>Manufacuturer:</label>
 					<select name="manufacturer" id="manufacturer">
 						 <option value="">Select Manufacturer</option>
@@ -31,17 +23,20 @@ if(($purchase_no == 0) || $purchase_no == ''){
                             }
                         ?>
 					</select><br>
-					</
+				<label>Name/Model</label>
+					<input type="text" name="name_sh" value="" id="po_no" />
 				<label>Quantity:</label>
 				    <input type="text" name="quantity" value="" id="quantity" /><br>
-				<!--<label>Category:</label> 
+				<label>Category:</label> 
 					<select name="category" id="category">
 						<option value="Television">Television</option>
 						<option value="Computer">Computer</option>
 						<option value="Cellphones">Cellphones</option>
+						<option value="Mouse">Mouse</option>
+						<option value="Not Applicable">Not Applicable</option>
 				    </select><br>
-				<label>Amount:</label>
-				    <input type="text" name="amount" value="" id="amount" /><br>-->
+				<label>Price</label>
+				    <input type="text" name="price" value="" id="amount" /><br>
 				<label>Remarks:</label><br>
 				    <textarea rows="4" cols="50" name="remarks" value="" id="remarks_po"></textarea><br>
 				<input type="hidden" name="author_email" value="<?php echo $email; ?>">
