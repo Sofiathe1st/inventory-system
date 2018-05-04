@@ -11,9 +11,9 @@
         <tr>  
             <th>PO no.</th>
             <th>PO Order Date</th>
-            <th>Asset Type</th>
-            <th>Manufacturer</th>
-            <th>Name/Model</th>
+            <th>Request Type</th>
+            <th>Supplier</th>
+           <!--  <th>Name/Model</th> -->
             <th>Quantity</th>
             <th>Category</th>
             <th>Price</th>
@@ -32,9 +32,9 @@
                  <tr> 
                     <td><?php echo htmlspecialchars($row->purchase_order_no); ?></td> 
                     <td><?php echo htmlspecialchars($row->purchase_order_date); ?></td>
-                    <td><?php echo htmlspecialchars($row->asset_type); ?></td>
-                    <td><?php echo htmlspecialchars($row->manufacturer); ?></td>
-                    <td><?php echo htmlspecialchars($row->name_sh); ?></td>
+                    <td><?php echo htmlspecialchars($row->request_type); ?></td>
+                    <td><?php echo htmlspecialchars($row->supplier); ?></td>
+                    <!--<td><?php echo htmlspecialchars($row->name_sh); ?></td> -->
                     <td><?php echo htmlspecialchars($row->quantity); ?></td>
                     <td><?php echo htmlspecialchars($row->category); ?></td>
                     <td><?php echo htmlspecialchars($row->price); ?></td>

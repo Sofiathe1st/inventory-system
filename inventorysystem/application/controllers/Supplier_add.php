@@ -1,19 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Purchase_order extends CI_Controller {
-	public function __consruct() {
+class Supplier_add extends CI_Controller {
 
-		parent::__consruct();
-
-		$this->load->model('queries', 'db');
-
-}
 	public function index()
 	{
-
 		if($this->session->userdata('logged_in')){
-			$this->load->model('queries');
 			$session_data = $this->session->userdata('logged_in');
 			$data['type'] 	   = $session_data['type'];		
 			$data['id']   	   = $session_data['id'];
@@ -24,9 +16,7 @@ class Purchase_order extends CI_Controller {
 			$data['email']     = $session_data['email'];
 			$data['lastname']  = $session_data['lastname'];
 
-			$data['supplier'] = $this->queries->getSupplier();
-
-			$this->load->view('purchase_order_dashboard', $data);
+			$this->load->view('supplier_add_dashboard', $data);
 } else{
 			redirect('login', 'refresh');
 		}

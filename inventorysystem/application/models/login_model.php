@@ -134,10 +134,10 @@ class Login_model extends CI_Model
     }
     
     
-    public function manufacturer_add()
+    public function supplier_add()
     {
         $this->load->library('form_validation');
-        $manufacturer_name = $this->input->post('manufacturer_name');
+        $supplier_name     = $this->input->post('supplier_name');
         $contact_no        = $this->input->post('contact_no');
         $region            = $this->input->post('region');
         $province          = $this->input->post('province');
@@ -145,7 +145,7 @@ class Login_model extends CI_Model
         $address           = $this->input->post('address');
         $status            = ($this->input->post('status'));
         
-        $this->security->xss_clean($manufacturer_name);
+        $this->security->xss_clean($supplier_name);
         $this->security->xss_clean($contact_no);
         $this->security->xss_clean($region);
         $this->security->xss_clean($province);
@@ -153,7 +153,7 @@ class Login_model extends CI_Model
         $this->security->xss_clean($address);
         $this->security->xss_clean($status);
         
-        $this->form_validation->set_rules('manufacturer_name', 'manufacturer_name', 'trim|required|is_unique[manufacturer.manufacturer_name]');
+        $this->form_validation->set_rules('supplier_name', 'supplier_name', 'trim|required|is_unique[supplier.supplier_name]');
         $this->form_validation->set_rules('contact_no', 'contact_no', 'trim|required');
         $this->form_validation->set_rules('region', 'region', 'trim|required');
         $this->form_validation->set_rules('province', 'province', 'trim|required');
@@ -165,7 +165,7 @@ class Login_model extends CI_Model
             echo '<script language="javascript">';
             echo 'alert("All fields Are Required To Be Inputted Correctly.")';
             echo '</script>';
-            redirect('manufacturer_add', 'refresh');
+            redirect('supplier_add', 'refresh');
             
         }
         if ($this->form_validation->run() == true) {
@@ -174,7 +174,7 @@ class Login_model extends CI_Model
             echo '</script>';
             $data = array(
                 'id' => '',
-                'manufacturer_name' => $manufacturer_name,
+                'supplier_name' => $supplier_name,
                 'contact_no' => $contact_no,
                 'region' => $region,
                 'province' => $province,
@@ -182,18 +182,18 @@ class Login_model extends CI_Model
                 'address' => $address,
                 'status' => $status
             );
-            $this->db->insert('manufacturer', $data);
-            redirect('manufacturer', 'refresh');
+            $this->db->insert('supplier', $data);
+            redirect('supplier', 'refresh');
         }
         
         else {
             redirect('login', 'refresh');
         }
     }
-    public function getInfoById_manufacturer($id)
+    public function getInfoById_supplier($id)
     {
         $this->db->where('id', $id);
-        $query = $this->db->get('manufacturer');
+        $query = $this->db->get('supplier');
         return $query->result_array();
     }
     public function getInfoById_purchase_order($id)

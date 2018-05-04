@@ -24,7 +24,7 @@ class Edit_purchase_order extends CI_Controller {
 			$data['email']     = $session_data['email'];
 			$data['lastname']  = $session_data['lastname'];
 
-			$data['manufacturer'] = $this->queries->getManufacturer();
+			$data['manufacturer'] = $this->queries->getSupplier();
 			$data['purchase_order_details'] = $this->queries->getPurchaseOrderdetails();
 
 			$this->load->view('edit_purchase_order_dashboard', $data);

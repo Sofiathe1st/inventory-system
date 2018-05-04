@@ -17,16 +17,18 @@
 					<input type='text' name='purchase_order_no[]' value='$row->purchase_order_no' id='po_no' readonly='true' />";
 		echo 	"<label>Purchase Order Date:</label>
 					<input type='text' name='purchase_order_date[]' value='$row->purchase_order_date' id='po_date' readonly='true' /><br>";
-		echo    "<label>Asset Type:</label>
-					<input type='text' name='asset_type[]' value='$row->asset_type' readonly='true'/>";
+		echo    "<label>Request Type:</label>
+					<input type='text' name='request_type[]' value='$row->request_type' readonly='true'/>";
 		echo 	"<label>Serial Number:</label>
 					<input type='text' name='serial_number[]' required />";
+		echo 	"<label>Supplier:</label>
+					 	<input type='text' name='supplier[]' value='$row->supplier' id='' readonly='true'/><br>";
 		echo 	"<hr id='po_div_line'>";
 		
 		echo 	"<label>Name/Model:</label>
-					<input type='text' name='name_sh[]' value='$row->name_sh' readonly='true' />";
+					<input type='text' name='name_sh[]' value='' />";
 		echo 	"<label>Manufacuturer:</label>
-					 	<input type='text' name='manufacturer[]' value='$row->manufacturer' id='' readonly='true'/><br>";
+					 	<input type='text' name='manufacturer[]' value='' id='' required'/><br>";
 		echo 	"<label>Quantity:</label>
 				    	<input type='text' name='quantity[]' value='1' id='quantity' readonly='true' /><br>";
 		echo 	"<label>Assigned to:</label>

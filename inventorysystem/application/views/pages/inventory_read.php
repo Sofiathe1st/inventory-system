@@ -12,7 +12,7 @@
         <tr>  
             <th><strong>PO #</strong></th>
             <th><strong>PO Date</strong></th>
-            <th><strong>Asset Type</strong></th>
+            <th><strong>Request Type</strong></th>
             <th><strong>Serial Number</strong></th>
             <th><strong>Name/Model</strong></th>
             <th><strong>Manufacturer</strong></th>
@@ -21,6 +21,7 @@
             <th><strong>Specifications</strong></th>
             <th><strong>Category</strong></th>
             <th><strong>Price</strong></th>
+            <th><strong>Supplier</strong></th>
             <th><strong>Status</strong></th>
             <th><strong>Color</strong></th>
             <th><strong>Remarks</strong></th>
@@ -36,7 +37,7 @@
                  <tr>
                     <td><?php echo ($row->purchase_order_no); ?></td>
                     <td><?php echo ($row->purchase_order_date); ?></td>
-                    <td><?php echo ($row->asset_type); ?></td>
+                    <td><?php echo ($row->request_type); ?></td>
                     <td><?php echo htmlspecialchars($row->serial_number); ?></td>
                     <td><?php echo ($row->name_sh); ?></td>
                     <td><?php echo ($row->manufacturer); ?></td> 
@@ -45,6 +46,7 @@
                     <td><?php echo ($row->specifications); ?></td>
                     <td><?php echo ($row->category); ?></td>       
                     <td><?php echo htmlspecialchars($row->price); ?></td>
+                    <td><?php echo htmlspecialchars($row->supplier); ?></td>
                     <td><?php echo ($row->status); ?></td>
                     <td><?php echo htmlspecialchars($row->color); ?></td>
                     <td><?php echo ($row->remarks); ?></td>

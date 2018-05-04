@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Purchase_order extends CI_Controller {
+class Edit_supplier extends CI_Controller {
 	public function __consruct() {
 
 		parent::__consruct();
 
 		$this->load->model('queries', 'db');
+	}
 
-}
 	public function index()
 	{
 
@@ -24,9 +24,9 @@ class Purchase_order extends CI_Controller {
 			$data['email']     = $session_data['email'];
 			$data['lastname']  = $session_data['lastname'];
 
-			$data['supplier'] = $this->queries->getSupplier();
+			$data['supplier_details'] = $this->queries->getsupplierdetails();
 
-			$this->load->view('purchase_order_dashboard', $data);
+			$this->load->view('edit_supplier_dashboard', $data);
 } else{
 			redirect('login', 'refresh');
 		}

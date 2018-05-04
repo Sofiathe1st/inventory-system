@@ -36,10 +36,10 @@ class queries extends CI_Model
             return $data;
         }
     }
-    public function getManufacturer()
+    public function getSupplier()
     {
         
-        $query = $this->db->get('manufacturer');
+        $query = $this->db->get('supplier');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -55,9 +55,9 @@ class queries extends CI_Model
         return $query->result_array();
     }
     
-    public function getManufacturerlist()
+    public function getSupplierlist()
     {
-        $q = $this->db->get('manufacturer');
+        $q = $this->db->get('supplier');
         
         if ($q->num_rows() > 0) {
             foreach ($q->result() as $row) {
@@ -77,9 +77,9 @@ class queries extends CI_Model
             return $data;
         }
     }
-    public function getManufacturerdetails()
+    public function getSupplierdetails()
     {
-        $q = $this->db->get('manufacturer');
+        $q = $this->db->get('supplier');
         
         if ($q->num_rows() > 0) {
             foreach ($q->result() as $row) {

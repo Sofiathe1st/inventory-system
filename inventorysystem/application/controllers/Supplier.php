@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Purchase_order extends CI_Controller {
+class Supplier extends CI_Controller {
 	public function __consruct() {
 
 		parent::__consruct();
@@ -24,9 +24,9 @@ class Purchase_order extends CI_Controller {
 			$data['email']     = $session_data['email'];
 			$data['lastname']  = $session_data['lastname'];
 
-			$data['supplier'] = $this->queries->getSupplier();
+			$data['supplier_list'] = $this->queries->getSupplierlist();
 
-			$this->load->view('purchase_order_dashboard', $data);
+			$this->load->view('supplier_dashboard', $data);
 } else{
 			redirect('login', 'refresh');
 		}

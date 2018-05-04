@@ -9,32 +9,35 @@
 				<label>Purchase Order Date:</label>
 				<input type="date" name="purchase_order_date" value="" /><br>
 				    <hr id="po_div_line">
-				<label>Asset Type:</label>
-				<select name="asset_type" id="category">
+				<label>Request Type:</label>
+				<select name="request_type" id="category">
 						<option value="Hardware">Hardware</option>
 						<option value="Software">Software</option>
+						<option value="Other">Other</option>
 				</select><br>
-				<label>Manufacuturer:</label>
-					<select name="manufacturer" id="manufacturer">
-						 <option value="">Select Manufacturer</option>
+				<label>Supplier:</label>
+					<select name="supplier" id="manufacturer">
+						 <option value="">Select Supplier</option>
                         <?php
-                            foreach ($manufacturer as $res) {
-                                echo "<option value='$res->manufacturer_name'>$res->manufacturer_name</option>";
+                            foreach ($supplier as $res) {
+                                echo "<option value='$res->supplier_name'>$res->supplier_name</option>";
                             }
                         ?>
 					</select><br>
-				<label>Name/Model</label>
-					<input type="text" name="name_sh" value="" id="po_no" />
+				<!-- <label>Name/Model</label>
+					<input type="text" name="name_sh" value="" id="po_no" /> -->
 				<label>Quantity:</label>
 				    <input type="text" name="quantity" value="" id="quantity" /><br>
-				<label>Category:</label> 
-					<select name="category" id="category">
+				<label>Category:</label>
+					<input type="text" name="category" value="" id="quantity" /><br> 
+					<!-- <select name="category" id="category">
 						<option value="Television">Television</option>
-						<option value="Computer">Computer</option>
+						<option value="Laptop">Laptop</option>
+						<option value="Desktop">Desktop</option>
 						<option value="Cellphones">Cellphones</option>
 						<option value="Mouse">Mouse</option>
 						<option value="Not Applicable">Not Applicable</option>
-				    </select><br>
+				    </select><br> -->
 				<label>Price</label>
 				    <input type="text" name="price" value="" id="amount" /><br>
 				<label>Remarks:</label><br>
