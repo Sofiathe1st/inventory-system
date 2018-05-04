@@ -455,7 +455,7 @@ class Login extends CI_Controller
             );
             $this->db->where('id', $id_purchase_order);
             $this->db->update('purchase_order', $data);
-            echo "<script>window.close();</script>";
+            redirect('purchase_order_view', 'refresh');
         }
     }
     public function purchase_order_search()

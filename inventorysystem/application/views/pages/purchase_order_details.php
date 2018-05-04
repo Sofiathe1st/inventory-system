@@ -1,7 +1,7 @@
 <?php
 @$purchase_order_id  = $result[0]['id'];
 @$purchase_order_no  = $result[0]['purchase_order_no'];
-@$manufacturer       = $result[0]['manufacturer'];
+@$supplier       = $result[0]['supplier'];
 @$purchase_order_date= $result[0]['purchase_order_date'];
 @$remarks			 = $result[0]['remarks'];
 ?>
@@ -29,7 +29,7 @@
 					<label>Color:</label>
 					    <input type="text" name="color" value="" id="color" /><br>
 					<!--<label>Price</label>-->
-					<input type="text" name="manufacturer" value="<?php echo $manufacturer; ?>">
+					<input type="text" name="supplier" value="<?php echo $supplier; ?>">
 					<input type="text" name="purchase_order_date" value="<?php echo $purchase_order_date ?>">
 					<input type="text" name="purchase_order_no" value="<?php echo $purchase_order_no; ?>">
 					<input type="text" name="remarks" value="<?php echo $remarks; ?>">

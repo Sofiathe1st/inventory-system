@@ -39,7 +39,7 @@
                     <td><?php echo htmlspecialchars($row->category); ?></td>
                     <td><?php echo htmlspecialchars($row->price); ?></td>
                     <td><?php echo htmlspecialchars($row->remarks); ?></td>
-                    <td><a href="<?php echo base_url() ?>index.php/login/edit_purchase_order_details/<?php echo $row->id ?>" id="a_upd" target="_blank">EDIT</a>
+                    <td><a href="<?php echo base_url() ?>index.php/login/edit_purchase_order_details/<?php echo $row->id ?>" id="a_upd">EDIT</a>
                         | <a href="<?php echo base_url() ?>index.php/login/deletepurchaseorder/?del=<?php echo $row->id ?>" id="a_del">DELETE</a></td>
                 </tr> 
                    

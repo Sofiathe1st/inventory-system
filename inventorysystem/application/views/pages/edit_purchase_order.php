@@ -14,7 +14,7 @@
               $id_purchase_order          = $result[0]['id'];
               $purchase_order_no          = $result[0]['purchase_order_no'];
               $purchase_order_date        = $result[0]['purchase_order_date'];
-              $manufacturer_purchase_order= $result[0]['manufacturer'];
+              $supplier_purchase_order      = $result[0]['supplier'];
               $remarks_purchase_order     = $result[0]['remarks'];
               $author_email    	          = $result[0]['author_email'];
               $author_firstname           = $result[0]['author_firstname'];
@@ -35,12 +35,12 @@
                <label>Purchase Order Date</label>
                   <input type="text" id="input_1" name="purchase_order_date" value="<?php echo $purchase_order_date; ?>" placeholder="Lastname" readonly="true" />
 
-               <label>Manufacturer:</label>
-          <select name="manufacturer" id="manufacturer">
-             <option value="<?php echo "$manufacturer_purchase_order"?>"><?php echo "$manufacturer_purchase_order"?></option>
+               <label>Supplier:</label>
+          <select name="supplier" id="manufacturer">
+             <option value="<?php echo $supplier_purchase_order?>"><?php echo $supplier_purchase_order?></option>
                         <?php
-                            foreach ($manufacturer as $res) {
-                                echo "<option value='$res->manufacturer_name'>$res->manufacturer_name</option>";
+                            foreach ($supplier as $res) {
+                                echo "<option value='$res->supplier_name'>$res->supplier_name</option>";
                             }
                         ?>
           </select><br>
