@@ -44,8 +44,8 @@
                     <td><?php echo ($row->assigned_to); ?></td>
                     <td><?php echo ($row->specifications); ?></td>
                     <td><?php echo ($row->category); ?></td>       
-                    <td><?php echo htmlspecialchars($row->price); ?>
-                    </td><td><?php echo ($row->status); ?></td>
+                    <td><?php echo htmlspecialchars($row->price); ?></td>
+                    <td><?php echo ($row->status); ?></td>
                     <td><?php echo htmlspecialchars($row->color); ?></td>
                     <td><?php echo ($row->remarks); ?></td>
 

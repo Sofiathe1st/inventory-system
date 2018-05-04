@@ -25,12 +25,12 @@
             <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
             <!-- <li><a class="active" href="<?php echo base_url() ?>index.php/home">Home</a></li> -->
             <li><a class="active" href="<?php echo base_url() ?>index.php/read">Users</a></li>
-            <!-- <li><a class="active" href="<?php echo base_url() ?>index.php/manufacturer">Manufacturers</a></li>
+            <li><a class="active" href="<?php echo base_url() ?>index.php/manufacturer">Manufacturers</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_view">Purchase Orders</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_search">Po search</a></li>
-            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_read">Inventory</a></li> -->
-            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_hardware">Inventory Hardware</a></li>
-            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_software">Inventory Software</a></li>
+           <!--  <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_hardware">Inventory Hardware</a></li>
+            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_software">Inventory Software</a></li> -->
+            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_read">Inventory</a></li>
 
           </ul>
 
