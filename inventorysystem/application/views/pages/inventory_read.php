@@ -5,7 +5,15 @@
     <div class="table-responsive">  
         <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
   
+  <?php
+              
+              echo form_open('login/inventory_search','class="myclass"');
+              ?>
+        <div class="form-group">
+            <input type="text" class="form-control" name="search_input" id="search" placeholder="Search...">
   
+            <button type="submit" class="btn btn-info" name="inventory_search">Search</button>      
+        </div><br>
     <table class="table table-bordered table-hover table-striped" style="table-layout: responsive">  
         <thead>  
     
@@ -30,9 +38,9 @@
         </tr>
         <thead>
 
-            <?php if(is_array($inventory_list)) { 
+            <?php
 
-                foreach ($inventory_list as $row) { ?>
+                foreach ($inventory_read as $row) { ?>
                     
                  <tr>
                     <td style="font-size:14px"><?php echo ($row->purchase_order_no); ?></td>
@@ -54,10 +62,11 @@
                 </tr> 
                    
 
-          <?php      }
+          <?php      
 
             } ?>   
     </table>
+    <center><?php echo $links; ?></center>
 </div>
 </div>
 </div>

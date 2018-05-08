@@ -196,5 +196,44 @@ class queries extends CI_Model
             }
         
     }
+    public function fetch_inventory_read($limit,$offset) {
+    $this->db->limit($limit,$offset);
+    $query = $this->db->get('purchase_order_details');
+    if($query->num_rows() > 0){
+        return $query->result();
+    }else{
+        return $query->result();
+    }
+   }
+   public function count_inventory_read() {
+    return $this->db->count_all('purchase_order_details');
+   }
+   public function inventory_search($search_input) {
+        $this->db->select('*');
+        $this->db->from('purchase_order_details');
+        $this->db->where('purchase_order_no', $search_input);
+        $this->db->or_where('purchase_order_date', $search_input);
+        $this->db->or_where('request_type', $search_input);
+        $this->db->or_where('serial_number', $search_input);
+        $this->db->or_where('name_sh', $search_input);
+        $this->db->or_where('manufacturer', $search_input);
+        $this->db->or_where('quantity', $search_input);
+        $this->db->or_where('assigned_to', $search_input);
+        $this->db->or_where('category', $search_input);
+        $this->db->or_where('specifications', $search_input);
+        $this->db->or_where('price', $search_input);
+        $this->db->or_where('supplier', $search_input);
+        $this->db->or_where('status', $search_input);
+        $this->db->or_where('color', $search_input);
+
+        $query = $this->db->get();
+            if ($query->num_rows() > 0) {
+                return $query->result();
+                # code...
+            }else{
+                return $query->result();
+            }
+        
+    }
 }
 ?>

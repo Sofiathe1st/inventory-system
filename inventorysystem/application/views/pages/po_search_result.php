@@ -52,7 +52,7 @@
 		echo 	"<input type='hidden' name='author_firstname[]' value='$row->author_firstname'>";
 		echo 	"<input type='hidden' name='author_lastname[]' value='$row->author_lastname'>";
         echo 	"<br><hr id='po_div_line2'>";
-        echo "<input type='hidden' name='quantity2' value='$row->quantity'>";
+        echo    "<input type='hidden' name='quantity2' value='$row->quantity'>";
     }
 ?>
 

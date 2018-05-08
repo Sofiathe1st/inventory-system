@@ -762,4 +762,25 @@ class Login extends CI_Controller
             redirect('inventory_hardware', 'refresh');
         }
     }
+    public function inventory_search() {
+        $this->load->model('queries');
+        $search_input = $this->input->post('search_input');
+
+        if(isset($search_input) and !empty($search_input)){
+            $data['inventory_read'] = $this->queries->inventory_search($search_input);
+            $session_data         = $this->session->userdata('logged_in');
+            $data['type']         = $session_data['type'];
+            $data['id']           = $session_data['id'];
+            $data['firstname']    = $session_data['firstname'];
+            $data['middlename']   = $session_data['middlename'];
+            $data['username']     = $session_data['username'];
+            $data['department']   = $session_data['department'];
+            $data['email']        = $session_data['email'];
+            $data['lastname']     = $session_data['lastname'];
+            $data['links'] = '';
+            $this->load->view('inventory_read_dashboard', $data);
+        }else{
+            redirect('inventory_read', 'refresh');
+        }
+    }
 }

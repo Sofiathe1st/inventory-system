@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2018 at 06:30 AM
+-- Generation Time: May 08, 2018 at 06:24 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -114,35 +114,6 @@ INSERT INTO `inventory_software` (`id`, `asset_type`, `software_name`, `software
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manufacturer`
---
-
-CREATE TABLE `manufacturer` (
-  `id` int(10) NOT NULL,
-  `manufacturer_name` varchar(255) NOT NULL,
-  `contact_no` varchar(50) NOT NULL,
-  `region` varchar(150) NOT NULL,
-  `province` varchar(150) NOT NULL,
-  `city` varchar(150) NOT NULL,
-  `address` varchar(150) NOT NULL,
-  `status` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `manufacturer`
---
-
-INSERT INTO `manufacturer` (`id`, `manufacturer_name`, `contact_no`, `region`, `province`, `city`, `address`, `status`) VALUES
-(1, 'samsung', '12351212313', 'Region 1', 'Region 1', 'Region 1', 'Region 1', 'active'),
-(2, 'toshiba', '124112414', 'Region 1', 'Region 1', 'Region 1', 'Region 1', 'not-active'),
-(3, 'asus', '124141414', 'Region 1', 'Region 1', 'Region 1', 'Region 1', 'active'),
-(4, 'acer', '1231241512', 'Region 1', 'Region 1', 'Region 1', 'Region 1', 'not-active'),
-(5, 'hp', '12313', 'Region 1', 'Region 1', 'Region 1', 'Region 1', 'active'),
-(21, 'sharp', '1231313', 'Region 1', 'Region 1', 'Region 1', 'Region 1', 'not-active');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `purchase_order`
 --
 
@@ -150,9 +121,8 @@ CREATE TABLE `purchase_order` (
   `id` int(50) NOT NULL,
   `purchase_order_no` varchar(255) NOT NULL,
   `purchase_order_date` date NOT NULL,
-  `asset_type` varchar(250) NOT NULL,
-  `manufacturer` varchar(255) NOT NULL,
-  `name_sh` varchar(250) NOT NULL,
+  `request_type` varchar(250) NOT NULL,
+  `supplier` varchar(250) NOT NULL,
   `quantity` int(250) NOT NULL,
   `category` varchar(250) NOT NULL,
   `price` int(250) NOT NULL,
@@ -166,8 +136,13 @@ CREATE TABLE `purchase_order` (
 -- Dumping data for table `purchase_order`
 --
 
-INSERT INTO `purchase_order` (`id`, `purchase_order_no`, `purchase_order_date`, `asset_type`, `manufacturer`, `name_sh`, `quantity`, `category`, `price`, `remarks`, `author_email`, `author_firstname`, `author_lastname`) VALUES
-(75, '1213', '2018-05-04', 'Software', 'sharp', 'macrohard', 2, 'Not Applicable', 15000, 'asd', 'admin@admin', 'John Charles', 'Villavicencio');
+INSERT INTO `purchase_order` (`id`, `purchase_order_no`, `purchase_order_date`, `request_type`, `supplier`, `quantity`, `category`, `price`, `remarks`, `author_email`, `author_firstname`, `author_lastname`) VALUES
+(75, '1213', '2018-05-04', 'Other', 'HMR', 2, 'Not Applicable', 16000, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(76, '0001', '2018-05-04', 'Hardware', 'LAZADA', 2, 'Computer', 50000, 'i74Gb RAM500Gb HDD', 'super@admin', 'John Charles', 'Villavicencio'),
+(79, '123', '2018-05-04', 'Hardware', 'LAZADA', 2, '3', 23, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(80, '123123', '2018-05-04', 'Hardware', 'LAZADA', 2, '3', 23, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(81, 'asd2', '2018-05-04', 'Other', 'LAZADA', 2, 'asd', 25000, 'ad123', 'super@admin', 'John Charles', 'Villavicencio'),
+(82, '0003', '2018-05-04', 'Hardware', 'LAZADA', 1, 'laptop', 20000, 'Request 1 new laptop for new employee.', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -179,7 +154,7 @@ CREATE TABLE `purchase_order_details` (
   `id` int(15) NOT NULL,
   `purchase_order_no` varchar(255) NOT NULL,
   `purchase_order_date` date NOT NULL,
-  `asset_type` varchar(250) NOT NULL,
+  `request_type` varchar(250) NOT NULL,
   `serial_number` varchar(250) NOT NULL,
   `name_sh` varchar(250) NOT NULL,
   `manufacturer` varchar(250) NOT NULL,
@@ -188,6 +163,7 @@ CREATE TABLE `purchase_order_details` (
   `category` varchar(250) NOT NULL,
   `specifications` varchar(250) NOT NULL,
   `price` int(250) NOT NULL,
+  `supplier` varchar(250) NOT NULL,
   `status` varchar(250) NOT NULL,
   `color` varchar(250) NOT NULL,
   `remarks` varchar(250) NOT NULL,
@@ -200,11 +176,33 @@ CREATE TABLE `purchase_order_details` (
 -- Dumping data for table `purchase_order_details`
 --
 
-INSERT INTO `purchase_order_details` (`id`, `purchase_order_no`, `purchase_order_date`, `asset_type`, `serial_number`, `name_sh`, `manufacturer`, `quantity`, `assigned_to`, `category`, `specifications`, `price`, `status`, `color`, `remarks`, `author_firstname`, `author_lastname`, `author_email`) VALUES
-(1, '123123ad', '2018-05-04', '0', 'asd', '0', 'toshiba', 1, 'asd', 'Computer', 'asd', 12, 'Working', 'asd', '12asd', 'John Charles', 'Villavicencio', 'admin@admin'),
-(2, '123123ad', '2018-05-04', '0', 'asd', '0', 'toshiba', 1, 'asd', 'Computer', 'asd', 12, 'Working', 'asd', '12asd', 'John Charles', 'Villavicencio', 'admin@admin'),
-(3, '1213', '2018-05-04', 'Software', 'dsa', 'macrohard', 'sharp', 1, 'charles', 'Not Applicable', 'na', 7500, 'Defective', 'na', 'asd', 'John Charles', 'Villavicencio', 'admin@admin'),
-(4, '1213', '2018-05-04', 'Software', 'asd', 'macrohard', 'sharp', 1, 'charles', 'Not Applicable', 'na', 7500, 'Defective', 'na', 'asd', 'John Charles', 'Villavicencio', 'admin@admin');
+INSERT INTO `purchase_order_details` (`id`, `purchase_order_no`, `purchase_order_date`, `request_type`, `serial_number`, `name_sh`, `manufacturer`, `quantity`, `assigned_to`, `category`, `specifications`, `price`, `supplier`, `status`, `color`, `remarks`, `author_firstname`, `author_lastname`, `author_email`) VALUES
+(1, '0003', '2018-05-04', 'Hardware', '00327-35038-41362-AAOEM', 'ASUS X405U', 'ASUS', 1, 'John Charles Villavicencio', 'laptop', 'i5-7200U\r\n4gb RAM\r\n1TB HDD\r\nWIN10', 20000, 'LAZADA', 'Working', 'Gray', 'Request 1 new laptop for new employee.', 'John Charles', 'Villavicencio', 'super@admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplier`
+--
+
+CREATE TABLE `supplier` (
+  `id` int(10) NOT NULL,
+  `supplier_name` varchar(255) NOT NULL,
+  `contact_no` varchar(50) NOT NULL,
+  `region` varchar(150) NOT NULL,
+  `province` varchar(150) NOT NULL,
+  `city` varchar(150) NOT NULL,
+  `address` varchar(150) NOT NULL,
+  `status` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`id`, `supplier_name`, `contact_no`, `region`, `province`, `city`, `address`, `status`) VALUES
+(1, 'HMR', 'NA', 'NA', 'NA', 'NA', 'NA', 'active'),
+(2, 'LAZADA', 'NA', 'NA', 'NA', 'NA', 'NA', 'active');
 
 -- --------------------------------------------------------
 
@@ -251,12 +249,6 @@ ALTER TABLE `inventory_software`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `manufacturer`
---
-ALTER TABLE `manufacturer`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `purchase_order`
 --
 ALTER TABLE `purchase_order`
@@ -266,6 +258,12 @@ ALTER TABLE `purchase_order`
 -- Indexes for table `purchase_order_details`
 --
 ALTER TABLE `purchase_order_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `supplier`
+--
+ALTER TABLE `supplier`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -289,20 +287,20 @@ ALTER TABLE `inventory_hardware`
 ALTER TABLE `inventory_software`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
--- AUTO_INCREMENT for table `manufacturer`
---
-ALTER TABLE `manufacturer`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
---
 -- AUTO_INCREMENT for table `purchase_order`
 --
 ALTER TABLE `purchase_order`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 --
 -- AUTO_INCREMENT for table `purchase_order_details`
 --
 ALTER TABLE `purchase_order_details`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `supplier`
+--
+ALTER TABLE `supplier`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user`
 --
