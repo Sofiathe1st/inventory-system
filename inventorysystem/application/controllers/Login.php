@@ -414,7 +414,11 @@ class Login extends CI_Controller
         $id_purchase_order           = $this->input->post('id');
         $purchase_order_no           = $this->input->post('purchase_order_no');
         $purchase_order_date         = $this->input->post('purchase_order_date');
-        $supplier_purchase_order = $this->input->post('supplier');
+        $request_type                = $this->input->post('request_type');
+        $supplier_purchase_order     = $this->input->post('supplier');
+        $category                    = $this->input->post('category');
+        $price                       = $this->input->post('price');
+        $quantity                    = $this->input->post('quantity');
         $remarks_purchase_order      = $this->input->post('remarks');
         $author_email                = $this->input->post('author_email');
         $author_firstname            = $this->input->post('author_firstname');
@@ -426,7 +430,10 @@ class Login extends CI_Controller
         $this->security->xss_clean($remarks_purchase_order);
         $this->security->xss_clean($author_email);
         $this->security->xss_clean($author_firstname);
-        $this->security->xss_clean($author_lastname);
+        $this->security->xss_clean($request_type);
+        $this->security->xss_clean($category);
+        $this->security->xss_clean($price);
+        $this->security->xss_clean($quantity);
         
         $this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
         $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
@@ -435,6 +442,11 @@ class Login extends CI_Controller
         $this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
         $this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
         $this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
+        $this->form_validation->set_rules('request_type', 'request_type', 'trim|required');
+        $this->form_validation->set_rules('category', 'category', 'trim|required');
+        $this->form_validation->set_rules('price', 'price', 'trim|required');
+        $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
+
         
         if ($this->form_validation->run() == false) {
             echo '<script language="javascript">';
@@ -447,7 +459,11 @@ class Login extends CI_Controller
                 'id' => $id_purchase_order,
                 'purchase_order_no' => $purchase_order_no,
                 'purchase_order_date' => $purchase_order_date,
+                'request_type' => $request_type,
                 'supplier' => $supplier_purchase_order,
+                'category' => $category,
+                'quantity' => $quantity,
+                'price' => $price,
                 'remarks' => $remarks_purchase_order,
                 'author_email' => $author_email,
                 'author_firstname' => $author_firstname,

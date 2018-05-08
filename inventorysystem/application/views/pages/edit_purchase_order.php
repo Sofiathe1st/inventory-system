@@ -1,6 +1,6 @@
     <title><?php echo $firstname?>: Update User Area</title>
 
-    <h3>Update User</h3>
+    <h3>Update Purchase Order</h3>
               <?php
               if(validation_errors()){
               ?>
@@ -14,16 +14,20 @@
               $id_purchase_order          = $result[0]['id'];
               $purchase_order_no          = $result[0]['purchase_order_no'];
               $purchase_order_date        = $result[0]['purchase_order_date'];
-              $supplier_purchase_order      = $result[0]['supplier'];
+              $supplier_purchase_order     = $result[0]['supplier'];
               $remarks_purchase_order     = $result[0]['remarks'];
               $author_email    	          = $result[0]['author_email'];
               $author_firstname           = $result[0]['author_firstname'];
               $author_lastname            = $result[0]['author_lastname'];
+              $request_type               = $result[0]['request_type'];
+              $category                   = $result[0]['category'];
+              $price                      = $result[0]['price'];
+              $quantity                   = $result[0]['quantity'];
 
               ?>
               <div id="form_1">
 
-                <h3>Update User Form</h3>
+                <h3>Update Purchase Order Form</h3>
                 <h4><label>ID: <?php echo $id_purchase_order;?></label></h4>
                 <div class="form-group"> 
 
@@ -34,6 +38,14 @@
 
                <label>Purchase Order Date</label>
                   <input type="text" id="input_1" name="purchase_order_date" value="<?php echo $purchase_order_date; ?>" placeholder="Lastname" readonly="true" />
+                <label>Request Type:</label>
+
+        <select name="request_type" id="category">
+            <option value="<?php echo $request_type?>"><?php echo $request_type?></option>
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+            <option value="Other">Other</option>
+        </select><br>
 
                <label>Supplier:</label>
           <select name="supplier" id="manufacturer">
@@ -44,6 +56,13 @@
                             }
                         ?>
           </select><br>
+          <label>Quantity:</label>
+            <input type="text" name="quantity" value="<?php echo $quantity?>" id="quantity" /><br>
+        <label>Category:</label>
+          <input type="text" name="category" value="<?php echo $category?>" id="quantity" /><br>
+
+          <label>Price</label>
+            <input type="text" name="price" value="<?php echo $price?>" id="amount" /><br>
 
                <label>Remarks</label>
                   <input type="text" id="input_1" name="remarks" value="<?php echo $remarks_purchase_order; ?>" placeholder="remarks" />
