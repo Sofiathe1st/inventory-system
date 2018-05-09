@@ -11,11 +11,11 @@
         <tr>  
             <th>PO no.</th>
             <th>PO Order Date</th>
-            <th>Request Type</th>
+            <th>Category</th>
             <th>Supplier</th>
            <!--  <th>Name/Model</th> -->
             <th>Quantity</th>
-            <th>Category</th>
+            <th>Item Type</th>
             <th>Price</th>
             <th>Remarks</th>
             <th>Options</th>
@@ -32,11 +32,11 @@
                  <tr> 
                     <td><?php echo htmlspecialchars($row->purchase_order_no); ?></td> 
                     <td><?php echo htmlspecialchars($row->purchase_order_date); ?></td>
-                    <td><?php echo htmlspecialchars($row->request_type); ?></td>
+                    <td><?php echo htmlspecialchars($row->category); ?></td>
                     <td><?php echo htmlspecialchars($row->supplier); ?></td>
                     <!--<td><?php echo htmlspecialchars($row->name_sh); ?></td> -->
                     <td><?php echo htmlspecialchars($row->quantity); ?></td>
-                    <td><?php echo htmlspecialchars($row->category); ?></td>
+                    <td><?php echo htmlspecialchars($row->item_type); ?></td>
                     <td><?php echo htmlspecialchars($row->price); ?></td>
                     <td><?php echo htmlspecialchars($row->remarks); ?></td>
                     <td><a href="<?php echo base_url() ?>index.php/login/edit_purchase_order_details/<?php echo $row->id ?>" id="a_upd">EDIT</a>

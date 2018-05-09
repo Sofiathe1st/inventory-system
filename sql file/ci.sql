@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2018 at 06:24 AM
+-- Generation Time: May 09, 2018 at 05:07 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -121,10 +121,10 @@ CREATE TABLE `purchase_order` (
   `id` int(50) NOT NULL,
   `purchase_order_no` varchar(255) NOT NULL,
   `purchase_order_date` date NOT NULL,
-  `request_type` varchar(250) NOT NULL,
+  `category` varchar(250) NOT NULL,
   `supplier` varchar(250) NOT NULL,
   `quantity` int(250) NOT NULL,
-  `category` varchar(250) NOT NULL,
+  `item_type` varchar(250) NOT NULL,
   `price` int(250) NOT NULL,
   `remarks` varchar(1000) NOT NULL,
   `author_email` varchar(255) NOT NULL,
@@ -136,13 +136,14 @@ CREATE TABLE `purchase_order` (
 -- Dumping data for table `purchase_order`
 --
 
-INSERT INTO `purchase_order` (`id`, `purchase_order_no`, `purchase_order_date`, `request_type`, `supplier`, `quantity`, `category`, `price`, `remarks`, `author_email`, `author_firstname`, `author_lastname`) VALUES
-(75, '1213', '2018-05-04', 'Other', 'HMR', 2, 'Not Applicable', 16000, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(76, '0001', '2018-05-04', 'Hardware', 'LAZADA', 2, 'Computer', 50000, 'i74Gb RAM500Gb HDD', 'super@admin', 'John Charles', 'Villavicencio'),
+INSERT INTO `purchase_order` (`id`, `purchase_order_no`, `purchase_order_date`, `category`, `supplier`, `quantity`, `item_type`, `price`, `remarks`, `author_email`, `author_firstname`, `author_lastname`) VALUES
+(75, '1213', '2018-05-04', 'Other', 'LAZADA', 2, 'Not Applicable', 16000, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(76, '0001', '2018-05-04', 'Hardware', 'LAZADA', 2, 'Computer', 50000, 'i7 4Gb RAM 500Gb HDD', 'super@admin', 'John Charles', 'Villavicencio'),
 (79, '123', '2018-05-04', 'Hardware', 'LAZADA', 2, '3', 23, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
 (80, '123123', '2018-05-04', 'Hardware', 'LAZADA', 2, '3', 23, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(81, 'asd2', '2018-05-04', 'Other', 'LAZADA', 2, 'asd', 25000, 'ad123', 'super@admin', 'John Charles', 'Villavicencio'),
-(82, '0003', '2018-05-04', 'Hardware', 'LAZADA', 1, 'laptop', 20000, 'Request 1 new laptop for new employee.', 'super@admin', 'John Charles', 'Villavicencio');
+(81, 'asd2', '2018-05-04', 'Other', 'LAZADA', 2, 'Phone', 25000, 'ad123', 'super@admin', 'John Charles', 'Villavicencio'),
+(82, '0003', '2018-05-04', 'Hardware', 'LAZADA', 1, 'Laptop', 20000, 'Request 1 new laptop for new employee.', 'super@admin', 'John Charles', 'Villavicencio'),
+(83, '0023', '2018-05-09', 'Software', 'HMR', 2, 'Laptop', 23000, 'asd', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -154,13 +155,13 @@ CREATE TABLE `purchase_order_details` (
   `id` int(15) NOT NULL,
   `purchase_order_no` varchar(255) NOT NULL,
   `purchase_order_date` date NOT NULL,
-  `request_type` varchar(250) NOT NULL,
+  `category` varchar(250) NOT NULL,
   `serial_number` varchar(250) NOT NULL,
   `name_sh` varchar(250) NOT NULL,
   `manufacturer` varchar(250) NOT NULL,
   `quantity` int(250) NOT NULL,
   `assigned_to` varchar(250) NOT NULL,
-  `category` varchar(250) NOT NULL,
+  `item_type` varchar(250) NOT NULL,
   `specifications` varchar(250) NOT NULL,
   `price` int(250) NOT NULL,
   `supplier` varchar(250) NOT NULL,
@@ -176,8 +177,10 @@ CREATE TABLE `purchase_order_details` (
 -- Dumping data for table `purchase_order_details`
 --
 
-INSERT INTO `purchase_order_details` (`id`, `purchase_order_no`, `purchase_order_date`, `request_type`, `serial_number`, `name_sh`, `manufacturer`, `quantity`, `assigned_to`, `category`, `specifications`, `price`, `supplier`, `status`, `color`, `remarks`, `author_firstname`, `author_lastname`, `author_email`) VALUES
-(1, '0003', '2018-05-04', 'Hardware', '00327-35038-41362-AAOEM', 'ASUS X405U', 'ASUS', 1, 'John Charles Villavicencio', 'laptop', 'i5-7200U\r\n4gb RAM\r\n1TB HDD\r\nWIN10', 20000, 'LAZADA', 'Working', 'Gray', 'Request 1 new laptop for new employee.', 'John Charles', 'Villavicencio', 'super@admin');
+INSERT INTO `purchase_order_details` (`id`, `purchase_order_no`, `purchase_order_date`, `category`, `serial_number`, `name_sh`, `manufacturer`, `quantity`, `assigned_to`, `item_type`, `specifications`, `price`, `supplier`, `status`, `color`, `remarks`, `author_firstname`, `author_lastname`, `author_email`) VALUES
+(1, '0003', '2018-05-04', 'Hardware', '00327-35038-41362-AAOEM', 'ASUS X405U', 'ASUS', 1, 'John Charles Villavicencio', 'Laptop', 'i5-7200U\r\n4gb RAM\r\n1TB HDD\r\nWIN10', 20000, 'LAZADA', 'Working', 'Gray', 'Request 1 new laptop for new employee.', 'John Charles', 'Villavicencio', 'super@admin'),
+(17, 'asd2', '2018-05-04', 'Other', '0233-123-3453-234s-234d', 'Samsung Note S3 Neo Galaxy', 'Samsung', 1, 'John Charles Villavicencio', 'Phone', '2GB RAM\r\nAndroid 10.2\r\nGyroscope Enabled', 12500, 'LAZADA', 'Spare', 'Green', 'ad123', 'John Charles', 'Villavicencio', 'super@admin'),
+(18, 'asd2', '2018-05-04', 'Other', '0233-123-3453-234s-221a', 'Samsung Note S3 Neo Galaxy', 'Samsung', 1, 'John Charles Villavicencio', 'Phone', '2GB RAM\r\nAndroid 10.2\r\nGyroscope Enabled', 12500, 'LAZADA', 'Working', 'Pink', 'ad123', 'John Charles', 'Villavicencio', 'super@admin');
 
 -- --------------------------------------------------------
 
@@ -229,8 +232,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `middlename`, `type`, `department`, `username`, `password`, `email`, `dateregistered`) VALUES
 (00017, 'John Charles', 'Villavicencio', 'Bautista', 'SuperAdmin', 'CT-DEPARTMENT', 'superadmin', '17c4520f6cfd1ab53d8745e84681eb49', 'super@admin', '2018-04-19'),
-(00077, 'John Charles', 'Villavicencio', 'Bautista', 'User', 'CT-DEPARTMENT', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@user', '2018-04-18'),
-(00078, 'John Charles', 'Villavicencio', 'Bautista', 'Admin', 'CT-DEPARTMENT', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin', '2018-04-18');
+(00077, 'John Charles', 'Villavicencio', 'Bautista', 'User', 'ITD-DEPARTMENT', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@user', '2018-05-09'),
+(00078, 'John Charles', 'Villavicencio', 'Bautista', 'Admin', 'CT-DEPARTMENT', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin', '2018-05-09');
 
 --
 -- Indexes for dumped tables
@@ -290,12 +293,12 @@ ALTER TABLE `inventory_software`
 -- AUTO_INCREMENT for table `purchase_order`
 --
 ALTER TABLE `purchase_order`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 --
 -- AUTO_INCREMENT for table `purchase_order_details`
 --
 ALTER TABLE `purchase_order_details`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `supplier`
 --

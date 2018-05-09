@@ -19,7 +19,7 @@
               $author_email    	          = $result[0]['author_email'];
               $author_firstname           = $result[0]['author_firstname'];
               $author_lastname            = $result[0]['author_lastname'];
-              $request_type               = $result[0]['request_type'];
+              $item_type               = $result[0]['item_type'];
               $category                   = $result[0]['category'];
               $price                      = $result[0]['price'];
               $quantity                   = $result[0]['quantity'];
@@ -38,10 +38,10 @@
 
                <label>Purchase Order Date</label>
                   <input type="text" id="input_1" name="purchase_order_date" value="<?php echo $purchase_order_date; ?>" placeholder="Lastname" readonly="true" />
-                <label>Request Type:</label>
+                <label>Category:</label>
 
-        <select name="request_type" id="category">
-            <option value="<?php echo $request_type?>"><?php echo $request_type?></option>
+        <select name="category" id="category">
+            <option value="<?php echo $category?>"><?php echo $category?></option>
             <option value="Hardware">Hardware</option>
             <option value="Software">Software</option>
             <option value="Other">Other</option>
@@ -58,8 +58,8 @@
           </select><br>
           <label>Quantity:</label>
             <input type="text" name="quantity" value="<?php echo $quantity?>" id="quantity" /><br>
-        <label>Category:</label>
-          <input type="text" name="category" value="<?php echo $category?>" id="quantity" /><br>
+        <label>Item Type:</label>
+          <input type="text" name="item_type" value="<?php echo $item_type?>" id="quantity" /><br>
 
           <label>Price</label>
             <input type="text" name="price" value="<?php echo $price?>" id="amount" /><br>

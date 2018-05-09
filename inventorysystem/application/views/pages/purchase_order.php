@@ -9,8 +9,8 @@
 				<label>Purchase Order Date:</label>
 				<input type="date" name="purchase_order_date" value="" /><br>
 				    <hr id="po_div_line">
-				<label>Request Type:</label>
-				<select name="request_type" id="category">
+				<label>Category:</label>
+				<select name="category" id="category">
 						<option value="Hardware">Hardware</option>
 						<option value="Software">Software</option>
 						<option value="Other">Other</option>
@@ -28,8 +28,8 @@
 					<input type="text" name="name_sh" value="" id="po_no" /> -->
 				<label>Quantity:</label>
 				    <input type="text" name="quantity" value="" id="quantity" /><br>
-				<label>Category:</label>
-					<input type="text" name="category" value="" id="quantity" /><br> 
+				<label>Item Type:</label>
+					<input type="text" name="item_type" value="" id="quantity" /><br> 
 					<!-- <select name="category" id="category">
 						<option value="Television">Television</option>
 						<option value="Laptop">Laptop</option>

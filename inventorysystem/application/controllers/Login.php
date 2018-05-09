@@ -144,7 +144,7 @@ class Login extends CI_Controller
         $this->load->model('queries');
         $purchase_order_no   = $this->input->post('purchase_order_no');
         $purchase_order_date = $this->input->post('purchase_order_date');
-        $request_type          = $this->input->post('request_type');
+        $item_type          = $this->input->post('item_type');
         $supplier        = $this->input->post('supplier');
         /*$name_sh             = $this->input->post('name_sh');*/
         $quantity            = $this->input->post('quantity');
@@ -173,7 +173,7 @@ class Login extends CI_Controller
 
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
-        $this->security->xss_clean($request_type);
+        $this->security->xss_clean($item_type);
         $this->security->xss_clean($supplier);
         /*$this->security->xss_clean($name_sh);*/
         $this->security->xss_clean($quantity);
@@ -186,7 +186,7 @@ class Login extends CI_Controller
         
         $this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required|is_unique[purchase_order.purchase_order_no]');
         $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
-        $this->form_validation->set_rules('request_type', 'request_type', 'trim|required');
+        $this->form_validation->set_rules('item_type', 'item_type', 'trim|required');
         $this->form_validation->set_rules('supplier', 'supplier', 'trim|required');
         /*$this->form_validation->set_rules('name_sh', 'name_sh', 'trim|required');*/
         $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
@@ -209,11 +209,11 @@ class Login extends CI_Controller
             $data = array(
                 'purchase_order_no' => $purchase_order_no,
                 'purchase_order_date' => $purchase_order_date,
-                'request_type' => $request_type,
+                'category' => $category,
                 'supplier' => $supplier,
                 /*'name_sh' => $name_sh,*/
                 'quantity' => $quantity,
-                'category' => $category,
+                'item_type' => $item_type,
                 'price' => $price,
                 'remarks' => $remarks,
                 'author_email' => $author_email,
