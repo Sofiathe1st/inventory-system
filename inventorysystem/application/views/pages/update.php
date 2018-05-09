@@ -19,7 +19,6 @@
               $department_user     = $result[0]['department'];
               $username_user       = $result[0]['username'];
               $email_user          = $result[0]['email'];
-              $email_user2         = $result[0]['email'];
               $dateregistered_user = $result[0]['dateregistered'];
 
               ?>
@@ -67,8 +66,7 @@
                 <input type="password" id="input_1" name="password" value="" placeholder="Password" required />
               <label>Email</label>
                 <input type="email" id="input_1" name="email" value="<?php echo $email_user; ?>" placeholder="Email" />
-                <input type="hidden" name="email" value="<?php echo $email_user2; ?>" placeholder="Email" />
-                 <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo date('Y-m-d');?>" />
+                <input name="dateregistered" type="hidden" id="dateregistered" value="<?php echo date('Y-m-d');?>" />
                 <center><button type="submit" name="update" value="Update" id="button_1">Update</button></center>
               <?php echo form_close() ?>
             </button>

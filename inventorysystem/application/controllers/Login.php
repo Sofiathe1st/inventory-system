@@ -134,7 +134,7 @@ class Login extends CI_Controller
             );
             $this->db->where('id', $id_user);
             $this->db->update('user', $data);
-            echo "<script>window.close();</script>";
+            redirect('read');
         }
     }
     
