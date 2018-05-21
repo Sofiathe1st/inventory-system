@@ -1,4 +1,4 @@
-    <title><?php echo $firstname?>: Update User Area</title>
+    <title>Edit Purchase Order</title>
 
     <h3>Update Purchase Order</h3>
               <?php

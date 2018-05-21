@@ -414,38 +414,63 @@ class Login extends CI_Controller
         $id_purchase_order           = $this->input->post('id');
         $purchase_order_no           = $this->input->post('purchase_order_no');
         $purchase_order_date         = $this->input->post('purchase_order_date');
-        $request_type                = $this->input->post('request_type');
-        $supplier_purchase_order     = $this->input->post('supplier');
         $category                    = $this->input->post('category');
-        $price                       = $this->input->post('price');
+        $supplier                    = $this->input->post('supplier');
         $quantity                    = $this->input->post('quantity');
-        $remarks_purchase_order      = $this->input->post('remarks');
+        $item_type                   = $this->input->post('item_type');
+        $price                       = $this->input->post('price');
+        $remarks                     = $this->input->post('remarks');
         $author_email                = $this->input->post('author_email');
         $author_firstname            = $this->input->post('author_firstname');
         $author_lastname             = $this->input->post('author_lastname');
+
+/*        echo "<pre>";
+        echo var_dump($purchase_order_no);
+        echo var_dump($purchase_order_date);
+        echo var_dump($category);
+        echo var_dump($supplier);
+        echo var_dump($quantity);
+        echo var_dump($item_type);
+        echo var_dump($price);
+        echo var_dump($remarks);
+        echo var_dump($author_email);
+        echo var_dump($author_firstname);
+        echo var_dump($author_lastname);
+
+        echo "<pre>";
+        exit();*/
         
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
-        $this->security->xss_clean($supplier_purchase_order);
-        $this->security->xss_clean($remarks_purchase_order);
+        $this->security->xss_clean($category);
+        $this->security->xss_clean($supplier);
+        $this->security->xss_clean($quantity);
+        $this->security->xss_clean($item_type);
+        $this->security->xss_clean($price);
+        $this->security->xss_clean($remarks_);
         $this->security->xss_clean($author_email);
         $this->security->xss_clean($author_firstname);
-        $this->security->xss_clean($request_type);
-        $this->security->xss_clean($category);
-        $this->security->xss_clean($price);
-        $this->security->xss_clean($quantity);
+        
+        
+        
+        
         
         $this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
         $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
+        $this->form_validation->set_rules('category', 'category', 'trim|required');
         $this->form_validation->set_rules('supplier', 'supplier', 'trim|required');
+        $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
+        $this->form_validation->set_rules('item_type', 'item_type', 'trim|required');
+        $this->form_validation->set_rules('price', 'price', 'trim|required');
         $this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
         $this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
         $this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
         $this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
-        $this->form_validation->set_rules('request_type', 'request_type', 'trim|required');
-        $this->form_validation->set_rules('category', 'category', 'trim|required');
-        $this->form_validation->set_rules('price', 'price', 'trim|required');
-        $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
+        
+        
+        
+        
+        
 
         
         if ($this->form_validation->run() == false) {
@@ -459,12 +484,12 @@ class Login extends CI_Controller
                 'id' => $id_purchase_order,
                 'purchase_order_no' => $purchase_order_no,
                 'purchase_order_date' => $purchase_order_date,
-                'request_type' => $request_type,
-                'supplier' => $supplier_purchase_order,
                 'category' => $category,
+                'supplier' => $supplier,
                 'quantity' => $quantity,
+                'item_type' => $item_type,
                 'price' => $price,
-                'remarks' => $remarks_purchase_order,
+                'remarks' => $remarks,
                 'author_email' => $author_email,
                 'author_firstname' => $author_firstname,
                 'author_lastname' => $author_lastname
@@ -507,14 +532,14 @@ class Login extends CI_Controller
     {
         $purchase_order_no   = $this->input->post('purchase_order_no');
         $purchase_order_date = $this->input->post('purchase_order_date');
-        $request_type        = $this->input->post('request_type');
+        $category            = $this->input->post('category');
         $serial_number       = $this->input->post('serial_number');
         $supplier            = $this->input->post('supplier');
         $name_sh             = $this->input->post('name_sh');
         $manufacturer        = $this->input->post('manufacturer');
         $quantity            = $this->input->post('quantity');
         $assigned_to         = $this->input->post('assigned_to');
-        $category            = $this->input->post('category');
+        $item_type           = $this->input->post('item_type');
         $specifications      = $this->input->post('specifications');
         $price               = $this->input->post('price');
         $status              = $this->input->post('status');
@@ -549,14 +574,14 @@ class Login extends CI_Controller
 
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
-        $this->security->xss_clean($request_type);
+        $this->security->xss_clean($category);
         $this->security->xss_clean($serial_number);
         $this->security->xss_clean($supplier);
         $this->security->xss_clean($name_sh);
         $this->security->xss_clean($manufacturer);
         $this->security->xss_clean($quantity);
         $this->security->xss_clean($assigned_to);
-        $this->security->xss_clean($category);
+        $this->security->xss_clean($item_type);
         $this->security->xss_clean($specifications);
         $this->security->xss_clean($price);
         $this->security->xss_clean($status);
@@ -568,14 +593,14 @@ class Login extends CI_Controller
         
         $this->form_validation->set_rules('purchase_order_no[]', 'purchase_order_no', 'trim|required');
         $this->form_validation->set_rules('purchase_order_date[]', 'purchase_order_date', 'trim|required');
-        $this->form_validation->set_rules('request_type[]', 'request_type', 'trim|required');
+        $this->form_validation->set_rules('category[]', 'category', 'trim|required');
         $this->form_validation->set_rules('serial_number[]', 'serial_number', 'trim|required');
         $this->form_validation->set_rules('supplier[]', 'supplier', 'trim|required');
         $this->form_validation->set_rules('name_sh[]', 'name_sh', 'trim|required');
         $this->form_validation->set_rules('manufacturer[]', 'manufacturer', 'trim|required');
         $this->form_validation->set_rules('quantity[]', 'quantity', 'trim|required');
         $this->form_validation->set_rules('assigned_to[]', 'assigned_to', 'trim|required');
-        $this->form_validation->set_rules('category[]', 'category', 'trim|required');
+        $this->form_validation->set_rules('item_type[]', 'item_type', 'trim|required');
         $this->form_validation->set_rules('specifications[]', 'specifications', 'trim|required');
         $this->form_validation->set_rules('price[]', 'price', 'trim|required');
         $this->form_validation->set_rules('status[]', 'status', 'trim|required');
@@ -597,14 +622,14 @@ class Login extends CI_Controller
                     'id' => 'id',
                     'purchase_order_no' => $purchase_order_no[$i],
                     'purchase_order_date' => $purchase_order_date[$i],
-                    'request_type' => $request_type[$i],
+                    'category' => $category[$i],
                     'supplier' => $supplier[$i],
                     'serial_number' => $serial_number[$i],
                     'name_sh' => $name_sh[$i],
                     'manufacturer' => $manufacturer[$i],
                     'quantity' => $quantity[$i],
                     'assigned_to' => $assigned_to[$i],
-                    'category' => $category[$i],
+                    'item_type' => $item_type[$i],
                     'specifications' => $specifications[$i],
                     'price' => $price[$i],
                     'status' => $status[$i],
