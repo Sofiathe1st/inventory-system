@@ -105,97 +105,7 @@ class queries extends CI_Model
         $query = $this->db->get('purchase_order');
         return $query->result();
     }
-    public function getInventory_hardware()
-    {
-        
-        $query = $this->db->get('inventory_hardware');
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $data[] = $row;
-            }
-            return $data;
-        }
-        
-    }
-    public function getInventory_software()
-    {
-        
-        $query = $this->db->get('inventory_software');
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $data[] = $row;
-            }
-            return $data;
-        }
-
-   }
-   public function count_inventory_hardware() {
-    return $this->db->count_all('inventory_hardware');
-   }
-   public function fetch_inventory_hardware($limit,$offset) {
-    $this->db->limit($limit,$offset);
-    $query = $this->db->get('inventory_hardware');
-    if($query->num_rows() > 0){
-        return $query->result();
-    }else{
-        return $query->result();
-    }
-   }
-   public function count_inventory_software() {
-    return $this->db->count_all('inventory_software');
-   }
-   public function fetch_inventory_software($limit,$offset) {
-    $this->db->limit($limit,$offset);
-    $query = $this->db->get('inventory_software');
-    if($query->num_rows() > 0){
-        return $query->result();
-    }else{
-        return $query->result();
-    }
-   }
-   public function software_search($search_input) {
-        $this->db->select('*');
-        $this->db->from('inventory_software');
-        $this->db->where('asset_type', $search_input);
-        $this->db->or_where('software_name', $search_input);
-        $this->db->or_where('software_info', $search_input);
-        $this->db->or_where('assigned_to', $search_input);
-        $this->db->or_where('date_purchased', $search_input);
-        $this->db->or_where('amount', $search_input);
-        $this->db->or_where('status', $search_input);
-
-
-        $query = $this->db->get();
-            if ($query->num_rows() > 0) {
-                return $query->result();
-                # code...
-            }else{
-                return $query->result();
-            }
-        
-    }
-    public function hardware_search($search_input) {
-        $this->db->select('*');
-        $this->db->from('inventory_hardware');
-        $this->db->where('asset_num', $search_input);
-        $this->db->or_where('asset_type', $search_input);
-        $this->db->or_where('type_item', $search_input);
-        $this->db->or_where('brand', $search_input);
-        $this->db->or_where('assigned_to', $search_input);
-        $this->db->or_where('specifications', $search_input);
-        $this->db->or_where('date_purchased', $search_input);
-        $this->db->or_where('amount', $search_input);
-        $this->db->or_where('status', $search_input);
-
-        $query = $this->db->get();
-            if ($query->num_rows() > 0) {
-                return $query->result();
-                # code...
-            }else{
-                return $query->result();
-            }
-        
-    }
+    
     public function fetch_inventory_read($limit,$offset) {
     $this->db->limit($limit,$offset);
     $query = $this->db->get('purchase_order_details');
@@ -230,7 +140,6 @@ class queries extends CI_Model
         $query = $this->db->get();
             if ($query->num_rows() > 0) {
                 return $query->result();
-                # code...
             }else{
                 return $query->result();
             }

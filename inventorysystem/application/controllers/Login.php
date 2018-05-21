@@ -146,7 +146,6 @@ class Login extends CI_Controller
         $purchase_order_date = $this->input->post('purchase_order_date');
         $item_type          = $this->input->post('item_type');
         $supplier        = $this->input->post('supplier');
-        /*$name_sh             = $this->input->post('name_sh');*/
         $quantity            = $this->input->post('quantity');
         $category            = $this->input->post('category');
         $price               = $this->input->post('price');
@@ -154,28 +153,12 @@ class Login extends CI_Controller
         $author_email        = $this->input->post('author_email');
         $author_firstname    = $this->input->post('author_firstname');
         $author_lastname     = $this->input->post('author_lastname');
-        
-        /*echo "<pre>";
-        echo var_dump($purchase_order_no);
-        echo var_dump($purchase_order_date);
-        echo var_dump($request_type);
 
-        echo var_dump($quantity);
-        echo var_dump($category);
-        echo var_dump($price);
-        echo var_dump($remarks);
-        echo var_dump($author_email);
-        echo var_dump($author_lastname);
-        echo var_dump($author_firstname);
-
-        echo "<pre>";
-        exit;*/
 
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
         $this->security->xss_clean($item_type);
         $this->security->xss_clean($supplier);
-        /*$this->security->xss_clean($name_sh);*/
         $this->security->xss_clean($quantity);
         $this->security->xss_clean($category);
         $this->security->xss_clean($price);
@@ -188,7 +171,6 @@ class Login extends CI_Controller
         $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
         $this->form_validation->set_rules('item_type', 'item_type', 'trim|required');
         $this->form_validation->set_rules('supplier', 'supplier', 'trim|required');
-        /*$this->form_validation->set_rules('name_sh', 'name_sh', 'trim|required');*/
         $this->form_validation->set_rules('quantity', 'quantity', 'trim|required');
         $this->form_validation->set_rules('category', 'category', 'trim|required');
         $this->form_validation->set_rules('price', 'price', 'trim|required');
@@ -211,7 +193,6 @@ class Login extends CI_Controller
                 'purchase_order_date' => $purchase_order_date,
                 'category' => $category,
                 'supplier' => $supplier,
-                /*'name_sh' => $name_sh,*/
                 'quantity' => $quantity,
                 'item_type' => $item_type,
                 'price' => $price,
@@ -424,22 +405,6 @@ class Login extends CI_Controller
         $author_firstname            = $this->input->post('author_firstname');
         $author_lastname             = $this->input->post('author_lastname');
 
-/*        echo "<pre>";
-        echo var_dump($purchase_order_no);
-        echo var_dump($purchase_order_date);
-        echo var_dump($category);
-        echo var_dump($supplier);
-        echo var_dump($quantity);
-        echo var_dump($item_type);
-        echo var_dump($price);
-        echo var_dump($remarks);
-        echo var_dump($author_email);
-        echo var_dump($author_firstname);
-        echo var_dump($author_lastname);
-
-        echo "<pre>";
-        exit();*/
-        
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
         $this->security->xss_clean($category);
@@ -450,10 +415,7 @@ class Login extends CI_Controller
         $this->security->xss_clean($remarks_);
         $this->security->xss_clean($author_email);
         $this->security->xss_clean($author_firstname);
-        
-        
-        
-        
+          
         
         $this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required');
         $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
@@ -465,12 +427,7 @@ class Login extends CI_Controller
         $this->form_validation->set_rules('remarks', 'remarks', 'trim|required');
         $this->form_validation->set_rules('author_email', 'author_email', 'trim|required');
         $this->form_validation->set_rules('author_firstname', 'author_firstname', 'trim|required');
-        $this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');
-        
-        
-        
-        
-        
+        $this->form_validation->set_rules('author_lastname', 'author_lastname', 'trim|required');   
 
         
         if ($this->form_validation->run() == false) {
@@ -549,28 +506,6 @@ class Login extends CI_Controller
         $author_firstname    = $this->input->post('author_firstname');
         $author_lastname     = $this->input->post('author_lastname');
         $quantity2           = $this->input->post('quantity2');
-        
-        
-       /* echo "<pre>";
-        echo var_dump($purchase_order_no);
-        echo var_dump($purchase_order_date);
-        echo var_dump($asset_type);
-        echo var_dump($serial_number);
-        echo var_dump($name_sh);
-        echo var_dump($manufacturer);
-        echo var_dump($quantity);
-        echo var_dump($assigned_to);
-        echo var_dump($category);
-        echo var_dump($specifications);
-        echo var_dump($price);
-        echo var_dump($status);
-        echo var_dump($color);
-        echo var_dump($remarks);
-        echo var_dump($author_email);
-        echo var_dump($author_firstname);
-        echo var_dump($author_lastname);
-        echo "<pre>";
-        exit();*/
 
         $this->security->xss_clean($purchase_order_no);
         $this->security->xss_clean($purchase_order_date);
@@ -643,148 +578,6 @@ class Login extends CI_Controller
             $this->db->insert_batch('purchase_order_details', $data);
             redirect('inventory_read');
 
-        }
-    }
-    public function inventory_hardware_add()
-    {
-        if ($this->input->post('inventory_hardware_add')) {
-            $this->login->inventory_hardware_add();
-            redirect('inventory_hardware');
-        } else {
-            $this->load->view('pages/inventory_hardware_add');
-        }
-    }
-     public function delete_inventory_hardware()
-    {
-        
-        $data = array(
-            $row->id = $_GET['del']
-        );
-        $this->db->where('id', $row->id);
-        $this->db->delete('inventory_hardware');
-        redirect('inventory_hardware');
-        
-    }
-    public function edit_inventory_hardware_details()
-    {
-        
-        $id = $this->uri->segment(3);
-        $this->load->model('queries');
-        
-        $data                 = array();
-        $data['result']       = $this->login->getInfoById_inventory_hardware_details($id);
-        $data['supplier'] = $this->queries->getsupplier();
-        $session_data         = $this->session->userdata('logged_in');
-        $data['type']         = $session_data['type'];
-        $data['id']           = $session_data['id'];
-        $data['firstname']    = $session_data['firstname'];
-        $data['middlename']   = $session_data['middlename'];
-        $data['username']     = $session_data['username'];
-        $data['department']   = $session_data['department'];
-        $data['email']        = $session_data['email'];
-        $data['lastname']     = $session_data['lastname'];
-        $this->load->view('edit_inventory_hardware_dashboard', $data);
-        
-    }
-    public function edit_inventory_hardware()
-    {
-        if ($this->input->post('edit_inventory_hardware')) {
-            $this->login->edit_inventory_hardware_details();
-            redirect('inventory_hardware');
-        } else {
-            $this->load->view('pages/edit_inventory_hardware_details');
-        }
-    }
-    public function inventory_software_add()
-    {
-        if ($this->input->post('inventory_software_add')) {
-            $this->login->inventory_software_add();
-            redirect('inventory_software');
-        } else {
-            $this->load->view('pages/inventory_software_add');
-        }
-    }
-    public function delete_inventory_software()
-    {
-        
-        $data = array(
-            $row->id = $_GET['del']
-        );
-        $this->db->where('id', $row->id);
-        $this->db->delete('inventory_software');
-        redirect('inventory_software');
-        
-    }
-    public function edit_inventory_software()
-    {
-        if ($this->input->post('edit_inventory_software')) {
-            $this->login->edit_inventory_software_details();
-            redirect('inventory_software');
-        } else {
-            $this->load->view('pages/edit_inventory_software_details');
-        }
-    }
-     public function edit_inventory_software_details()
-    {
-        
-        $id = $this->uri->segment(3);
-        $this->load->model('queries');
-        
-        $data                 = array();
-        $data['result']       = $this->login->getInfoById_inventory_software_details($id);
-        $data['supplier'] = $this->queries->getSupplier();
-        $session_data         = $this->session->userdata('logged_in');
-        $data['type']         = $session_data['type'];
-        $data['id']           = $session_data['id'];
-        $data['firstname']    = $session_data['firstname'];
-        $data['middlename']   = $session_data['middlename'];
-        $data['username']     = $session_data['username'];
-        $data['department']   = $session_data['department'];
-        $data['email']        = $session_data['email'];
-        $data['lastname']     = $session_data['lastname'];
-        $this->load->view('edit_inventory_software_dashboard', $data);
-        
-    }
-    public function software_search() {
-        $this->load->model('queries');
-        $search_input = $this->input->post('search_input');
-
-        if(isset($search_input) and !empty($search_input)){
-            $data['inventory_software'] = $this->queries->software_search($search_input);
-            $session_data         = $this->session->userdata('logged_in');
-            $data['type']         = $session_data['type'];
-            $data['id']           = $session_data['id'];
-            $data['firstname']    = $session_data['firstname'];
-            $data['middlename']   = $session_data['middlename'];
-            $data['username']     = $session_data['username'];
-            $data['department']   = $session_data['department'];
-            $data['email']        = $session_data['email'];
-            $data['lastname']     = $session_data['lastname'];
-            $data['links'] = '';
-            $this->load->view('inventory_software_dashboard', $data);
-        }else{
-            redirect('inventory_software', 'refresh');
-        }
-    }
-    public function hardware_search() {
-        $this->load->model('queries');
-        $search_input = $this->input->post('search_input');
-
-        if(isset($search_input) and !empty($search_input)){
-            $data['inventory_hardware'] = $this->queries->hardware_search($search_input);
-            $session_data         = $this->session->userdata('logged_in');
-            $data['type']         = $session_data['type'];
-            $data['id']           = $session_data['id'];
-            $data['firstname']    = $session_data['firstname'];
-            $data['middlename']   = $session_data['middlename'];
-            $data['username']     = $session_data['username'];
-            $data['department']   = $session_data['department'];
-            $data['email']        = $session_data['email'];
-            $data['lastname']     = $session_data['lastname'];
-            $data['links'] = '';
-            $this->load->view('inventory_hardware_dashboard', $data);
-        }else{
-            redirect('inventory_hardware', 'refresh');
         }
     }
     public function inventory_search() {

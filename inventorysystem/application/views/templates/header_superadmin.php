@@ -10,7 +10,6 @@
       <div id="mySidenav" class="sidenav">
         <b href="javascript:void(0)" class="closebtn" style="cursor:pointer" onclick="closeNav()">&times;</b>
           <center>
-            <a href="profileimage">
               <img alt="Avatar" src="<?php echo base_url('assets/images/userpicture.png'); ?>" style="width:100px">
             </a>
           </center>
@@ -23,13 +22,10 @@
       <div id="main">
           <ul>
             <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
-            <!-- <li><a class="active" href="<?php echo base_url() ?>index.php/home">Home</a></li> -->
             <li><a class="active" href="<?php echo base_url() ?>index.php/read">Users</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/supplier">Suppliers</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_view">Purchase Orders</a></li>
             <li><a class="active" href="<?php echo base_url() ?>index.php/purchase_order_search">Po search</a></li>
-           <!--  <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_hardware">Inventory Hardware</a></li>
-            <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_software">Inventory Software</a></li> -->
             <li><a class="active" href="<?php echo base_url() ?>index.php/inventory_read">Inventory</a></li>
 
           </ul>
