@@ -127,7 +127,7 @@ class queries extends CI_Model
         $this->db->or_where('serial_number', $search_input);
         $this->db->or_where('name_sh', $search_input);
         $this->db->or_where('manufacturer', $search_input);
-        $this->db->or_where('quantity', $search_input);
+        /*$this->db->or_where('quantity', $search_input);*/
         $this->db->or_where('assigned_to', $search_input);
         $this->db->or_where('item_type', $search_input);
         $this->db->or_where('supplier', $search_input);
@@ -145,5 +145,6 @@ class queries extends CI_Model
             }
         
     }
+    
 }
 ?>

@@ -11,7 +11,7 @@ class Login extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('login_view');
         } else {
-            redirect(base_url('index.php/home'), 'refresh');
+            redirect(base_url('index.php/read'), 'refresh');
         }
     }
     

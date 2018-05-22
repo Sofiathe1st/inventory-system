@@ -13,8 +13,10 @@
             <input type="text" class="form-control" name="search_input" id="search" placeholder="Search...">
   
             <button type="submit" class="btn btn-info" name="inventory_search">Search</button>      
-        </div><br>
+        </div><br>  
+
     <table class="table table-bordered table-hover table-striped" style="table-layout: responsive">  
+
         <thead>  
     
         <tr>  

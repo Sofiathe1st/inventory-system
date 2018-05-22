@@ -34,7 +34,7 @@ class Inventory_read extends CI_Controller {
 			$data['username']  = $session_data['username'];
 			$data['department']= $session_data['department'];
 			$data['email']     = $session_data['email'];
-			$data['lastname']  = $session_data['lastname'];
+			$data['lastname']  = $session_data['lastname']; 
 
 			$data['inventory_list'] = $this->queries->getInv();
 			$data['purchase_order']	= $this->queries->getPO();
