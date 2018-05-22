@@ -471,12 +471,20 @@ class Login extends CI_Controller
         
         $po_no           = $this->input->post('purchase_order_no');
         $data['results'] = $this->queries->search($po_no);
+        $data['quantity1'] = $this->queries->quantity1($po_no);
+        $data['quantity2'] = $this->queries->quantity2($po_no);
         
         if ($data['results'] == FALSE) {
             $data['message'] = 'PO # ' . '"' . $po_no . '"' . ' not found.';
             
             $this->load->view('purchase_order_search_dashboard', $data);
             
+        }
+        elseif ($data['quantity1'] == $data['quantity2']) {
+             $data['message'] = 'PO # ' . '"' . $po_no . '"' . ' is exhausted.';
+            
+            $this->load->view('purchase_order_search_dashboard', $data);
+
         } else {
             
             echo '<script language="javascript">';
