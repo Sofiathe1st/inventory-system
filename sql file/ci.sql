@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2018 at 05:07 AM
+-- Generation Time: May 22, 2018 at 08:03 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.15
 
@@ -19,97 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `ci`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `inventory_hardware`
---
-
-CREATE TABLE `inventory_hardware` (
-  `id` int(250) NOT NULL,
-  `asset_type` varchar(250) NOT NULL,
-  `asset_num` varchar(250) NOT NULL,
-  `type_item` varchar(250) NOT NULL,
-  `brand` varchar(250) NOT NULL,
-  `assigned_to` varchar(250) NOT NULL,
-  `specifications` varchar(500) NOT NULL,
-  `date_purchased` date NOT NULL,
-  `amount` varchar(250) NOT NULL,
-  `status` varchar(250) NOT NULL,
-  `comment` varchar(250) NOT NULL,
-  `author_email` varchar(250) NOT NULL,
-  `author_firstname` varchar(250) NOT NULL,
-  `author_lastname` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `inventory_hardware`
---
-
-INSERT INTO `inventory_hardware` (`id`, `asset_type`, `asset_num`, `type_item`, `brand`, `assigned_to`, `specifications`, `date_purchased`, `amount`, `status`, `comment`, `author_email`, `author_firstname`, `author_lastname`) VALUES
-(1, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(3, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(4, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(5, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(7, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(8, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(9, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(11, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(12, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(13, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(15, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(16, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(17, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(19, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(20, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(21, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(23, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(24, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(25, 'Hardware', 'Mouse0001', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(26, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(27, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(29, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(30, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio'),
-(31, 'Hardware', '1234', 'Laptop', 'Asus', 'asd', 'asasdadasd', '2018-04-18', 'asdd', 'Working', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(33, 'Hardware', '12323', 'mouse', 'acer', 'asd asd', '1d fs sa', '2017-11-30', '12314123', 'Defective', 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(34, 'Hardware', 'sdad', 'addada', 'dadad', 'adasd', 'adasdad', '2018-05-24', 'asdada', 'Spare', 'dadad', 'super@admin', 'John Charles', 'Villavicencio');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `inventory_software`
---
-
-CREATE TABLE `inventory_software` (
-  `id` int(250) NOT NULL,
-  `asset_type` varchar(250) NOT NULL,
-  `software_name` varchar(250) NOT NULL,
-  `software_info` varchar(500) NOT NULL,
-  `assigned_to` varchar(250) NOT NULL,
-  `quantity` varchar(250) NOT NULL,
-  `date_purchased` date NOT NULL,
-  `amount` varchar(250) NOT NULL,
-  `status` varchar(250) NOT NULL,
-  `comments` varchar(500) NOT NULL,
-  `author_email` varchar(250) NOT NULL,
-  `author_firstname` varchar(250) NOT NULL,
-  `author_lastname` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `inventory_software`
---
-
-INSERT INTO `inventory_software` (`id`, `asset_type`, `software_name`, `software_info`, `assigned_to`, `quantity`, `date_purchased`, `amount`, `status`, `comments`, `author_email`, `author_firstname`, `author_lastname`) VALUES
-(3, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
-(4, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '111111111', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio'),
-(7, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
-(8, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '222223', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio'),
-(11, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
-(12, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '12144444', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio'),
-(15, 'Software', 'Macrohard Office 2010', 'Macrohard Office 2010 HB', 'John Charles Villavicencio', '2', '2018-05-19', '8999', 'Working', 'Macrohard Office 2010 assigned to John Charles Villavicencio', 'super@admin', 'John Charles', 'Villavicencio'),
-(16, 'Software', 'asdad', 'adada', 'sdasda', 'sdaadasd', '2018-05-09', '53321', 'Defective', 'asdada', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -139,11 +48,12 @@ CREATE TABLE `purchase_order` (
 INSERT INTO `purchase_order` (`id`, `purchase_order_no`, `purchase_order_date`, `category`, `supplier`, `quantity`, `item_type`, `price`, `remarks`, `author_email`, `author_firstname`, `author_lastname`) VALUES
 (75, '1213', '2018-05-04', 'Other', 'LAZADA', 2, 'Not Applicable', 16000, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
 (76, '0001', '2018-05-04', 'Hardware', 'LAZADA', 2, 'Computer', 50000, 'i7 4Gb RAM 500Gb HDD', 'super@admin', 'John Charles', 'Villavicencio'),
-(79, '123', '2018-05-04', 'Hardware', 'LAZADA', 2, '3', 23, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
 (80, '123123', '2018-05-04', 'Hardware', 'LAZADA', 2, '3', 23, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
-(81, 'asd2', '2018-05-04', 'Other', 'LAZADA', 2, 'Phone', 25000, 'ad123', 'super@admin', 'John Charles', 'Villavicencio'),
-(82, '0003', '2018-05-04', 'Hardware', 'LAZADA', 1, 'Laptop', 20000, 'Request 1 new laptop for new employee.', 'super@admin', 'John Charles', 'Villavicencio'),
-(83, '0023', '2018-05-09', 'Software', 'HMR', 2, 'Laptop', 23000, 'asd', 'super@admin', 'John Charles', 'Villavicencio');
+(84, '233', '2018-05-21', 'Software', 'LAZADA', 2, 'LCD Monitor', 50000, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(85, '12333', '2018-05-21', 'Hardware', 'HMR', 2, 'laptop', 15000, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(86, '1', '2018-05-21', 'Hardware', 'HMR', 20, '23', 123123, 'ad', 'super@admin', 'John Charles', 'Villavicencio'),
+(87, '002', '2018-05-22', 'Hardware', 'HMR', 2, 'laptop', 2000, 'asd', 'super@admin', 'John Charles', 'Villavicencio'),
+(88, '003', '2018-05-22', 'Hardware', 'HMR', 12, 'asd', 1231231, 'aasd', 'super@admin', 'John Charles', 'Villavicencio');
 
 -- --------------------------------------------------------
 
@@ -179,8 +89,14 @@ CREATE TABLE `purchase_order_details` (
 
 INSERT INTO `purchase_order_details` (`id`, `purchase_order_no`, `purchase_order_date`, `category`, `serial_number`, `name_sh`, `manufacturer`, `quantity`, `assigned_to`, `item_type`, `specifications`, `price`, `supplier`, `status`, `color`, `remarks`, `author_firstname`, `author_lastname`, `author_email`) VALUES
 (1, '0003', '2018-05-04', 'Hardware', '00327-35038-41362-AAOEM', 'ASUS X405U', 'ASUS', 1, 'John Charles Villavicencio', 'Laptop', 'i5-7200U\r\n4gb RAM\r\n1TB HDD\r\nWIN10', 20000, 'LAZADA', 'Working', 'Gray', 'Request 1 new laptop for new employee.', 'John Charles', 'Villavicencio', 'super@admin'),
-(17, 'asd2', '2018-05-04', 'Other', '0233-123-3453-234s-234d', 'Samsung Note S3 Neo Galaxy', 'Samsung', 1, 'John Charles Villavicencio', 'Phone', '2GB RAM\r\nAndroid 10.2\r\nGyroscope Enabled', 12500, 'LAZADA', 'Spare', 'Green', 'ad123', 'John Charles', 'Villavicencio', 'super@admin'),
-(18, 'asd2', '2018-05-04', 'Other', '0233-123-3453-234s-221a', 'Samsung Note S3 Neo Galaxy', 'Samsung', 1, 'John Charles Villavicencio', 'Phone', '2GB RAM\r\nAndroid 10.2\r\nGyroscope Enabled', 12500, 'LAZADA', 'Working', 'Pink', 'ad123', 'John Charles', 'Villavicencio', 'super@admin');
+(17, 'asd2', '2018-05-04', 'Other', '0233-123-3453-234s-234d', 'Samsung Galaxy Note S3 Neo ', 'Samsung', 1, 'John Charles Villavicencio', 'Phone', '2GB RAM\nAndroid 10.2\n', 12500, 'LAZADA', 'Spare', 'Green', 'ad123', 'John Charles', 'Villavicencio', 'super@admin'),
+(18, 'asd2', '2018-05-04', 'Other', '0233-123-3453-234s-221a', 'Samsung Galaxy Note S3 Neo ', 'Samsung', 1, 'John Charles Villavicencio', 'Phone', '2GB RAM\nAndroid 10.2\n', 12500, 'LAZADA', 'Defective', 'Pink', 'ad123', 'John Charles', 'Villavicencio', 'super@admin'),
+(19, '0001', '2018-05-04', 'Hardware', '12', 'asd', 'asd', 1, 'asd', 'Computer', 'asd', 25000, 'LAZADA', 'Working', 'asd', 'i7 4Gb RAM 500Gb HDD', 'John Charles', 'Villavicencio', 'super@admin'),
+(20, '0001', '2018-05-04', 'Hardware', '123', 'asd', 'asd', 1, 'asd', 'Computer', 'asd', 25000, 'LAZADA', 'Working', 'asd', 'i7 4Gb RAM 500Gb HDD', 'John Charles', 'Villavicencio', 'super@admin'),
+(21, '002', '2018-05-22', 'Hardware', '000231', 'asus 123', 'asus', 1, 'john diaz', 'laptop', 'x405u', 1000, 'HMR', 'Working', 'white', 'asd', 'John Charles', 'Villavicencio', 'super@admin'),
+(22, '002', '2018-05-22', 'Hardware', '000234', 'hp 123', 'hp', 1, 'jovert galang', 'laptop', 'x405u', 1000, 'HMR', 'Working', 'gray', 'asd', 'John Charles', 'Villavicencio', 'super@admin'),
+(23, '002', '2018-05-22', 'Hardware', '12313', 'asd', 'qwe', 1, 'asd', 'laptop', 'asdad', 1000, 'HMR', 'Working', 'asd', 'asd', 'John Charles', 'Villavicencio', 'super@admin'),
+(24, '002', '2018-05-22', 'Hardware', '12313', 'asd', 'asd', 1, 'asd', 'laptop', 'asd', 1000, 'HMR', 'Working', 'asd', 'asd', 'John Charles', 'Villavicencio', 'super@admin');
 
 -- --------------------------------------------------------
 
@@ -233,23 +149,11 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `middlename`, `type`, `department`, `username`, `password`, `email`, `dateregistered`) VALUES
 (00017, 'John Charles', 'Villavicencio', 'Bautista', 'SuperAdmin', 'CT-DEPARTMENT', 'superadmin', '17c4520f6cfd1ab53d8745e84681eb49', 'super@admin', '2018-04-19'),
 (00077, 'John Charles', 'Villavicencio', 'Bautista', 'User', 'ITD-DEPARTMENT', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@user', '2018-05-09'),
-(00078, 'John Charles', 'Villavicencio', 'Bautista', 'Admin', 'CT-DEPARTMENT', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin', '2018-05-09');
+(00078, 'John Charles', 'Villavicencio', 'Bautista', 'Admin', 'CT-DEPARTMENT', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@admin', '2018-05-21');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `inventory_hardware`
---
-ALTER TABLE `inventory_hardware`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `inventory_software`
---
-ALTER TABLE `inventory_software`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `purchase_order`
@@ -280,25 +184,15 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `inventory_hardware`
---
-ALTER TABLE `inventory_hardware`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
---
--- AUTO_INCREMENT for table `inventory_software`
---
-ALTER TABLE `inventory_software`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
---
 -- AUTO_INCREMENT for table `purchase_order`
 --
 ALTER TABLE `purchase_order`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 --
 -- AUTO_INCREMENT for table `purchase_order_details`
 --
 ALTER TABLE `purchase_order_details`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `supplier`
 --
