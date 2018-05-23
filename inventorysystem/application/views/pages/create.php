@@ -1,6 +1,6 @@
 <title><?php echo $firstname?>: Create User Area</title>
 
-            	<h3>Create User</h3>
+            	<h3 id="read_title"><center>Create User</center></h3>
               <?php echo validation_errors(); ?>
 
 <?php echo form_open('login/register'); ?>

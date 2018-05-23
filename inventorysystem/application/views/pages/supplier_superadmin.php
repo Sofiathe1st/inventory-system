@@ -2,7 +2,8 @@
 
 
 <title>Supplier</title>
-<h2 id="inv_title">Suppliers</h2>
+<div id="inv_form">
+    <h2 id="inv_title">Suppliers</h2>
 <a href="<?php echo base_url() ?>index.php/supplier_add" id="a_add">Add Supplier</a>
 <body>
     <div class="table-responsive">
@@ -39,7 +40,7 @@
                     <td><?php echo htmlspecialchars($row->city); ?></td> 
                     <td><?php echo htmlspecialchars($row->address); ?></td>
                     <td><?php echo htmlspecialchars($row->status); ?></td>
-                    <td><a href="<?php echo base_url() ?>index.php/login/edit_supplier_details/<?php echo $row->id ?>" id="a_upd" >EDIT</a>|<a href="<?php echo base_url() ?>index.php/login/deletesupplier/?del=<?php echo $row->id ?>" id="a_del">DELETE</a>
+                    <td><a href="<?php echo base_url() ?>index.php/login/edit_supplier_details/<?php echo $row->id ?>" id="a_upd" >EDIT</a>|<a href="<?php echo base_url() ?>index.php/login/deletesupplier/?del=<?php echo $row->id ?>" id="a_del">DELETE</a></td>
 
                 </tr> 
                    
@@ -48,4 +49,6 @@
             } ?>    
     </table>
  
- 
+ </div>
+</div>
+</div>

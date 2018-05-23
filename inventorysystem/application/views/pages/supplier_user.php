@@ -2,7 +2,8 @@
 
 
 <title>Supplier</title>
-<h2 id="inv_title">Suppliers</h2>
+<div id="inv_form">
+    <h2 id="inv_title">Suppliers</h2>
 <a href="<?php echo base_url() ?>index.php/supplier_add" id="a_add">Add Supplier</a>
 <body>
     <div class="table-responsive">
@@ -49,3 +50,6 @@
     </table>
  
  
+</div>
+</div>
+</div>

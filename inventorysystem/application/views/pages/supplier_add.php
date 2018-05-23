@@ -1,5 +1,5 @@
 <title><?php echo $firstname?>: Add Supplier area</title>
-    <h3>Add Supplier</h3>
+    <h3 id="read_title"><center>Add Supplier</center></h3>
 
     <?php echo validation_errors(); ?>
         <?php echo form_open('login/supplier_add'); ?>
