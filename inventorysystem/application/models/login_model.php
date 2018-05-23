@@ -31,6 +31,18 @@ class Login_model extends CI_Model
         $password_user       = md5($this->input->post('password'));
         $email_user          = $this->input->post('email');
         $dateregistered_user = $this->input->post('dateregistered');
+
+        /*echo "<pre>";
+        echo var_dump($firstname_user);
+        echo var_dump($lastname_user);
+        echo var_dump($middlename_user);
+        echo var_dump($department_user);
+        echo var_dump($username_user);
+        echo var_dump($password_user);
+        echo var_dump($email_user);
+        echo var_dump($dateregistered_user);
+        echo "<pre>";
+        exit();*/
         
         $this->security->xss_clean($firstname_user);
         $this->security->xss_clean($lastname_user);
@@ -42,19 +54,30 @@ class Login_model extends CI_Model
         $this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
         $this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
         $this->form_validation->set_rules('middlename', 'Middlename', 'trim|required');
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[user.username]');
+        /*$this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[user.username]');*/
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[user.email]');
+        /*$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[user.email]');*/
         
         if ($this->form_validation->run() == false) {
             echo '<script language="javascript">';
             echo 'alert("All fields Are Required To Be Inputted Correctly.")';
             echo '</script>';
             redirect('create', 'refresh');
-            
-        }
         
-        else {
+        }if ($this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[user.username]')->run() == false) {
+            echo '<script language="javascript">';
+            echo 'alert("Username Already Exists.")';
+            echo '</script>';
+            redirect('create', 'refresh');
+        
+        }
+        if ($this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[user.email]')->run() == false) {
+            echo '<script language="javascript">';
+            echo 'alert("Email Already Exists.")';
+            echo '</script>';
+            redirect('create', 'refresh');
+
+        }else {
             $data = array(
                 'id' => '',
                 'firstname' => $firstname_user,
@@ -67,9 +90,6 @@ class Login_model extends CI_Model
                 'email' => $email_user,
                 'dateregistered' => $dateregistered_user
             );
-            echo '<script language="javascript">';
-            echo 'alert("All fields Are Required To Be Inputted Correctly.")';
-            echo '</script>';
             $this->db->insert('user', $data);
         }
     }
@@ -156,7 +176,7 @@ class Login_model extends CI_Model
         $this->security->xss_clean($address);
         $this->security->xss_clean($status);
         
-        $this->form_validation->set_rules('supplier_name', 'supplier_name', 'trim|required|is_unique[supplier.supplier_name]');
+        /*$this->form_validation->set_rules('supplier_name', 'supplier_name', 'trim|required|is_unique[supplier.supplier_name]');*/
         $this->form_validation->set_rules('contact_no', 'contact_no', 'trim|required');
         $this->form_validation->set_rules('region', 'region', 'trim|required');
         $this->form_validation->set_rules('province', 'province', 'trim|required');
@@ -170,6 +190,13 @@ class Login_model extends CI_Model
             echo '</script>';
             redirect('supplier_add', 'refresh');
             
+        }
+        if ($this->form_validation->set_rules('supplier_name', 'supplier_name', 'trim|required|is_unique[supplier.supplier_name]')->run() == false) {
+            echo '<script language="javascript">';
+            echo 'alert("Supplier Name Already Exists.")';
+            echo '</script>';
+            redirect('create', 'refresh');
+
         }
         if ($this->form_validation->run() == true) {
             echo '<script language="javascript">';

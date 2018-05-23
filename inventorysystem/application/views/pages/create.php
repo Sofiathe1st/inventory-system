@@ -2,6 +2,14 @@
 
             	<h3 id="read_title"><center>Create User</center></h3>
               <?php echo validation_errors(); ?>
+              <?php
+    
+    if(isset($message))
+    {
+        echo $message;
+    }  
+    ?>
+
 
 <?php echo form_open('login/register'); ?>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
