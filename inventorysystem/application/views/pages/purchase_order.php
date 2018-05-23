@@ -34,20 +34,11 @@
                             }
                         ?>
 					</select><br>
-				<!-- <label>Name/Model</label>
-					<input type="text" name="name_sh" value="" id="po_no" /> -->
+				
 				<label><b>Quantity:</b></label>
 				    <input type="text" name="quantity" value="" id="quantity" /><br>
 				<label><b>Item Type:</b></label>
 					<input type="text" name="item_type" value="" id="quantity" /><br> 
-					<!-- <select name="category" id="category">
-						<option value="Television">Television</option>
-						<option value="Laptop">Laptop</option>
-						<option value="Desktop">Desktop</option>
-						<option value="Cellphones">Cellphones</option>
-						<option value="Mouse">Mouse</option>
-						<option value="Not Applicable">Not Applicable</option>
-				    </select><br> -->
 				<label><b>Price</b></label>
 				    <input type="text" name="price" value="" id="amount" /><br>
 				<label><b>Remarks:</b></label><br>

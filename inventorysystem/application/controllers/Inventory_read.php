@@ -20,7 +20,7 @@ class Inventory_read extends CI_Controller {
 			$config = array();
 			$config['base_url'] = base_url() . 'index.php/inventory_read/index';
 			$config['total_rows'] = $this->queries->count_inventory_read();
-			$config['per_page'] = 5;
+			$config['per_page'] = 10;
 			$this->pagination->initialize($config);
 			$page = $this->uri->segment(3);
 			$data['inventory_read'] = $this->queries->fetch_inventory_read($config['per_page'], $page);

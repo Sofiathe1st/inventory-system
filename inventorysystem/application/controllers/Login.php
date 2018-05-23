@@ -619,7 +619,8 @@ class Login extends CI_Controller
             $data['lastname']     = $session_data['lastname'];
             $data['links'] = '';
             $this->load->view('inventory_read_dashboard', $data);
-        }else{
+        }
+        else{
             redirect('inventory_read', 'refresh');
         }
     }
