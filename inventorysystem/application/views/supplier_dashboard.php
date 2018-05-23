@@ -3,7 +3,7 @@ if($type == 'User'){
 ?>
 <?php
 $this->load->view('templates/header_user');
-$this->load->view('pages/supplier');
+$this->load->view('pages/supplier_user');
 $this->load->view('templates/footer');
 ?>
 <?php } else { ?>
@@ -17,7 +17,7 @@ if($type == 'Admin'){
 ?>
 <?php
 $this->load->view('templates/header_admin');
-$this->load->view('pages/supplier');
+$this->load->view('pages/supplier_admin');
 $this->load->view('templates/footer');
 ?>
 <?php } else { ?>
@@ -31,7 +31,7 @@ if($type == 'SuperAdmin'){
 ?>
 <?php
 $this->load->view('templates/header_superadmin');
-$this->load->view('pages/supplier');
+$this->load->view('pages/supplier_superadmin');
 $this->load->view('templates/footer');
 ?>
 <?php } else { ?>
