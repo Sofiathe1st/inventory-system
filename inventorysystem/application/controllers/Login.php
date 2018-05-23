@@ -495,7 +495,7 @@ class Login extends CI_Controller
             
         }
         elseif ($data['quantity1'] == $data['quantity2']) {
-             $data['message'] = 'PO # ' . '"' . $po_no . '"' . ' already full.';
+             $data['message'] = 'PO # ' . '"' . $po_no . '"' . ' Already Completed.';
             
             $this->load->view('purchase_order_search_dashboard', $data);
 
