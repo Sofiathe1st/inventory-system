@@ -47,7 +47,7 @@ class Login extends CI_Controller
     {
         if ($this->input->post('register')) {
             $this->login->register();
-            redirect('home');
+            redirect('read');
         } else {
             $this->load->view('pages/create');
         }
@@ -481,7 +481,7 @@ class Login extends CI_Controller
             
         }
         elseif ($data['quantity1'] == $data['quantity2']) {
-             $data['message'] = 'PO # ' . '"' . $po_no . '"' . ' is exhausted.';
+             $data['message'] = 'PO # ' . '"' . $po_no . '"' . ' already full.';
             
             $this->load->view('purchase_order_search_dashboard', $data);
 

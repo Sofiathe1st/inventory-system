@@ -67,6 +67,9 @@ class Login_model extends CI_Model
                 'email' => $email_user,
                 'dateregistered' => $dateregistered_user
             );
+            echo '<script language="javascript">';
+            echo 'alert("All fields Are Required To Be Inputted Correctly.")';
+            echo '</script>';
             $this->db->insert('user', $data);
         }
     }
