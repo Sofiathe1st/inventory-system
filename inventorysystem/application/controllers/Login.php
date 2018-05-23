@@ -142,6 +142,15 @@ class Login extends CI_Controller
     {
         $this->load->library('form_validation');
         $this->load->model('queries');
+        $session_data       = $this->session->userdata('logged_in');
+        $data['type']       = $session_data['type'];
+        $data['id']         = $session_data['id'];
+        $data['firstname']  = $session_data['firstname'];
+        $data['middlename'] = $session_data['middlename'];
+        $data['username']   = $session_data['username'];
+        $data['department'] = $session_data['department'];
+        $data['email']      = $session_data['email'];
+        $data['lastname']   = $session_data['lastname'];
         $purchase_order_no   = $this->input->post('purchase_order_no');
         $purchase_order_date = $this->input->post('purchase_order_date');
         $item_type          = $this->input->post('item_type');
@@ -167,7 +176,7 @@ class Login extends CI_Controller
         $this->security->xss_clean($author_firstname);
         $this->security->xss_clean($author_lastname);
         
-        $this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required|is_unique[purchase_order.purchase_order_no]');
+        /*$this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required|is_unique[purchase_order.purchase_order_no]');*/
         $this->form_validation->set_rules('purchase_order_date', 'purchase_order_date', 'trim|required');
         $this->form_validation->set_rules('item_type', 'item_type', 'trim|required');
         $this->form_validation->set_rules('supplier', 'supplier', 'trim|required');
@@ -185,6 +194,11 @@ class Login extends CI_Controller
             echo '</script>';
             redirect('purchase_order', 'refresh');
             
+        }
+        if ($this->form_validation->set_rules('purchase_order_no', 'purchase_order_no', 'trim|required|is_unique[purchase_order.purchase_order_no]')->run() == false) {
+            $data['message'] = 'PO # ' . '"' . $purchase_order_no . '"' . ' already exists!!';
+            
+            $this->load->view('purchase_order_dashboard', $data);
         }
         
         else {
