@@ -1,6 +1,6 @@
-    <title>Update User Area</title>
+    <title>Update User Data</title>
 
-    <h3>Update User</h3>
+    <h3 id="read_title"><center>Update User</center></h3>
               <?php
               if(validation_errors()){
               ?>

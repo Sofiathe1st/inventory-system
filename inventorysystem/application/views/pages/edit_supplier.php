@@ -1,6 +1,6 @@
-    <title><?php echo $firstname?>: Update User Area</title>
+    <title>Edit Supplier Data</title>
 
-    <h3>Update User</h3>
+    <h3 id="read_title"><center>Edit Supplier</center></h3>
               <?php
               if(validation_errors()){
               ?>
@@ -23,7 +23,7 @@
               ?>
               <div id="form_1">
 
-                <h3>Update User Form</h3>
+                <h3>Edit Supplier Form</h3>
                 <h4><label>ID: <?php echo $id_supplier;?></label></h4>
                 <div class="form-group"> 
 
